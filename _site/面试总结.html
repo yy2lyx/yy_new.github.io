@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+
+
+
+<head>
+	<meta charset="utf-8">
+	<title>深度学习算法面试总结 - 凡人炼丹传</title>
+	<link rel="canonical" href="http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html">
+	<meta name="description" content="面试中机器学习，深度学习中常问的算法总结">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:4000"},
+  "headline": "深度学习算法面试总结",
+  "abstract": "面试中机器学习，深度学习中常问的算法总结",
+    "keywords": "机器学习, 深度学习, 面试",
+    "wordcount": "598",
+    "image": ["http://localhost:4000/assets/imgposts/blog_imgs/question.jpg"],
+  "datePublished": "2020-06-12 23:21:00 +0800",
+  "dateModified": "2020-06-12 23:21:00 +0800",
+  "author": {
+    "@type": "Person",
+    "name": "李小肥的YY"},
+  "publisher": {
+    "@type":  "Organization",
+    "logo": {
+        "@type": "ImageObject",
+        "encodingFormat": "image/png",
+        "contentUrl": "http://localhost:4000/assets/img/branding/logo1.png",
+        "url": "http://localhost:4000/assets/img/branding/logo1.png"},
+    "name" : "凡人炼丹传"}
+}
+</script>
+<!-- Open Graph data -->
+<meta property="og:url" content="http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="深度学习算法面试总结"/>
+<meta property="og:description" content="面试中机器学习，深度学习中常问的算法总结"/>
+<meta property="og:image" content="http://localhost:4000/assets/imgposts/blog_imgs/question.jpg"/>
+<meta property="og:image:alt" content="深度学习算法面试总结"/>
+<meta property="og:site_name" content="凡人炼丹传" />
+<meta property="article:published_time" content="2020-06-12 23:21:00 +0800" />
+<meta property="article:modified_time" content="2020-06-12 23:21:00 +0800" />
+<meta property="article:tag" content="机器学习, 深度学习, 面试" />
+<meta property="fb:admins" content="ar.maybach" />
+<!-- Schema.org markup for Google -->
+<meta itemprop="name" content="深度学习算法面试总结">
+<meta itemprop="description" content="面试中机器学习，深度学习中常问的算法总结">
+<meta itemprop="image" content="http://localhost:4000/assets/imgposts/blog_imgs/question.jpg">
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="深度学习算法面试总结">
+<meta name="twitter:description" content="面试中机器学习，深度学习中常问的算法总结">
+<meta name="twitter:creator" content="">
+<meta data-rh="true" name="twitter:label1" content="Word count"/>
+<meta data-rh="true" name="twitter:data1" content="598"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/blog_imgs/question.jpg">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<style>
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/lora/v17/0QIvMX1D_JOuMwr7I_FMl_E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/lora/v17/0QIvMX1D_JOuMwr7I_FMl_E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdu3cOWxw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+	</style>
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lora:400,600|Source+Sans+Pro:200,400,700" rel="stylesheet"> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="./assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="./assets/css/main.css">
+	
+
+
+
+
+<link rel="icon" href="./assets/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="./assets/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
+	
+	<link rel="stylesheet" href="./assets/css/highlighter/syntax-base16.monokai.dark.css">
+	
+</head>
+
+  <body>
+    
+
+
+
+
+<section class="hidden">
+  <div class="post">
+      <a  class="post-list-title" href="./%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html">深度学习算法面试总结</a>
+      
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2020-06-12T23:21:00+08:00">June 12, 2020</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+        <div class="post-excerpt">
+            <blockquote> <p>面试官会根据自己简历中提到的一些点进行提问，这里先自己对某些点进行深挖。</p></blockquote><h3 id="一数据处理">一.数据处理</h3><p>海量数据：</p><ul> <li>（1）数据量太大，无法短时间内处理完成</li> <li>（2）无法一次性将数据放入内存中。</li></ul><h4 id="11-缺失值处理">1.1 缺失值处理</h4><ul> <li>填充固定值：选取某个固定值/默认值填充缺失值。</li> <li>填充均值：对每一列的缺失值，填充当列的均值。</li> <li>填充中位数：对每一列的缺失值，填充当列的中位数。</li> <li>填充众数：对每一列的缺失值，填充当列的众数。由于存在某列缺失值过多，众数为nan的情况，因此这里取的是每列删除掉nan值后的众数。</li> <li>填充上下条的数据：对每一条数据的缺失值，填充其上下条数据的值。</li> <li>填充插值得到的数据：用插值法拟合出缺失的数据，然后进行填充。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。</li></ul><h3 id="二机器学习">二.机器学习</h3><h4 id="21--svm和lr的区别与联系">2.1 SVM和LR的区别与联系？</h4><p>SVM 和 LR 都是属于分类算法，不过 SVM 是通过划分超平面的方法来进行分类，而 LR 则是通过计算样本属于哪个类别的概率，从而达到分类效果</p><h4 id="22--交叉熵函数系列问题与最大似然函数的关系和区别">2.2 交叉熵函数系列问题？与最大似然函数的关系和区别？</h4><p>在二分类中，交叉熵函数和负最大似然函数的表达式是相同的，但是交叉熵函数是从信息论角度得到的，而最大似然函数则是从概率论角度得到的</p><p>交叉熵涉及到2点：</p><ul> <li>信息量：假设X是一个离散型随机变量，其取值集合为X，概率分布函数为p(x)=Pr(X=x),x∈X，我们定义事件X=x0的信息量为：I(x0)=−log(p(x0))，可以理解为，一个事件发生的概率越大，则它所携带的信息量就越小，而当p(x0)=1时，熵将等于0，也就是说该事件的发生不会导致任何信息量的增加。举个例子，小明平时不爱学习，考试经常不及格，而小王是个勤奋学习的好学生，经常得满分，所以我们可以做如下假设：事件A：小明考试及格，对应的概率P(xA)=0.1，信息量为I(xA)=−log(0.1)=3.3219事件B：小王考试及格，对应的概率P(xB)=0.999，信息量为I(xB)=−log(0.999)=0.0014可以看出，结果非常符合直观：小明及格的可能性很低(十次考试只有一次及格)，因此如果某次考试及格了（大家都会说：XXX竟然及格了！），必然会引入较大的信息量，对应的I值也较高。</li> <li>熵：假设小明的考试结果是一个0-1分布XA只有两个取值{0：不及格，1：及格}，在某次考试结果公布前，小明的考试结果有多大的不确定度呢？你肯定会说：十有八九不及格！因为根据先验知识，小明及格的概率仅有0.1,90%的可能都是不及格的。怎么来度量这个不确定度？求期望！不错，我们对所有可能结果带来的额外信息量求取均值（期望），其结果不就能够衡量出小明考试成绩的不确定度了吗。<strong>熵其实是信息量的期望值，它是一个随机变量的确定性的度量。熵越大，变量的取值越不确定，反之就越确定。</strong></li> <li>相对熵：称为<strong>KL散度</strong>，是两个随机分布间距离的度量。越小说明分布越一致。</li> <li>交叉熵：交叉熵与KL距离在行为上是等价的，都反映了分布p，q的相似程度。特别的，在logistic regression中，p:真实样本分布，服从参数为p的0-1分布，即X∼B(1,p)X∼B(1,p)q:待估计的模型，服从参数为q的0-1分布，即X∼B(1,q)两者的交叉熵为</li></ul><h4 id="23-svm的核函数">2.3 SVM的核函数</h4><p>使用非线性核的支持向量机可以处理线性不可分的问题。通过核函数，支持向量机可以将特征向量映射到更高维的空间中，使得原本线性不可分的数据在映射之后的空间中变得线性可分，如下图所示，原本二维空间的线性不可分（异或问题）转成三维空间，就可以线性可分了。<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_1.jpg" alt="" /></p><p>常用的核函数：线性核、多项式核、高斯核（RBF）、拉普拉斯核等等。核函数的选择其实才是SVM模型的最大变数。</p><h4 id="24-l1和l2范数">2.4 L1和L2范数</h4><p>范数的定义：\(\|\mathbf{x}\|_{p}:=\left(\sum_{i=1}^{n}\left|x_{i}\right|^{p}\right)^{1 / p}\)L1范数就是p=1,即：\(\|\boldsymbol{x}\|_{1}:=\sum_{i=1}^{n}\left|x_{i}\right|\)</p><p>L2范数就是p = 2，即:\(\|\boldsymbol{x}\|_{2}:=\sqrt{x_{1}^{2}+\cdots+x_{n}^{2}}\)</p><p>这里如果需要求解如何使得上述式子最小，无可避免三步走：求导，置零，解方程。因此L2范数计算就比L1范数计算更容易，因此L2范数应用较多。</p><p>L1 和 L2 范数在机器学习上最主要的应用大概分下面两类：</p><ul> <li>作为损失函数使用(计算回归问题中需要计算拟合的线和点之间的距离)，这里L1是LAD（最小绝对偏差），L2是最小二乘法</li> <li>作为正则项使用（防止过拟合）也即所谓 L1-regularization 和 L2-regularization：这里就是将x替换成权重w，</li></ul><p>这两个正则项最主要的不同，包括两点：如上面提到的，L2 计算起来更方便，而 L1 在特别是非稀疏向量上的计算效率就很低；还有就是 L1 最重要的一个特点，输出稀疏，会把不重要的特征直接置零，而 L2 则不会；最后，如之前多次提过，L2 有唯一解，而 L1 不是。</p><h4 id="25-决策树">2.5 决策树</h4><p>决策树属于典型的“<strong>白盒模型</strong>”，如下图所示，我是否应该接收一个新的offer？这里可以通过构建一个个节点，来判断我是否应该接收offer。</p><p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_2.jpg" alt="" /></p><p>比较常用的决策树有<strong>ID3</strong>，<strong>C4.5</strong>和<strong>CART</strong>（Classification And Regression Tree）。</p><p><strong>熵</strong>：熵是随机变量的不确定程度。越混乱熵值越高，说明越混乱，分类越混乱。当熵值为0时，说明是纯物质。以下是熵的公式。\(H(X)=-\sum_{i=1}^{n} p_{i} \log p_{i}\)​ <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_3.jpg" alt="" /></p><p>当Entropy最大为1的时候，是分类效果最差的状态，当它最小为0的时候，是完全分类的状态。因为熵等于零是理想状态，一般实际情况下，熵介于0和1之间。熵的不断最小化，实际上就是提高分类正确率的过程。</p><p>例子：A = [1,1,1,1,2,2,1,1,1,1] , B = [1,2,3,4,5,6,6,7,8,0] ，显然A集合的熵值小很多。</p><p><strong>信息增益</strong></p><ul> <li>信息增益表示得知特征X的信息而使得类Y的信息的不确定性减少的程度。</li> <li>C4.5决策树学习应用信息增益准则选择特征。</li></ul><p>信息增益的<strong>定义</strong>：给定训练数据集D和特征A，经验熵H（D）表示对数据集D进行分类的不确定性。而<strong>经验条件熵H（D|A）表示在特征A 给定的条件下对数据集D进行分类的不确定性</strong>，那么它们的差，即信息增益。如下公式：\(g(D, A)=H(D)-H(D \mid A)\)<strong>表示由于特征A而使得对数据集D的分类的不确定性减少的程度。不同的特征往往具有不同的信息增益，信息增益大的特征具有更强的分类能力。</strong></p><p><strong>基尼指数</strong></p><ul> <li>CART决策树采用基尼指数(Gini index)来选择划分特征。</li></ul><p>基尼指数的定义：在数据集中随机抽取2个样本，其类别不一样的概率。因此Gini越小，数据集D纯度越高。\(\operatorname{Gini}(D)=\sum_{k=1}^{Y} \sum_{k \neq j} p_{k} p_{j}=1-\sum_{k=1}^{Y} p_{k}^{2}\)<strong>决策树的过拟合</strong></p><p>决策树很容易发生过拟合的现象。原因是由于可以通过不断的分枝使得信息熵为0.</p><p>如何解决该现象？</p><p>进行<strong>剪枝</strong>：</p><ul> <li><strong>预剪枝</strong>：在决策树生成过程中，对每个节点划分前估计出验证集的精度决定是否划分。</li> <li><strong>后剪枝</strong>：先训练完成一个完整的决策树，再自底而上进行剪枝。</li></ul><h4 id="26-随机森林">2.6 随机森林</h4><p>随机森林属于集成学习的Bagging方法，同时也是由多个弱分类器构建的强分类器。<strong>森林</strong>：</p><ul> <li>随机森林是由很多决策树并行构成的，决策树之间没有关联。</li>...<a class="read-more" href="./%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html"> read more</a>
+        </div>
+  </div>
+</section>
+<div class="flex-container transparent">
+  
+
+
+
+
+<header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li>
+            <div class="theme-toggle night">
+    <input class="night" type="checkbox" id="theme-switch">
+    <label class="night" for="theme-switch">
+        <div class="toggle night"></div>
+        <div class="names night">             
+        <p class="light night"><svg class="night" width="20" viewBox="0 0 25 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path class="night" d="M12.5 2.49871C11.3401 2.50016 10.2282 2.96156 9.40801 3.78171C8.58785 4.60187 8.12645 5.71383 8.125 6.87371C8.125 7.03947 8.19085 7.19844 8.30806 7.31565C8.42527 7.43286 8.58424 7.49871 8.75 7.49871C8.91576 7.49871 9.07473 7.43286 9.19194 7.31565C9.30915 7.19844 9.375 7.03947 9.375 6.87371C9.37593 6.04519 9.70547 5.25088 10.2913 4.66503C10.8772 4.07918 11.6715 3.74964 12.5 3.74871C12.6658 3.74871 12.8247 3.68286 12.9419 3.56565C13.0592 3.44844 13.125 3.28947 13.125 3.12371C13.125 2.95795 13.0592 2.79898 12.9419 2.68177C12.8247 2.56456 12.6658 2.49871 12.5 2.49871V2.49871ZM12.5 -0.00129131C8.47891 -0.00129131 5.62031 3.26238 5.625 6.88269C5.62487 8.54403 6.22974 10.1486 7.32656 11.3964C8.32891 12.5378 9.29062 14.4007 9.375 14.9987L9.37734 17.9358C9.37744 18.0587 9.41402 18.1787 9.48242 18.2807L10.4395 19.7198C10.4964 19.8055 10.5737 19.8758 10.6644 19.9245C10.7551 19.9731 10.8564 19.9986 10.9594 19.9987H14.0395C14.1426 19.9988 14.2441 19.9734 14.3351 19.9247C14.426 19.8761 14.5034 19.8057 14.5605 19.7198L15.5176 18.28C15.5854 18.1776 15.6219 18.0578 15.6227 17.935L15.625 14.9987C15.7129 14.3846 16.6797 12.5303 17.6734 11.3964C18.5434 10.4028 19.1087 9.17963 19.3015 7.87318C19.4944 6.56673 19.3066 5.23238 18.7608 4.02985C18.215 2.82732 17.3342 1.80757 16.2238 1.09264C15.1135 0.377721 13.8206 -0.00207746 12.5 -0.00129131V-0.00129131ZM14.3727 17.7452L13.7047 18.7487H11.2937L10.6273 17.7452V17.4987H14.3738L14.3727 17.7452ZM14.375 16.2487H10.625L10.6227 14.9987H14.375V16.2487ZM16.7348 10.5725C16.1879 11.1956 15.316 12.4511 14.7594 13.7479H10.243C9.68516 12.4507 8.81328 11.1956 8.26641 10.5725C7.36971 9.5491 6.87599 8.2344 6.87734 6.87371C6.87031 3.8659 9.23594 1.24871 12.5 1.24871C15.602 1.24871 18.125 3.77176 18.125 6.87371C18.1249 8.23456 17.6305 9.54904 16.7336 10.5725H16.7348ZM3.75 6.87371C3.75 6.70795 3.68415 6.54898 3.56694 6.43177C3.44973 6.31456 3.29076 6.24871 3.125 6.24871H0.625C0.45924 6.24871 0.300269 6.31456 0.183058 6.43177C0.065848 6.54898 0 6.70795 0 6.87371C0 7.03947 0.065848 7.19844 0.183058 7.31565C0.300269 7.43286 0.45924 7.49871 0.625 7.49871H3.125C3.29076 7.49871 3.44973 7.43286 3.56694 7.31565C3.68415 7.19844 3.75 7.03947 3.75 6.87371ZM20.625 2.49871C20.7221 2.49849 20.8178 2.4759 20.9047 2.43269L23.4047 1.18269C23.5529 1.10852 23.6657 0.978483 23.718 0.821201C23.7704 0.66392 23.7582 0.492273 23.684 0.344021C23.6473 0.270614 23.5964 0.205161 23.5344 0.151397C23.4724 0.0976336 23.4004 0.0566132 23.3225 0.0306781C23.1652 -0.0217002 22.9936 -0.00945342 22.8453 0.0647243L20.3453 1.31472C20.2194 1.37771 20.1184 1.48136 20.0588 1.60889C19.9991 1.73643 19.9843 1.88037 20.0166 2.0174C20.049 2.15442 20.1267 2.2765 20.2371 2.36386C20.3475 2.45122 20.4842 2.49873 20.625 2.49871ZM24.375 6.24871H21.875C21.7092 6.24871 21.5503 6.31456 21.4331 6.43177C21.3158 6.54898 21.25 6.70795 21.25 6.87371C21.25 7.03947 21.3158 7.19844 21.4331 7.31565C21.5503 7.43286 21.7092 7.49871 21.875 7.49871H24.375C24.5408 7.49871 24.6997 7.43286 24.8169 7.31565C24.9342 7.19844 25 7.03947 25 6.87371C25 6.70795 24.9342 6.54898 24.8169 6.43177C24.6997 6.31456 24.5408 6.24871 24.375 6.24871ZM4.65469 1.31472L2.15469 0.0647243C2.08128 0.0279952 2.00136 0.00608435 1.91948 0.00024269C1.83761 -0.00559897 1.75539 0.004743 1.67751 0.0306781C1.52023 0.0830564 1.39019 0.195769 1.31602 0.344021C1.24184 0.492273 1.22959 0.66392 1.28197 0.821201C1.33435 0.978483 1.44706 1.10852 1.59531 1.18269L4.09531 2.43269C4.18223 2.4759 4.27794 2.49849 4.375 2.49871C4.5158 2.49873 4.65248 2.45122 4.7629 2.36386C4.87332 2.2765 4.951 2.15442 4.98337 2.0174C5.01574 1.88037 5.0009 1.73643 4.94124 1.60889C4.88158 1.48136 4.78061 1.37771 4.65469 1.31472ZM23.4047 12.5647L20.9047 11.3147C20.7564 11.2405 20.5847 11.2283 20.4274 11.2807C20.2701 11.3332 20.14 11.4459 20.0658 11.5942C19.9916 11.7425 19.9794 11.9142 20.0318 12.0715C20.0842 12.2289 20.197 12.3589 20.3453 12.4331L22.8453 13.6831C22.9936 13.7573 23.1653 13.7695 23.3226 13.7171C23.4799 13.6647 23.61 13.5519 23.6842 13.4036C23.7584 13.2553 23.7706 13.0836 23.7182 12.9263C23.6658 12.769 23.553 12.6389 23.4047 12.5647V12.5647ZM4.375 11.2487C4.27794 11.2489 4.18223 11.2715 4.09531 11.3147L1.59531 12.5647C1.44701 12.6389 1.33425 12.769 1.28183 12.9263C1.25588 13.0042 1.24552 13.0864 1.25135 13.1683C1.25719 13.2502 1.27909 13.3302 1.31582 13.4036C1.35255 13.477 1.40338 13.5425 1.46542 13.5963C1.52745 13.6501 1.59947 13.6911 1.67737 13.7171C1.83469 13.7695 2.00638 13.7573 2.15469 13.6831L4.65469 12.4331C4.78083 12.3702 4.88202 12.2666 4.94183 12.1389C5.00164 12.0113 5.01656 11.8672 4.98417 11.7301C4.95178 11.5929 4.87397 11.4707 4.76339 11.3833C4.65281 11.2959 4.51594 11.2485 4.375 11.2487V11.2487Z" /></svg></p>
+        <p class="dark night"><svg class="night" width="20" viewBox="0 0 25 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path class="night" d="M6.39614 3.72646C7.50591 1.56178 9.72622 0.00900831 12.4782 0.00114817C13.8006 -0.00388798 15.0965 0.375153 16.2101 1.09278C17.3237 1.8104 18.2079 2.83612 18.7564 4.04682C19.3049 5.25751 19.4945 6.60175 19.3024 7.91818C19.1103 9.23461 18.5447 10.4673 17.6735 11.4683C17.5227 11.6416 17.3516 11.859 17.1739 12.1069L9.47856 6.12184C9.65443 5.45016 10.046 4.85578 10.5924 4.43118C11.1387 4.00657 11.8093 3.77554 12.4997 3.77401C12.6654 3.77401 12.8244 3.70776 12.9416 3.58984C13.0588 3.47191 13.1247 3.31197 13.1247 3.1452C13.1247 2.97843 13.0588 2.81849 12.9416 2.70057C12.8244 2.58264 12.6654 2.51639 12.4997 2.51639C11.6212 2.5173 10.7634 2.78383 10.0374 3.28141C9.31146 3.77899 8.75092 4.48463 8.42856 5.30674L6.39614 3.72646ZM6.39614 10.0841C6.64968 10.5817 6.96225 11.0465 7.327 11.4683C7.97231 12.2091 8.98169 13.7568 9.36645 15.0624C9.36645 15.0726 9.36919 15.0828 9.37075 15.093H12.8372L6.39614 10.0841ZM9.37466 16.3502V17.8574C9.37584 18.1045 9.44934 18.3458 9.58599 18.5511L10.2536 19.5607C10.3675 19.7335 10.5221 19.8753 10.7037 19.9734C10.8852 20.0715 11.0881 20.1229 11.2942 20.1231H13.7047C13.9107 20.1231 14.1135 20.0718 14.2951 19.9739C14.4766 19.876 14.6313 19.7345 14.7454 19.5619L15.4129 18.5511C15.5492 18.3451 15.622 18.1033 15.6223 17.8558V17.2581L14.4528 16.3502H9.37466Z"/>
+            <path class="night" d="M0.131556 1.2363L0.898352 0.243172C0.948738 0.177883 1.01142 0.123229 1.08282 0.0823368C1.15423 0.0414448 1.23294 0.0151171 1.31446 0.00486006C1.39598 -0.00539702 1.47872 0.000617709 1.55793 0.0225602C1.63714 0.0445026 1.71127 0.0819422 1.77609 0.132737L24.7585 18.0039C24.8894 18.1062 24.9745 18.2567 24.9952 18.4221C25.0158 18.5876 24.9703 18.7545 24.8687 18.8862L24.1015 19.8794C24.0511 19.9446 23.9884 19.9992 23.917 20.0401C23.8457 20.0809 23.767 20.1072 23.6855 20.1175C23.6041 20.1277 23.5214 20.1217 23.4422 20.0998C23.363 20.0779 23.2889 20.0405 23.2241 19.9898L0.241322 2.1186C0.110489 2.01624 0.0254259 1.86578 0.00484145 1.70032C-0.015743 1.53486 0.0298368 1.36795 0.131556 1.2363V1.2363Z"/>
+            </svg></p>
+        </div>
+    </label>
+</div>
+          </li>
+          <li>
+            <a href="./">
+              <div class="left">
+                首页
+              </div>  
+              <div class="right">
+                <svg width="24px" aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><rect x="83.534" y="40.929" width="3.997" height="20.071"/></g><path d="M16.466,41.931l33.548-25.123L92.81,48.877l2.396-3.198L50.015,11.814L4.794,45.679l2.396,3.199l5.279-3.954v42.763h75.062  V61h-3.997v22.69H64.598V54.068H35.402V83.69H16.466V41.931z M39.399,58.065h21.202V83.69H39.399V58.065z"/></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./archive.html">
+              <div class="left">
+                文章
+              </div>
+              <div class="right">
+                <svg width="24px" aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="-3 3 64 64"><g><path d="M60.992,31.985c0-15.979-13-28.978-28.979-28.978c-15.994,0-29.006,12.999-29.006,28.978   c0,15.994,13.012,29.007,29.006,29.007v-2c-14.891,0-27.006-12.115-27.006-27.007c0-14.875,12.115-26.978,27.006-26.978   c14.876,0,26.979,12.103,26.979,26.978c0,8.945-4.479,17.329-11.804,22.338l0.874-10.062l-1.992-0.174l-1.135,13.071l13.042,1.136   l0.174-1.992l-9.183-0.799C56.443,50.079,60.992,41.321,60.992,31.985z"/><polygon points="33.014,12.682 31.014,12.682 31.014,32.398 39.811,41.224 41.227,39.812 33.014,31.572  "/></g></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./tags.html">
+              <div class="left">
+                标签
+              </div>
+              <div class="right">
+                <svg width="24px" aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M75.244,15.066c-2.59,0-5.027,1.012-6.857,2.843c-3.781,3.785-3.778,9.94,0.002,13.724    c1.831,1.833,4.266,2.843,6.857,2.843s5.026-1.01,6.861-2.843c3.781-3.785,3.781-9.943-0.002-13.724    C80.275,16.076,77.838,15.066,75.244,15.066z M78.766,28.252c-1.871,1.869-5.129,1.869-6.996,0c-1.929-1.931-1.931-5.069-0.002-7    c0.934-0.934,2.175-1.448,3.498-1.448c1.322,0,2.564,0.515,3.5,1.448C80.691,23.183,80.691,26.321,78.766,28.252z M94.632,41.027    l0.005-28.872c0-3.745-3.05-6.792-6.792-6.792L58.973,5.368l-1.237-0.004c-1.893,0-4.75,0-6.617,1.869L7.008,51.342    c-1.06,1.059-1.645,2.467-1.645,3.966s0.583,2.908,1.644,3.968l33.717,33.717c1.058,1.06,2.467,1.645,3.966,1.645    s2.908-0.585,3.968-1.645l44.106-44.111c1.893-1.886,1.88-4.604,1.869-7.227L94.632,41.027z M90.022,46.139L45.913,90.25    c-0.654,0.65-1.792,0.652-2.443,0L9.752,56.532c-0.328-0.327-0.507-0.762-0.507-1.225c0-0.462,0.18-0.894,0.507-1.221    L53.861,9.976c0.676-0.674,2.284-0.731,3.874-0.731l1.237,0.004l28.872-0.004c1.604,0,2.909,1.306,2.909,2.911l-0.005,28.872    l0.005,0.642C90.76,43.585,90.769,45.392,90.022,46.139z"/></g></svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./about.html">
+              <div class="left">
+                关于
+              </div>
+              <div class="right">
+                <svg width='24px' aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 846.66 846.66"><g><path d="M351.26 453.22c-276.42,134.06 -224.86,336.22 -224.73,336.8 6.03,25.41 -32.58,34.56 -38.6,9.15 -0.15,-0.65 -55.78,-219.32 218.87,-367.66 -60.98,-39 -100.02,-106.82 -100.02,-182.56 0,-119.6 96.95,-216.55 216.55,-216.55 119.6,0 216.55,96.95 216.55,216.55 0,75.74 -39.04,143.56 -100.02,182.56 274.65,148.34 219.02,367.01 218.87,367.66 -6.02,25.41 -44.63,16.26 -38.6,-9.15 0.13,-0.58 51.69,-202.74 -224.73,-336.8 -22.55,7.96 -46.8,12.29 -72.07,12.29 -25.27,0 -49.52,-4.33 -72.07,-12.29zm72.07 -381.14c-97.68,0 -176.87,79.19 -176.87,176.87 0,97.69 79.19,176.87 176.87,176.87 97.68,0 176.87,-79.18 176.87,-176.87 0,-97.68 -79.19,-176.87 -176.87,-176.87z"/></g></svg>
+              </div>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="./feed.xml">
+              <div class="left">
+                Atom feed
+              </div>
+              <div class="right">
+                <svg width='24px' aria-hidden="true" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M80 352c26.467 0 48 21.533 48 48s-21.533 48-48 48-48-21.533-48-48 21.533-48 48-48m0-32c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80zm367.996 147.615c-6.448-237.848-198.06-429.164-435.61-435.61C5.609 31.821 0 37.229 0 44.007v8.006c0 6.482 5.146 11.816 11.626 11.994 220.81 6.05 398.319 183.913 404.367 404.367.178 6.48 5.512 11.626 11.994 11.626h8.007c6.778 0 12.185-5.609 12.002-12.385zm-144.245-.05c-6.347-158.132-133.207-284.97-291.316-291.316C5.643 175.976 0 181.45 0 188.247v8.005c0 6.459 5.114 11.72 11.567 11.989 141.134 5.891 254.301 119.079 260.192 260.192.269 6.453 5.531 11.567 11.989 11.567h8.005c6.798 0 12.271-5.643 11.998-12.435z"></path></svg>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+      
+      
+      <div class="logo"><a href="./"><img class="logo" id="logo" src="./assets/img/branding/MVM-logo-full.svg" alt="凡人炼丹传"></a></div>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="深度学习算法面试总结">
+<meta itemprop="description" content="面试中机器学习，深度学习中常问的算法总结">
+<meta itemprop="datePublished" content="2020-06-12T23:21:00+08:00">
+
+    <div class="page-image">
+      <div class="cover-image" style="background: url('./assets/img/posts/blog_imgs/question.jpg') center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">深度学习算法面试总结</h1>
+          
+
+  <span class = "post-page-meta">
+  
+    <p class="page_meta">
+  
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2020-06-12T23:21:00+08:00">June 12, 2020</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+    </p>
+  
+  </span>
+
+        </div>
+        <aside class="sidebar side" id="sidebar">
+    
+
+
+
+<div class="tag-cloud">
+    
+        <ul class="tags side">
+            
+                <li><a href="./tag.html?tag=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" class="tag side">机器学习</a></li>
+            
+                <li><a href="./tag.html?tag=%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" class="tag side">深度学习</a></li>
+            
+                <li><a href="./tag.html?tag=%E9%9D%A2%E8%AF%95" class="tag side">面试</a></li>
+            
+    
+        </ul>
+</div>
+    <div class="share-options side">
+    <div class="share-hover side">
+        <span class="share-button side"><svg fill="currentColor" width="25" height="25" class="side"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons side" id="sidebar-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=深度学习算法面试总结&url=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html&title=深度学习算法面试总结" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html&title=深度学习算法面试总结&summary=面试中机器学习，深度学习中常问的算法总结&source=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=深度学习算法面试总结&body=面试中机器学习，深度学习中常问的算法总结%0A%0ARead more here: http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="side" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
+        </div>
+    </div>
+    <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
+</div>
+</aside>
+
+        
+        
+        <blockquote>
+  <p>面试官会根据自己简历中提到的一些点进行提问，这里先自己对某些点进行深挖。</p>
+</blockquote>
+
+<h3 id="一数据处理">一.数据处理</h3>
+<p>海量数据：</p>
+<ul>
+  <li>（1）数据量太大，无法短时间内处理完成</li>
+  <li>（2）无法一次性将数据放入内存中。</li>
+</ul>
+
+<h4 id="11-缺失值处理">1.1 缺失值处理</h4>
+<ul>
+  <li>填充固定值：选取某个固定值/默认值填充缺失值。</li>
+  <li>填充均值：对每一列的缺失值，填充当列的均值。</li>
+  <li>填充中位数：对每一列的缺失值，填充当列的中位数。</li>
+  <li>填充众数：对每一列的缺失值，填充当列的众数。由于存在某列缺失值过多，众数为nan的情况，因此这里取的是每列删除掉nan值后的众数。</li>
+  <li>填充上下条的数据：对每一条数据的缺失值，填充其上下条数据的值。</li>
+  <li>填充插值得到的数据：用插值法拟合出缺失的数据，然后进行填充。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。</li>
+</ul>
+
+<h3 id="二机器学习">二.机器学习</h3>
+<h4 id="21--svm和lr的区别与联系">2.1  SVM和LR的区别与联系？</h4>
+<p>SVM 和 LR 都是属于分类算法，不过 SVM 是通过划分超平面的方法来进行分类，而 LR 则是通过计算样本属于哪个类别的概率，从而达到分类效果</p>
+
+<h4 id="22--交叉熵函数系列问题与最大似然函数的关系和区别">2.2  交叉熵函数系列问题？与最大似然函数的关系和区别？</h4>
+<p>在二分类中，交叉熵函数和负最大似然函数的表达式是相同的，但是交叉熵函数是从信息论角度得到的，而最大似然函数则是从概率论角度得到的</p>
+
+<p>交叉熵涉及到2点：</p>
+<ul>
+  <li>信息量：假设X是一个离散型随机变量，其取值集合为X，概率分布函数为p(x)=Pr(X=x),x∈X，我们定义事件X=x0的信息量为：
+I(x0)=−log(p(x0))，可以理解为，一个事件发生的概率越大，则它所携带的信息量就越小，而当p(x0)=1时，熵将等于0，也就是说该事件的发生不会导致任何信息量的增加。举个例子，小明平时不爱学习，考试经常不及格，而小王是个勤奋学习的好学生，经常得满分，所以我们可以做如下假设：
+事件A：小明考试及格，对应的概率P(xA)=0.1，信息量为I(xA)=−log(0.1)=3.3219
+事件B：小王考试及格，对应的概率P(xB)=0.999，信息量为I(xB)=−log(0.999)=0.0014
+可以看出，结果非常符合直观：小明及格的可能性很低(十次考试只有一次及格)，因此如果某次考试及格了（大家都会说：XXX竟然及格了！），必然会引入较大的信息量，对应的I值也较高。</li>
+  <li>熵：假设小明的考试结果是一个0-1分布XA只有两个取值{0：不及格，1：及格}，在某次考试结果公布前，小明的考试结果有多大的不确定度呢？你肯定会说：十有八九不及格！因为根据先验知识，小明及格的概率仅有0.1,90%的可能都是不及格的。怎么来度量这个不确定度？求期望！不错，我们对所有可能结果带来的额外信息量求取均值（期望），其结果不就能够衡量出小明考试成绩的不确定度了吗。<strong>熵其实是信息量的期望值，它是一个随机变量的确定性的度量。熵越大，变量的取值越不确定，反之就越确定。</strong></li>
+  <li>相对熵：称为<strong>KL散度</strong>，是两个随机分布间距离的度量。越小说明分布越一致。</li>
+  <li>交叉熵：交叉熵与KL距离在行为上是等价的，都反映了分布p，q的相似程度。特别的，在logistic regression中，
+p:真实样本分布，服从参数为p的0-1分布，即X∼B(1,p)X∼B(1,p)
+q:待估计的模型，服从参数为q的0-1分布，即X∼B(1,q)两者的交叉熵为</li>
+</ul>
+
+<h4 id="23-svm的核函数">2.3 SVM的核函数</h4>
+<p>使用非线性核的支持向量机可以处理线性不可分的问题。通过核函数，支持向量机可以将特征向量映射到更高维的空间中，使得原本线性不可分的数据在映射之后的空间中变得线性可分，如下图所示，原本二维空间的线性不可分（异或问题）转成三维空间，就可以线性可分了。
+<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_1.jpg" alt="" /></p>
+
+<p>常用的核函数：线性核、多项式核、高斯核（RBF）、拉普拉斯核等等。核函数的选择其实才是SVM模型的最大变数。</p>
+
+<h4 id="24-l1和l2范数">2.4 L1和L2范数</h4>
+<p>范数的定义：
+\(\|\mathbf{x}\|_{p}:=\left(\sum_{i=1}^{n}\left|x_{i}\right|^{p}\right)^{1 / p}\)
+L1范数就是p=1,即：
+\(\|\boldsymbol{x}\|_{1}:=\sum_{i=1}^{n}\left|x_{i}\right|\)</p>
+
+<p>L2范数就是p = 2，即:
+\(\|\boldsymbol{x}\|_{2}:=\sqrt{x_{1}^{2}+\cdots+x_{n}^{2}}\)</p>
+
+<p>这里如果需要求解如何使得上述式子最小，无可避免三步走：求导，置零，解方程。因此L2范数计算就比L1范数计算更容易，因此L2范数应用较多。</p>
+
+<p>L1 和 L2 范数在机器学习上最主要的应用大概分下面两类：</p>
+<ul>
+  <li>作为损失函数使用(计算回归问题中需要计算拟合的线和点之间的距离)，这里L1是LAD（最小绝对偏差），L2是最小二乘法</li>
+  <li>作为正则项使用（防止过拟合）也即所谓 L1-regularization 和 L2-regularization：这里就是将x替换成权重w，</li>
+</ul>
+
+<p>这两个正则项最主要的不同，包括两点：如上面提到的，L2 计算起来更方便，而 L1 在特别是非稀疏向量上的计算效率就很低；还有就是 L1 最重要的一个特点，输出稀疏，会把不重要的特征直接置零，而 L2 则不会；最后，如之前多次提过，L2 有唯一解，而 L1 不是。</p>
+
+<h4 id="25-决策树">2.5 决策树</h4>
+
+<p>决策树属于典型的“<strong>白盒模型</strong>”，如下图所示，我是否应该接收一个新的offer？这里可以通过构建一个个节点，来判断我是否应该接收offer。</p>
+
+<p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_2.jpg" alt="" /></p>
+
+<p>比较常用的决策树有<strong>ID3</strong>，<strong>C4.5</strong>和<strong>CART</strong>（Classification And Regression Tree）。</p>
+
+<p><strong>熵</strong>：熵是随机变量的不确定程度。越混乱熵值越高，说明越混乱，分类越混乱。当熵值为0时，说明是纯物质。以下是熵的公式。
+\(H(X)=-\sum_{i=1}^{n} p_{i} \log p_{i}\)
+​		<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_3.jpg" alt="" /></p>
+
+<p>当Entropy最大为1的时候，是分类效果最差的状态，当它最小为0的时候，是完全分类的状态。因为熵等于零是理想状态，一般实际情况下，熵介于0和1之间。熵的不断最小化，实际上就是提高分类正确率的过程。</p>
+
+<p>例子：A = [1,1,1,1,2,2,1,1,1,1] , B = [1,2,3,4,5,6,6,7,8,0] ，显然A集合的熵值小很多。</p>
+
+<p><strong>信息增益</strong></p>
+
+<ul>
+  <li>信息增益表示得知特征X的信息而使得类Y的信息的不确定性减少的程度。</li>
+  <li>C4.5决策树学习应用信息增益准则选择特征。</li>
+</ul>
+
+<p>信息增益的<strong>定义</strong>：给定训练数据集D和特征A，经验熵H（D）表示对数据集D进行分类的不确定性。而<strong>经验条件熵H（D|A）表示在特征A 给定的条件下对数据集D进行分类的不确定性</strong>，那么它们的差，即信息增益。如下公式：
+\(g(D, A)=H(D)-H(D \mid A)\)
+<strong>表示由于特征A而使得对数据集D的分类的不确定性减少的程度。不同的特征往往具有不同的信息增益，信息增益大的特征具有更强的分类能力。</strong></p>
+
+<p><strong>基尼指数</strong></p>
+
+<ul>
+  <li>CART决策树采用基尼指数(Gini index)来选择划分特征。</li>
+</ul>
+
+<p>基尼指数的定义：在数据集中随机抽取2个样本，其类别不一样的概率。因此Gini越小，数据集D纯度越高。
+\(\operatorname{Gini}(D)=\sum_{k=1}^{Y} \sum_{k \neq j} p_{k} p_{j}=1-\sum_{k=1}^{Y} p_{k}^{2}\)
+<strong>决策树的过拟合</strong></p>
+
+<p>决策树很容易发生过拟合的现象。原因是由于可以通过不断的分枝使得信息熵为0.</p>
+
+<p>如何解决该现象？</p>
+
+<p>进行<strong>剪枝</strong>：</p>
+
+<ul>
+  <li><strong>预剪枝</strong>：在决策树生成过程中，对每个节点划分前估计出验证集的精度决定是否划分。</li>
+  <li><strong>后剪枝</strong>：先训练完成一个完整的决策树，再自底而上进行剪枝。</li>
+</ul>
+
+<h4 id="26-随机森林">2.6 随机森林</h4>
+
+<p>随机森林属于集成学习的Bagging方法，同时也是由多个弱分类器构建的强分类器。
+<strong>森林</strong>：</p>
+
+<ul>
+  <li>随机森林是由很多决策树并行构成的，决策树之间没有关联。</li>
+  <li>当我们进行分类任务时，新的输入样本进入，就让森林中的每一棵决策树分别进行判断和分类，每个决策树会得到一个自己的分类结果，决策树的分类结果中哪一个分类最多，那么随机森林就会把这个结果当做最终的结果。</li>
+</ul>
+
+<p><strong>随机</strong>：</p>
+
+<ul>
+  <li>样本的随机：在训练过程中，输入到每个决策树的样本是从总体样本中随机抽样的。</li>
+  <li>决策树节点的随机：对每个决策树而言，其节点属性都是从总的属性中随机抽取的。</li>
+</ul>
+
+<p><strong>特点</strong>：</p>
+
+<ul>
+  <li>由于是并行模型，训练快。</li>
+  <li>得到不同特征的对模型的重要程度。</li>
+  <li>不容易过拟合。</li>
+  <li>如果有很大一部分的特征遗失，仍可以维持准确度。</li>
+</ul>
+
+<h3 id="三-nlp">三. NLP</h3>
+<h4 id="31--什么是tf-idf">3.1  什么是TF-IDF?</h4>
+<p>词频-逆文档频率TF-IDF(term frequency–inverse document frequency)是一种用于信息检索与数据挖掘的常用加权技术，常用于挖掘文章中的关键词，而且算法简单高效，常被工业用于最开始的文本数据清洗。</p>
+
+<p>\(\text { 词频(TF) }=\frac{\text { 某个词在文章中的出现次数 }}{\text { 文章的总词数 }}\)
+\(\text { 逆文档频率(IDF) }=\log \left(\frac{\text { 语料库的文档总数 }}{\text { 包含该词的文档数 } x+1}\right)\)</p>
+
+<p>当有TF(词频)和IDF(逆文档频率)后，将这两个词相乘，就能得到一个词的TF-IDF的值。某个词在文章中的TF-IDF越大，那么一般而言这个词在这篇文章的重要性会越高，所以通过计算文章中各个词的TF-IDF，由大到小排序，排在最前面的几个词，就是该文章的关键词。</p>
+
+<h4 id="32--什么是word2vec">3.2  什么是word2vec</h4>
+
+<p>判断一个词的词性（动词，名词）这里可以用word2vec，</p>
+
+<p>嵌入到一个数学空间里，这种嵌入方式，就叫词嵌入（word embedding)，而 Word2vec是词嵌入的一种。</p>
+
+<ul>
+  <li>Skip-gram 模型：用一个词语作为输入，来预测它周围的上下文</li>
+  <li>CBOW 模型：拿一个词语的上下文作为输入，来预测这个词语本身</li>
+</ul>
+
+<h4 id="33--fasttext">3.3  fastText</h4>
+<ul>
+  <li>word2vec的CBOW模型架构和fastText模型非常相似</li>
+  <li>fastText 和CBOW差别：CBOW的输入是目标单词的上下文，fastText的输入是多个单词及其n-gram特征，这些特征用来表示单个文档；CBOW的输入单词被onehot编码过，fastText的输入特征是被embedding过；CBOW的输出是目标词汇，fastText的输出是文档对应的类标。</li>
+</ul>
+
+<h4 id="34--ner">3.4  NER</h4>
+<ul>
+  <li>named-entity-recognition（命名实体识别，又叫“专名识别”）。指识别文本中具有特定意义的实体，主要包括人名，地名，机构名，专有名词。<strong>NER系统就是从非结构化的输入文本中抽取出上述实体，并且可以按照业务需求识别出更多类别的实体</strong>，比如产品名称、型号、价格等。学术上NER所涉及的命名实体一般包括3大类（实体类，时间类，数字类）和7小类（人名、地名、组织机构名、时间、日期、货币、百分比）。货币、百分比等数字类实体可通过正则搞定。</li>
+  <li>NER是NLP中一项基础性关键任务。<strong>从自然语言处理的流程来看，NER可以看作词法分析中未登录词识别的一种，是未登录词中数量最多、识别难度最大、对分词效果影响最大问题。</strong>同时NER也是关系抽取、事件抽取、知识图谱、机器翻译、问答系统等诸多NLP任务的基础。</li>
+</ul>
+
+<blockquote>
+  <p>原句：姚明在NBA打篮球</p>
+
+  <p>如下标签：姚/B-PER 明/I-PER 在/O NBA/B_ORG 打/O 篮/O 球/O</p>
+</blockquote>
+
+<p>其中常见的方法是对字或者词打上标签。<code class="language-plaintext highlighter-rouge">B-type</code>, <code class="language-plaintext highlighter-rouge">I-type</code>, <code class="language-plaintext highlighter-rouge">O</code>， 其中<code class="language-plaintext highlighter-rouge">B-type</code>表示组成该类型实体的第一个字或词。<code class="language-plaintext highlighter-rouge">I-type</code>表示组成该类型实体的中间或最后字或词，<code class="language-plaintext highlighter-rouge">O</code>表示该字或词不组成命名实体，当然有的地方也采用<code class="language-plaintext highlighter-rouge">B-type</code>, <code class="language-plaintext highlighter-rouge">I-type</code>, <code class="language-plaintext highlighter-rouge">E-type</code>，<code class="language-plaintext highlighter-rouge">O</code>形式。</p>
+
+<p>整体结构如下：</p>
+
+<blockquote>
+  <p>字（词嵌入）==&gt; BiLSTM（拿到字的每一个标签的所有得分）==&gt; CRF（输出预测标签值）</p>
+</blockquote>
+
+<ul>
+  <li>这里问什么要用到CRF(直接用全连接分类即可)？==&gt; <strong>CRF层能从训练数据中获得约束性的规则</strong>：CRF层可以为最后预测的标签添加一些约束来保证预测的标签是合法的。在训练数据训练过程中，这些约束可以通过CRF层自动学习到。 这些约束可以是： I：句子中第一个词总是以标签“B-“ 或 “O”开始，而不是“I-” II：标签“B-label1 I-label2 I-label3 I-…”,label1, label2, label3应该属于同一类实体。例如，“B-Person I-Person” 是合法的序列, 但是“B-Person I-Organization” 是非法标签序列. III：标签序列“O I-label” is 非法的.实体标签的首个标签应该是 “B-“ ，而非 “I-“, 换句话说,有效的标签序列应该是“O B-label”。 有了这些约束，标签序列预测中非法序列出现的概率将会大大降低。</li>
+  <li>CRF（条件随机场）：属于判别式模型，条件随机场对多个变量在给定观测值后的条件概率进行建模。概率图模型是以某些可观测的变量为条件分布进行推断。假设某个字的前后（x_1,x_2,x_3）,推断问题的目标就是计算2在1的条件下发生的概率，然后所有条件概率相加。</li>
+</ul>
+
+<h4 id="35--文本增强技术">3.5  文本增强技术</h4>
+
+<ul>
+  <li><strong>词汇和短语进行替换</strong>：选择同义词进行替换；空间中找到相邻的词汇进行替换；利用TF-IDF对哪些非核心词汇（分值很低的）进行替换</li>
+  <li><strong>随机噪音</strong>：随机插入一些词汇，占位符；交换词汇或者shuffle句子；随机删除词汇或者句子</li>
+  <li><strong>混合增强</strong>：起源于图像的mixup（猫和狗的混合）。提出了wordMixup和sentMixup将词向量和句向量进行Mixup。</li>
+  <li><strong>回译</strong>：中文翻译成英文表达，然后再由英文翻译回中文。</li>
+  <li><strong>GAN对抗生成网络</strong>：GAN 主要分为两部分：生成模型和判别模型。生成模型的作用是模拟真实数据的分布，判别模型的作用是判断一个样本是真实的样本还是生成的样本。GAN 的目标是训练一个生成模型完美的拟合真实数据分布使得判别模型无法区分。</li>
+</ul>
+
+<h3 id="四-图像算法">四. 图像算法</h3>
+<blockquote>
+  <p>参考文章：
+<a href="https://zhuanlan.zhihu.com/p/80852438">图像总常用的变换</a>
+<a href="https://zhuanlan.zhihu.com/p/59640437">边缘检测</a>
+<a href="https://blog.csdn.net/samkieth/article/details/49533435">图像增强技术</a></p>
+</blockquote>
+
+<h4 id="41--图像特征提取的方法有哪些">4.1  图像特征提取的方法有哪些？</h4>
+
+<ul>
+  <li>SIFT（尺度不变特征变换）—— 图像拼接：</li>
+  <li>HOG（方向梯度直方图（Histogram of Oriented Gradient, HOG））—— 行人检测：特征是一种在计算机视觉和图像处理中用来进行物体检测的特征描述子。它通过计算和统计图像局部区域的梯度方向直方图来构成特征。）<strong>本质：梯度的统计信息，而梯度主要存在于边缘的地方</strong>。</li>
+  <li>LBP(Local Binary Pattern局部二值模式)：种描述图像局部纹理的特征算子，具有旋转不变性与灰度不变性等显著优点。LBP特征将窗口中心点与邻域点的关系进行比较，重新编码形成新特征以消除对外界场景对图像的影响，因此一定程度上解决了复杂场景下（光照变换）特征描述问题（<strong>局部纹理特征提取</strong>）。</li>
+</ul>
+
+<h4 id="42--为什么要图像的灰度化">4.2  为什么要图像的灰度化?</h4>
+
+<ul>
+  <li>图像识别中要识别物体：找到edge ==&gt; 计算梯度 ==&gt; 需要用到灰度图</li>
+  <li>有利于图像特征提取：RGB采用的是三通道，而灰度图用的是单通道，能加快特征抽取。</li>
+</ul>
+
+<h4 id="43--为什么预处理中要归一化和标准化">4.3  为什么预处理中要归一化和标准化</h4>
+
+<ul>
+  <li>取值范围从0～255已经转化为0～1之间了，这个对于后续的神经网络或者卷积神经网络处理有很大的好处，加快梯度下降求解的速度</li>
+  <li>减小了几何变换和仿射变化的影响。</li>
+</ul>
+
+<h4 id="44--为什么要中值滤波和均值滤波">4.4  为什么要中值滤波和均值滤波?</h4>
+
+<ul>
+  <li>
+    <p>目的：消除图像中的噪声成分叫作图像的平滑化或滤波操作。图像的能量大部分集中在幅度谱的低频和中频段是很常见的，而在较高频段，感兴趣的信息经常被噪声淹没。</p>
+  </li>
+  <li>中值滤波：一连串数字｛1，4，6，8，9｝中，数字6就是这串数字的中值.椒盐噪声很好的被平滑了，而且也没均值那样模糊化太过于严重。</li>
+  <li>均值滤波：图片中一个方块区域（一般为3*3）内，中心点的像素为全部点像素值的平均值。一般均值滤波过于模糊化了。</li>
+</ul>
+
+<h4 id="45--边缘检测算子">4.5  边缘检测算子</h4>
+
+<ul>
+  <li>
+    <p>Roberts算子：基于x轴和y轴的
+\(s_{x}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+0 &amp; -1
+\end{array}\right]\)
+\(s_{y}=\left[\begin{array}{cc}
+0 &amp; -1 \\
+1 &amp; 0
+\end{array}\right]\)</p>
+  </li>
+  <li>Prewitt算子：
+\(s_{x}=\left[\begin{array}{ccc}
+-1 &amp; 0 &amp; 1 \\
+-1 &amp; 0 &amp; 1 \\
+-1 &amp; 0 &amp; 1
+\end{array}\right]\)
+\(s_{y}=\left[\begin{array}{ccc}
+1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+-1 &amp; -1 &amp; -1
+\end{array}\right]\)</li>
+  <li>
+    <p>Sobel算子：
+\(s_{x}=\left[\begin{array}{ccc}
+-1 &amp; 0 &amp; 1 \\
+-2 &amp; 0 &amp; 2 \\
+-1 &amp; 0 &amp; 1
+\end{array}\right]\)
+\(s_{y}=\left[\begin{array}{ccc}
+1 &amp; 2 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+-1 &amp; -2 &amp; -1
+\end{array}\right]\)</p>
+  </li>
+  <li><strong>基本的边缘算子</strong>如Sobel求得的边缘图存在很多问题，如<strong>噪声污染没有被排除、边缘线太过于粗宽</strong>等</li>
+  <li>Canny算子：目标是找到一个最优的边缘。具有以下优势
+    <ul>
+      <li>低错误率：标识尽可能多的实际边缘，剑豪噪声产生的误报。</li>
+      <li>高定位性：标识出的边缘要与图像的实际边缘尽可能的接近。</li>
+      <li>最小响应：图像中的边缘只能标识一次。</li>
+    </ul>
+  </li>
+  <li>canny检测的步骤：
+    <ol>
+      <li>使用高斯滤波器降噪。</li>
+      <li>利用Sobel算子进行卷积（x和y反向）</li>
+      <li>将像素点上x和y卷积之后的平方求根，并计算x，y方向上的角度，
+  \(G=\sqrt{G_{x}^{2}+G_{y}^{2}}\)，\(\theta=\arctan \left(\frac{G_{y}}{G_{x}}\right)\)</li>
+      <li>非极大值抑制，进一步排除非边缘的像素，仅保留一些细线条。</li>
+      <li>滞后阈值：高于某阈值，保留为边缘像素，反之排除。</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="46--常用的插值方法">4.6  常用的插值方法</h4>
+
+<p>在图像几何变换时，无法给有些像素点直接赋值，例如，<strong>将图像放大两倍，必然会多出一些无法被直接映射的像素点，对于这些像素点，通过插值决定它们的值</strong>。于是，产生了图像插值算法。</p>
+
+<ul>
+  <li>线性插值：<strong>最近邻插值，双线性插值以及双三次插值等</strong>，\(f(x)=a_{1} x+a_{0}\)</li>
+</ul>
+
+<h4 id="47-深度学习和传统目标检测方法的优缺点">4.7 深度学习和传统目标检测方法的优缺点</h4>
+
+<p>传统的目标检测算法对光照，明暗，数据传输，物体遮挡等上模型的鲁棒性不强。</p>
+
+<h4 id="48--图像增强技术">4.8  图像增强技术</h4>
+
+<p>增强技术也可以有多种分类，如，可以分为平滑（抑制高频成分）与锐化（增强高频成分），空间域与频域。</p>
+
+<ul>
+  <li>空间域增强就是指增强构成图像的像素，是直接对这些像素进行操作的过程。</li>
+  <li>频域则是修改图像的傅立叶变换。</li>
+</ul>
+
+<h4 id="49-ssd和yolo">4.9 SSD和Yolo</h4>
+
+<ul>
+  <li>SSD：将物体检测这个问题的解空间，抽象为一组预先设定好（尺度，长宽比）的bounding box。在每个bounding box，预测分类label，以及box offset来更好的框出物体。对一张图片，结合多个大小不同的feature map的预测结果，以期能够处理大小不同的物体。
+    <ul>
+      <li>（优点）相比Fast RNN系列，删除了bounding box proposal这一步，及后续的重采样步骤，因而速度较快，达到59FPS。</li>
+      <li>（优点）</li>
+    </ul>
+  </li>
+  <li>YOLO：<strong>将物体检测这个问题定义为bounding box和分类置信度的回归问题。</strong>将整张图像作为输入，划分成SxS grid，每个cell预测B个bounding box（x, y, w, h）及对应的分类置信度（class-specific confidence score）。分类置信度是bounding box是物体的概率及其与真实值IOU相乘的结果。
+    <ul>
+      <li>（优点）速度快，45FPS</li>
+      <li>（优点）YOLO使用图像的全局信息做预测，因而对背景的误识别率低。</li>
+      <li>（缺点） 每个cell只能拥有一个label和两个bounding box，这个空间局限性，使得对小物体检测效果不好</li>
+      <li>（缺点）对于物体长宽比的泛化能力较弱，当一类物体新的长宽比出现时，检测准确率减低。</li>
+    </ul>
+  </li>
+  <li>二者之间的差别：YOLO在卷积层后接全连接层，即检测时只利用了最高层Feature maps（包括Faster RCNN也是如此）而SSD采用金字塔结构，即利用了conv4-3/fc7/conv6-2/conv7-2/conv8_2/conv9_2这些大小不同的feature maps，在多个feature maps上同时进行softmax分类和位置回归。SSD还加入了Prior box</li>
+</ul>
+
+<h4 id="410--零样本学习zero-shot-learning和单样本学习one-shot-learning">4.10  零样本学习（Zero-shot Learning）和单样本学习（One-shot Learning）</h4>
+
+<ul>
+  <li>零样本学习：基于可见标注数据集&amp;可见标签集合（seen），学习并预测不可见（unseen，无标注）数据集结果。</li>
+</ul>
+
+<h4 id="411--前景背景分割">4.11  前景背景分割</h4>
+
+<h4 id="412--工业相机ccd和cmos">4.12  工业相机CCD和CMOS</h4>
+<ul>
+  <li>CCD（电荷耦合元件）：输出节点统一输出数据，信号一致性好；CCD采用逐个光敏输出，速度较慢</li>
+  <li>CMOS（金属氧化物半导体元件）：CMOS芯片中每个像素都有自己的信号放大器，各自进行电荷到电压的转换，输出信号的一致性较差，比CCD的信号噪声更多。CMOS每个电荷元件都有独立的装换控制器，读出速度很快，FPS在500以上的高速相机大部分使用的都是CMOS。</li>
+</ul>
+
+<h4 id="413-小目标检测">4.13 小目标检测</h4>
+<p>在深度学习目标检测中，特别是人脸检测中，小目标、小人脸的检测由于<strong>分辨率低，图片模糊，信息少，噪音多</strong>，所以一直是一个实际且常见的困难问题。
+FPN特征金字塔网络：参考文章：https://zhuanlan.zhihu.com/p/92005927</p>
+
+<h4 id="414-目标检测中的map">4.14 目标检测中的mAP</h4>
+<p>具体参考文章：https://www.cnblogs.com/itmorn/p/14193729.html</p>
+
+<h3 id="五-深度学习">五. 深度学习</h3>
+<h4 id="51--梯度消失的原因和解决办法有哪些">5.1  梯度消失的原因和解决办法有哪些？</h4>
+<ul>
+  <li>梯度消失：每一层非线性层都可以视为是一个非线性函数 f(x)f(x)(非线性来自于非线性激活函数），因此整个深度网络可以视为是一个复合的非线性多元函数。那么根据“链式求导”法则，比如rnn来说，其激活函数为tanh，那么tanh的导数的最大值是1，那么如果连乘0.8的100次方，无线接近于0，导致梯度消失。</li>
+  <li>梯度爆炸：tanh导数 * W权重，这里如果W的值太大了，随着序列长度的增加，连乘无限大，导致梯度爆炸。</li>
+  <li>解决方案：一个是激活函数比如relu系列，一个初始化权重 ，一个是梯度裁剪</li>
+</ul>
+
+<h4 id="52--rnn-和lstm的差别在哪">5.2  RNN 和LSTM的差别在哪？</h4>
+
+<p>RNN的前向推导公式：</p>
+
+<p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_4.jpg" alt="" /></p>
+
+<p>LSTM的三种门控制如下：
+<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_5.jpg" alt="" /></p>
+
+<p>如上图所示，它们的名字、表示的计算过程及输出分别是：</p>
+
+<ul>
+  <li>
+    <p>遗忘门：
+  \(f_i=\sigma\left(W_f\left[x_i, h_{i-1}\right]+b_f\right)\)</p>
+  </li>
+  <li>
+    <p>输入们：
+  \(i_i=\sigma\left(W_i\left[x_i, h_{i-1}\right]+b_i\right)\)</p>
+  </li>
+  <li>
+    <p>输出们：
+  \(o_i=\sigma\left(W_o\left[x_i, h_{i-1}\right]+b_o\right)\)</p>
+  </li>
+</ul>
+
+<p>可以看到，除了参数不同，它们计算公式是一样的。啰嗦一句，上图中 [公式] 表示sigmoid函数， [公式] 表示tanh函数：</p>
+
+<ul>
+  <li>RNN来说，它能够处理一定的短期依赖，但无法处理长期依赖问题。原因：当序列较长时，序列后部的梯度很难反向传播到前面的序列，比如10个元素以前，这就产生了梯度消失问题</li>
+  <li>当然，RNN也存在梯度爆炸问题，但这个问题一般可以通过梯度裁剪（gradient clipping）来解决</li>
+  <li>RNN没有细胞状态；LSTM通过细胞状态记忆信息。</li>
+  <li>RNN激活函数只有tanh；LSTM通过输入门、遗忘门、输出门引入sigmoid函数并结合tanh函数，添加求和操作，减少梯度消失和梯度爆炸的可能性。</li>
+  <li>RNN只能够处理短期依赖问题；LSTM既能够处理短期依赖问题，又能够处理长期依赖问题。</li>
+</ul>
+
+<h4 id="53--注意力机制是为了解决什么问题为什么选用了双向循环神经网络">5.3  注意力机制是为了解决什么问题？为什么选用了双向循环神经网络？</h4>
+<ul>
+  <li>人脑在工作时具有一定注意力，当欣赏艺术品时，既可以看到全貌，也可以关注 细节，眼睛聚焦在局部，忽略其他位置信息。说明人脑在处理信息的时候有一定权重划分。而注意力机制的提出正是模仿了人脑的这种核心特性。</li>
+  <li>实际使用中，随着输入序列长度的增加，模型性能显著下降。因为<strong>编码时输入序列的全部信息被压缩到一个向量表示中去</strong>。<strong>序列越长，句子越前面的词的信息丢失就越严重</strong>。以100词的句子为例，编码时将整个句子的信息压缩到一个向量中去，而在解码时(比如翻译)，目标语言第一个单词大概率与源语言第一个单词对应，这就意味着第一步的解码需要考虑到100步之前的信息。一个小技巧是可以将<strong>源语言句子逆向输入</strong>，或者重复输入两遍，得到一定的提升，也可以使用<strong>LSTM</strong>缓解这个问题。但对于<strong>过长序列仍难以有很好表现</strong>。</li>
+</ul>
+
+<h4 id="54--batch-normalization和dropout差别">5.4  Batch Normalization和Dropout差别</h4>
+<ul>
+  <li><strong>BN训练和测试时的参数是一样的嘛？</strong>BN是对每一批训练数据进行归一化，使用每一批数据的均值和方差；测试的时候，每一批数据中仅有一个样本，没有batch概念了，这里的均值和方差就是全量数据均值和方差。</li>
+  <li>
+    <p><strong>BN训练时为什么不用全量训练集的均值和方差呢？</strong>对于BN，是对每一批数据进行归一化到一个相同的分布，而每一批数据的均值和方差会有一定的差别，而不是用固定的值，这个差别实际上也能够增加模型的鲁棒性，也会在一定程度上减少过拟合。<strong>BN操作把分布压缩在[-1,1],服从均值为0,方差为1的正太分布</strong>，相当于把大部分Activation的值落入非线性函数的线性区内，其对应的导数远离导数饱和区，这样来加速训练收敛过程。</p>
+  </li>
+  <li><strong>Dropout的作用是什么？</strong> 在训练的过程中以一定概率使得神经元失活，即输出为0，以提高模型的泛化能力，减少过拟合。</li>
+  <li><strong>Dropout 在训练和测试时都需要嘛？</strong>dropout仅在训练的时候采用，为了减少神经元对部分上层神经元的依赖，类似于将多个不同的网络结构的模型集成起来，减少过拟合和增强其鲁棒性。测试的时候用到的是整个训练完成的模型，不需要dropout。</li>
+  <li>
+    <p><strong>Dropout 如何平衡训练和测试时的差异呢？</strong>假设失活概率为 p ，就是这一层中的每个神经元都有p的概率失活，如下图的三层网络结构中，如果失活概率为0.5，则平均每一次训练有3个神经元失活，所以输出层每个神经元只有3个输入，而实际测试时是不会有dropout的，输出层每个神经元都有6个输入，这样在训练和测试时，输出层每个神经元的输入和的期望会有量级上的差异。</p>
+  </li>
+  <li><strong>BN和Dropout共同使用时会出现的问题</strong>BN和Dropout单独使用都能减少过拟合并加速训练速度，但如果一起使用的话并不会产生1+1&gt;2的效果，相反可能会得到比单独使用更差的效果。</li>
+</ul>
+
+<h4 id="55--batch-normalization和layer-normalization的差别">5.5  Batch Normalization和Layer Normalization的差别</h4>
+<ul>
+  <li>
+    <p>LN和BN都是一种归一化方式，差别是：BN是取的是不同样本的同一个特征进行归一化；LN取得是同一个样本的不同特征。</p>
+  </li>
+  <li>
+    <p>应用场景不同：LN适用于RNN或者batchsize较小；BN适用于CNN。</p>
+  </li>
+  <li>
+    <p>对于RNN来说，每个样本的长度都是不同的，那么当BN需要统计靠后的时间片段的时候，可能都没有这方面的信息，那么只基于某些长时间片段的样本的统计信息无法反应出全局分布，所以就不合适了。</p>
+  </li>
+</ul>
+
+<h4 id="56--bert的具体网络结构以及训练过程及其优势在哪">5.6  bert的具体网络结构，以及训练过程，及其优势在哪</h4>
+<ul>
+  <li>bert处理句子是整体处理的，不是逐字处理的，解决了不受长期依赖问题困扰的主要原因（不存在过去信息丢失的风险），同时提高了训练效率。</li>
+  <li>多头注意力和位置嵌入：提供了有关不同单词之间的关系信息。</li>
+  <li>总结：完全避免了递归操作，通过整体处理句子以及学习单词之间的关系来感谢多头注意机制和位置嵌入。</li>
+</ul>
+
+<h4 id="57--albert和bert的差别在哪">5.7  albert和bert的差别在哪</h4>
+<ul>
+  <li>albert的核心：<strong>训练出更小但效果更好的模型!</strong> 想让模型更轻，训练更快，效果更好！（期望的是<strong>用更少量的数据，得到更好的结果</strong>）。ALBERT提出了三种优化策略，做到了比BERT模型小很多的模型，但效果反而超越了BERT， XLNet。
+    <ul>
+      <li><strong>Factorized Embedding Parameterization</strong>. 他们做的第一个改进是针对于Vocabulary Embedding。在BERT、XLNet中，词表的embedding size(E)和transformer层的hidden size(H)是等同的，所以E=H。但实际上词库的大小一般都很大，这就导致模型参数个数就会变得很大。为了解决这些问题他们提出了一个基于factorization的方法。他们没有直接把one-hot映射到hidden layer, 而是先把one-hot映射到低维空间之后，再映射到hidden layer。这其实类似于做了矩阵的分解。</li>
+      <li><strong>Cross-layer parameter sharing</strong>. 每一层的layer可以共享参数，这样一来参数的个数不会以层数的增加而增加。所以最后得出来的模型相比BERT-large小18倍以上。</li>
+      <li><strong>Inter-sentence coherence loss</strong>. 在BERT的训练中提出了next sentence prediction loss, 也就是给定两个sentence segments, 然后让BERT去预测它俩之间的先后顺序，但在ALBERT文章里提出这种是有问题的，其实也说明这种训练方式用处不是很大。 所以他们做出了改进，他们使用的是setence-order prediction loss (SOP)，其实是基于主题的关联去预测是否两个句子调换了顺序。</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="58--cnn和rnn的差别">5.8  CNN和RNN的差别</h4>
+<ul>
+  <li>训练速度上：CNN快很多。RNN慢的原因是每个timestep的计算，都要依赖前一个时刻的输出。而cnn的卷积的时候，和空间上其他的点没有任何联系，适合并行计算。</li>
+  <li>数据约束：CNN对于数据的约束就很强了，图像识别，input的纬度是48*48的，必须定死了，而RNN其实对于数据的长度（句子的长度）没有要求（TF里面有动态rnn来在输入rnn之前去掉pad为0的地方）</li>
+  <li>卷积层不同空间位置的神经元共享权值，用于发现图像中不同空间位置的模式。共享参数是深度学习一个重要的思想，其在减少网络参数的同时仍然能保持很高的网络容量(capacity)。卷积层在空间方向共享参数，而循环神经网络(recurrent neural networks)在时间方向共享参数。</li>
+</ul>
+
+<h4 id="59-优化器和超参调节">5.9 优化器和超参调节</h4>
+
+<p><strong>SGD(随机梯度下降)</strong></p>
+
+<p>​	在随机梯度下降算法（SGD）中，优化器基于小批量估计梯度下降最快的方向，并朝该方向迈出一步。由于步长固定，因此 SGD 可能很快停滞在平稳区（plateaus）或者局部最小值上。
+\(w_{t+1}=w_{t}-\alpha \cdot g_{t}\)
+​	基本策略可以理解为随机梯度下降像是一个盲人下山，不用每走一步计算一次梯度，但是他总能下到山底，只不过过程会显得扭扭曲曲。</p>
+
+<h4 id="59--深度学习平台">5.9  深度学习平台</h4>
+<ul>
+  <li>阿里NASA计划的机器学习平台PAI（17年）
+    <ul>
+      <li>全面兼容TF，Caffe，MXNet深度学习框架</li>
+      <li>提供云端的计算资源</li>
+      <li>集成很多机器学习算法（分类，回归，聚类）</li>
+      <li>支持大规模的分布式数据训练</li>
+    </ul>
+  </li>
+  <li>百度paddlepaddle飞桨(18年)
+    <ul>
+      <li>支持大规模的分布式数据训练</li>
+      <li>多平台部署</li>
+      <li>产业级的开源模型库（语义理解，图像分类，目标检测，图像分割等多种场景）</li>
+    </ul>
+  </li>
+  <li>微软Microsoft Custom Vision Services（17年）
+    <ul>
+      <li>针对的是图像分类器</li>
+      <li>提供迁移学习的模型</li>
+    </ul>
+  </li>
+  <li>谷歌的Cloud AutoML
+    <ul>
+      <li>针对的是图像分类器</li>
+      <li>提供迁移学习的模型</li>
+    </ul>
+  </li>
+</ul>
+
+
+        <aside class="sidebar inline" id="post-end">
+    
+
+
+
+<div class="tag-cloud">
+    
+        <ul class="tags inline">
+            
+                <li><a href="./tag.html?tag=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" class="tag inline">机器学习</a></li>
+            
+                <li><a href="./tag.html?tag=%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" class="tag inline">深度学习</a></li>
+            
+                <li><a href="./tag.html?tag=%E9%9D%A2%E8%AF%95" class="tag inline">面试</a></li>
+            
+    
+        </ul>
+</div>
+    <div class="share-options inline">
+    <div class="share-hover inline">
+        <span class="share-button inline"><svg fill="currentColor" width="25" height="25" class="inline"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></span>
+        <div class="share-icons inline" id="post-end-icons">
+            <a class="twitter" href="https://twitter.com/intent/tweet?text=深度学习算法面试总结&url=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="reddit" href="http://www.reddit.com/submit?url=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html&title=深度学习算法面试总结" title="Submit to Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html&title=深度学习算法面试总结&summary=面试中机器学习，深度学习中常问的算法总结&source=http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share on LinkedIn" rel="nofollow" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a class="email" href="mailto:?subject=深度学习算法面试总结&body=面试中机器学习，深度学习中常问的算法总结%0A%0ARead more here: http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" title="Share via e-mail" rel="nofollow" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a class="copy-link" onclick="copyToClipboard()" title="Copy to clipboard" rel="nofollow" target="_blank"><svg width="20px" fill="currentColor" class="inline" viewBox="0 0 18 18"><path d="M16.94 1.1A3.7 3.7 0 0 0 14.3 0c-1 0-1.94.39-2.64 1.1L7.43 5.3c-.91.92-2.09 3.2 0 5.27a.75.75 0 0 0 .82.16c.09-.03.17-.09.24-.15a.74.74 0 0 0 0-1.06c-1.16-1.15-.77-2.39-.02-3.16l4.24-4.22a2.2 2.2 0 0 1 1.58-.65c.6 0 1.16.23 1.58.65.86.87.86 2.29 0 3.16L12.7 8.47a.74.74 0 0 0 1.04 1.05l3.17-3.16a3.73 3.73 0 0 0 0-5.27h.03zM9.54 7.4a.74.74 0 0 0 0 1.06c1.16 1.15.76 2.39 0 3.16l-4.22 4.22c-.42.42-.99.65-1.59.65a2.23 2.23 0 0 1-1.58-3.82l3.17-3.16A.73.73 0 0 0 5.54 9a.78.78 0 0 0-.22-.52.77.77 0 0 0-1.05 0L1.1 11.64A3.72 3.72 0 0 0 3.74 18c1 0 1.94-.39 2.65-1.1l4.23-4.2c.21-.22.94-1.02 1.13-2.2.18-1.12-.2-2.15-1.12-3.07-.27-.27-.78-.27-1.06 0l-.02-.02z" clip-rule="evenodd" fill-rule="evenodd"></path></svg></a>
+        </div>
+    </div>
+    <div class='alert' style='font-size:.6em;color:var(--accent);text-align:center;'></div>
+</div>
+</aside>
+
+        <div class="separator"></div>
+        
+
+
+
+<section class="author-box">
+  <div class="narrow-column">
+    <a href='https://amaynez.github.io'><img src="./assets/img/yy.jpg" alt="李小肥的YY" class="author-img"></a>
+    <ul class="contact-icons">
+      
+      
+      <li class="linkedin"><a class="linkedin" href="https://in.linkedin.com/in/amaynez" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      
+      
+      <li class="github"><a class="github" href="http://github.com/yy2lyx" target="_blank"><i class="fa fa-github"></i></a></li>
+      
+      
+      <li class="email"><a class="email" href="mailto:yeyansiwangtt@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      
+    </ul>
+  </div>
+  <div class="author-desc">
+    <h3>李小肥的YY</h3>
+    <p>本人专注于机器学习、深度学习、自然语言处理和大模型，希望能和各位看官共同学习进步！</p>
+  </div>
+</section>
+
+        
+
+
+
+<div class="recent-box">
+  <h2 class="page-subtitle">最近发布</h2>
+  <div class="recent-list">
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93.html" class="recent-item-img" style="background: url('./assets/img/posts/blog_imgs/interview.jpeg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>面试基础总结</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        5 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./JetsonXavierNX%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.html" class="recent-item-img" style="background: url('./assets/img/posts/blog_imgs/jetson.jpg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>Jetson Xavier NX 的使用记录</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./ZED2%E7%9B%B8%E6%9C%BAapi%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html" class="recent-item-img" style="background: url('./assets/img/posts/blog_imgs/zed.jpeg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>ZED2相机api使用心得</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+      
+        <div class="recent-item">
+          
+          
+
+          <a href="./python%E7%9A%84%E6%89%93%E5%8C%85%E7%A5%9E%E5%99%A8Nuitka.html" class="recent-item-img" style="background: url('./assets/img/posts/blog_imgs/nuitka.jpeg') center no-repeat; background-size: cover;">
+            <div class="recent-item-title">
+              <span>python的打包神器——Nuitka</span>
+              
+
+  <span class = "recent-item-meta">
+  
+  
+  
+  
+    
+    
+    <p class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </p>
+  
+  
+  </span>
+
+            </div>
+          </a>
+        </div>
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+        <!-- <div class="newsletter" id="mc_embed_signup">
+  <h2 class="page-subtitle">Newsletter</h2>
+  <div class="form-container">
+    <p>Subscribe here to get our latest updates</p>
+    <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <label class="screen-reader-text" for="mce-EMAIL">Email Address</label>
+      <div class="newsletter-box" id="mc_embed_signup_scroll">
+        <input type="email" name="EMAIL" placeholder="Email address" class="email-input" id="mce-EMAIL" required>
+        <input type="submit" value="Subscribe" name="subscribe" class="subscribe-btn" id="mc-embedded-subscribe">
+      </div>
+    </form>
+  </div>
+</div> <!-- End Newsletter -->
+ -->
+        <!-- <section class="comment-area">
+    <div class="comment-wrapper">
+        
+        <div class="row" id="comment-curtain">
+            <div class="col-lg-8 col-sm-10 mr-auto ml-auto">
+                <h2 class="page-subtitle">Comments</h2>
+                <div class="comments-trigger" onClick="toggle_comments()">
+                    <i class="fa fa-comments"></i>&nbsp;&nbsp;Write a comment ...
+                </div>
+            </div>
+        </div>
+        
+
+        
+            
+        
+    </div>
+</section> <!-- End Comment Area --> -->
+      </div>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+<footer class="main-footer">
+    <div class="footer-wrapper">
+        <div class="logo-symbol">
+            <a class="logo-link" title="凡人炼丹传" href="./">
+                <svg width="45px" height="45px" class="logo-symbol" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 649 649"><g fill="currentColor" stroke="none"><path d="M2938 6380 c-551 -53 -1031 -220 -1478 -514 -306 -201 -588 -470 -810 -771 -276 -374 -475 -850 -559 -1336 -64 -371 -53 -836 29 -1211 155 -712 552 -1347 1130 -1810 450 -360 1021 -589 1640 -659 58 -6 202 -12 320 -12 282 0 503 26 756 87 902 220 1680 841 2079 1661 303 622 402 1333 279 2005 -90 496 -313 984 -634 1390 -111 140 -378 404 -519 513 -456 352 -957 560 -1549 643 -126 17 -558 26 -684 14z m687 -220 c77 -11 189 -32 250 -46 127 -29 345 -94 345 -103 0 -4 -341 -188 -757 -409 l-757 -403 -41 22 c-22 13 -58 26 -79 29 l-40 5 -148 370 c-82 204 -150 377 -153 386 -10 29 325 119 570 153 169 24 174 24 430 21 183 -3 273 -8 380 -25z m-1292 -546 l157 -387 -24 -28 c-13 -16 -30 -44 -36 -64 -6 -19 -17 -35 -23 -35 -7 -1 -382 -54 -834 -119 -453 -64 -823 -115 -823 -111 0 3 43 62 95 132 269 358 584 630 980 844 90 49 321 153 341 154 6 0 81 -174 167 -386z m2026 347 l37 -20 129 -440 128 -440 -35 -39 c-20 -22 -37 -44 -39 -50 -3 -8 -290 13 -929 66 -775 65 -925 80 -928 92 -2 11 223 134 785 432 433 228 794 416 801 417 7 0 30 -8 51 -18z m204 -92 c420 -211 850 -600 1137 -1027 34 -51 60 -95 57 -98 -4 -4 -805 157 -859 172 -10 3 -18 12 -18 21 0 58 -78 133 -137 133 -18 0 -33 2 -33 5 0 3 -52 184 -116 403 -63 218 -117 405 -120 415 -3 9 -3 17 1 17 3 0 42 -19 88 -41z m-913 -894 c494 -41 904 -75 912 -75 7 -1 24 -23 36 -51 l24 -50 -169 -269 -168 -270 -44 0 c-24 0 -63 -9 -86 -21 l-42 -21 -679 402 c-373 222 -688 409 -699 416 -18 13 -18 14 -1 14 10 0 422 -34 916 -75z m-1175 18 l48 -48 -31 -225 c-18 -124 -60 -417 -94 -652 l-62 -428 -44 0 c-24 0 -51 -4 -61 -10 -16 -8 -146 87 -777 566 -418 317 -761 578 -763 580 -3 3 0 9 5 14 8 8 1633 247 1700 249 25 1 42 -9 79 -46z m915 -414 l690 -411 0 -38 0 -37 -147 -46 c-82 -26 -453 -148 -825 -271 l-676 -223 -22 30 -22 29 98 669 c82 557 101 669 114 669 8 0 31 9 50 19 19 11 38 20 43 20 4 1 318 -184 697 -410z m1959 175 c251 -53 457 -97 457 -98 9 -9 123 -247 153 -320 113 -272 189 -599 209 -901 l9 -130 -231 -273 c-224 -265 -232 -273 -264 -270 l-34 3 -418 1013 -419 1013 26 30 c15 16 33 29 41 29 8 0 220 -43 471 -96z m-593 2 c6 -5 804 -1949 802 -1952 -2 -2 -274 272 -605 609 l-600 612 13 32 c20 46 17 82 -9 128 l-23 41 170 271 171 272 40 -6 c22 -3 41 -6 41 -7z m-3341 -611 c402 -307 733 -561 737 -564 31 -26 -38 -31 -947 -65 -516 -19 -941 -33 -944 -30 -2 2 6 77 18 165 49 346 162 693 324 986 44 82 52 91 66 79 9 -7 345 -264 746 -571z m2710 -142 c17 -16 39 -32 48 -38 15 -9 13 -64 -23 -695 -22 -377 -40 -686 -40 -687 0 -2 -8 -3 -19 -3 -10 0 -30 -9 -45 -21 l-27 -21 -342 200 c-188 110 -542 317 -787 460 -245 144 -445 266 -445 273 0 8 312 116 820 285 451 150 822 272 824 273 2 1 18 -11 36 -26z m590 -425 c220 -222 500 -505 623 -629 l223 -225 -17 -31 -18 -30 -585 -82 c-322 -45 -602 -85 -621 -88 -31 -4 -37 -1 -53 27 -11 17 -34 39 -53 47 -19 9 -34 21 -34 27 -1 6 16 316 37 688 l37 678 26 9 c14 5 27 10 30 10 3 1 185 -180 405 -401z m-2587 -114 c-2 -9 -224 -178 -494 -375 l-492 -359 -38 16 c-26 11 -53 14 -84 10 -25 -3 -55 -7 -67 -8 -16 -2 -106 76 -362 316 -204 192 -341 327 -341 338 0 16 10 18 83 19 45 0 431 13 857 28 984 36 942 35 938 15z m59 -88 l22 -23 -104 -467 c-58 -256 -105 -468 -105 -470 0 -2 -14 -6 -32 -10 -17 -3 -47 -18 -65 -32 l-34 -26 -339 122 -338 122 -7 45 c-5 37 -3 47 12 58 10 7 229 169 488 359 258 190 472 346 475 346 3 0 15 -11 27 -24z m1013 -430 c421 -245 769 -452 775 -460 5 -8 7 -18 3 -21 -3 -4 -417 -41 -920 -84 l-913 -77 -16 26 c-9 15 -29 36 -45 47 l-28 21 104 465 105 465 43 7 c27 4 55 17 75 35 18 16 37 28 42 26 6 -2 354 -204 775 -450z m-2307 -276 c-7 -71 -4 -98 10 -126 l15 -30 -206 -248 -206 -248 -27 59 c-140 314 -228 733 -229 1086 l0 138 323 -303 c270 -254 322 -307 320 -328z m5277 366 c-17 -270 -58 -489 -135 -721 -38 -117 -134 -350 -140 -343 -1 2 -35 117 -75 256 l-72 253 26 25 c51 52 58 134 15 189 -21 26 -21 26 -2 48 11 12 102 120 203 240 100 120 184 216 186 214 2 -2 -1 -74 -6 -161z m-642 -487 l21 -41 -456 -782 c-251 -429 -461 -787 -467 -794 -9 -9 -19 -10 -42 -2 l-29 10 -174 676 -174 675 35 37 c20 20 40 51 45 67 l10 30 584 82 c321 44 594 82 605 82 16 1 27 -10 42 -40z m-4015 -145 c301 -109 327 -120 327 -142 0 -12 7 -39 15 -58 l15 -36 -411 -469 c-226 -259 -413 -468 -415 -466 -2 2 1 219 6 483 5 263 10 538 10 610 l0 132 29 12 c16 6 39 23 52 36 13 14 28 23 34 21 5 -2 157 -57 338 -123z m-517 -413 c-3 -262 -9 -527 -12 -589 -8 -134 -2 -135 -120 20 -93 121 -192 278 -272 428 l-61 115 215 257 c181 216 218 255 235 251 l22 -6 -7 -476z m4695 460 c3 -3 43 -133 88 -289 l82 -282 -62 -108 c-75 -130 -175 -278 -265 -392 -140 -176 -514 -528 -595 -558 -13 -5 -72 -13 -130 -17 l-105 -7 -16 40 -16 40 462 796 461 796 45 -6 c25 -4 48 -9 51 -13z m-1736 -69 c-6 -5 -361 -192 -790 -417 -429 -224 -806 -422 -838 -439 -52 -28 -59 -29 -70 -15 -17 22 -78 59 -99 59 -19 0 -16 -14 -68 300 -29 169 -38 246 -30 248 27 9 62 50 74 87 11 32 19 41 43 44 67 8 1683 139 1733 140 30 0 50 -3 45 -7z m90 -62 c10 -11 38 -26 62 -31 38 -10 44 -16 52 -48 90 -346 333 -1280 337 -1292 3 -11 -7 -23 -29 -36 -19 -11 -42 -38 -53 -60 l-19 -40 -1050 297 c-859 244 -1050 301 -1050 315 0 12 239 141 860 465 473 247 863 449 866 449 3 1 14 -8 24 -19z m-2076 -210 c13 0 21 -9 25 -27 10 -47 86 -497 86 -508 0 -5 -13 -19 -29 -29 -35 -24 -57 -59 -66 -108 -4 -22 -14 -39 -24 -42 -143 -41 -861 -236 -870 -236 -7 0 -11 5 -9 11 2 6 190 224 418 484 349 399 416 472 431 464 10 -5 27 -9 38 -9z m1376 -1065 c741 -208 1053 -300 1060 -312 6 -9 24 -32 41 -52 l31 -35 -30 -68 c-34 -77 -25 -71 -205 -139 -310 -116 -653 -180 -984 -183 -97 0 -178 1 -181 4 -89 106 -817 1053 -817 1063 0 18 9 27 23 21 7 -2 485 -137 1062 -299z m-1319 264 c31 -35 81 -51 134 -44 l46 6 380 -487 c208 -268 385 -496 392 -506 13 -17 10 -18 -45 -12 -640 65 -1267 346 -1732 776 l-61 57 42 12 c271 74 805 218 814 218 6 1 19 -9 30 -20z m2814 -563 c0 -5 -223 -138 -278 -165 -24 -13 -46 -20 -49 -18 -2 3 3 19 11 36 12 22 27 33 59 42 27 7 56 26 81 52 35 37 44 41 105 47 36 4 67 8 69 9 1 0 2 -1 2 -3z" transform="translate(0.000000,644.000000) scale(0.100000,-0.100000)"/></g></svg>
+            </a>
+        </div>
+        <div class="copyright">
+          <p>2025 &copy; 李小肥的YY</p>
+        </div>
+        <div class="footer-nav">
+            <div>
+                <a href="./archive.html">
+                    文章
+                </a>
+            </div>
+            <div>
+                <a href="./tags.html">
+                    标签
+                </a>
+            </div>
+            <div>
+                <a href="./about.html">
+                    关于
+                </a>
+            </div>
+        </div>
+    </div>
+</footer> <!-- End Footer -->
+
+</div>
+
+    <div class="top" title="Top">
+      <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-up fa-w-8 fa-2x"><path fill="currentColor" d="M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z" class=""></path></svg>
+    </div>
+    
+
+
+
+
+<!-- JS -->
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var logo = document.getElementById('logo');
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+    storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+    var data = storage.getItem('theme');
+    try {
+        data = JSON.parse(data ? data : '');
+    } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+    }
+    return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+    themeData.nightShift = nightShift;
+    saveThemeData(themeData);
+    html.dataset.theme = nightShift ? 'dark' : 'light';
+    if (nightShift) {
+        logo.setAttribute("src", "./assets/img/branding/MVM-logo-full-dark.svg");
+    } else {
+        logo.setAttribute("src", "./assets/img/branding/MVM-logo-full.svg");
+    }
+    setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+    }, 50);
+    }
+
+    function autoThemeToggle() {
+    // Next time point of theme toggle
+    var now = new Date();
+    var toggleAt = new Date();
+    var hours = now.getHours();
+    var nightShift = hours >= 19 || hours <=7;
+
+    if (nightShift) {
+        if (hours > 7) {
+        toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+    } else {
+        toggleAt.setHours(19);
+    }
+
+    toggleAt.setMinutes(0);
+    toggleAt.setSeconds(0);
+    toggleAt.setMilliseconds(0)
+
+    var delay = toggleAt.getTime() - now.getTime();
+
+    // auto toggle theme mode
+    setTimeout(function() {
+        handleThemeToggle(!nightShift);
+    }, delay);
+
+    return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+    };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+    handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+    var data = autoThemeToggle();
+
+    // Toggle theme by local setting
+    if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+    } else {
+        handleThemeToggle(themeData.nightShift);
+    }
+    } else if (nightModeOption == 'manual') {
+    handleThemeToggle(themeData.nightShift);
+    } else {
+    var nightShift = themeData.nightShift;
+    if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+    }
+    handleThemeToggle(nightShift);
+    }
+})();
+</script>
+
+<script src="./assets/js/jekyll-search.js"></script>
+<script src="./assets/js/jquery-3.6.0.min.js"></script>
+
+
+  <script>
+    function toggle_comments(){
+      var commentCurtain = document.getElementById('comment-curtain')
+      if (commentCurtain) {
+        commentCurtain.classList.toggle('hide')
+      }
+      var disqusThread = document.getElementById('comment-layout')
+      if (disqusThread) {
+        disqusThread.classList.toggle('show')
+      }
+    }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText('http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html').then(function() {
+      alerts = document.getElementsByClassName('alert')
+      for (i=0; i < alerts.length; i++){
+        alerts[i].innerHTML='\u00ABlink copied\u00BB';
+        setTimeout((function(i){ return function(){alerts[i].innerHTML='';}})(i), 1600 );
+      };
+      }, function() {
+        prompt("Unable to copy, please use this link:", "http://localhost:4000/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html");
+      });
+    }
+
+    $(function () {
+      if (document.getElementById('comment-curtain') == null){
+        var disqusThread = document.getElementById('comment-layout')
+        if (disqusThread) {
+          disqusThread.classList.toggle('show')
+        }
+      }
+
+      var tweetTags = document.getElementsByTagName("tweet");
+
+      if (tweetTags != null){
+        for (i=0; i<tweetTags.length; i++){
+          tweetA = document.createElement("a")
+          tweetA.href = 'https://twitter.com/share?text='
+                       + encodeURIComponent(tweetTags[i].textContent)
+                       + '&via=&url='
+                       + window.location.href;
+          tweetA.target = "_blank";
+          tweetA.className = 'twitter';
+          tweetSpanText = document.createElement('span');
+          tweetSpanText.className = 'tweetText';
+          tweetSpanText.appendChild(document.createTextNode(tweetTags[i].textContent));
+          tweetSpanIcon = document.createElement('span');
+          tweetSpanIcon.className = 'tweetIcon';
+          tweetSpanIcon.appendChild(document.createTextNode("click to tweet"));
+          tweetI = document.createElement("i");
+          tweetI.className = 'fa fa-twitter';
+          tweetSpanIcon.appendChild(tweetI);
+          tweetA.appendChild(tweetSpanText);
+          tweetA.appendChild(tweetSpanIcon);
+          tweetTags[i].textContent = "";
+          tweetTags[i].appendChild(tweetA);
+        }
+      }
+
+    });
+
+  </script>
+  <!-- Mailchimp linking -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8ece198b3eb260e6838461a60/d20d9fb9aad962399025da52e.js");</script>
+
+
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "CommonHTML": { linebreaks: { automatic: true } }
+    });
+  </script>
+  <script src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script src="./assets/js/main.js"></script>
+<script>
+  SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: './search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a><p>{description}</p></li>',
+      noResultsText: 'No results found',
+      fuzzy: false,
+      exclude: ['Welcome']
+    });
+</script>
+
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8SZS2YBZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R8SZS2YBZK');
+</script>
+  </body>
+</html>
