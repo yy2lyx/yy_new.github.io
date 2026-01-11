@@ -6,7 +6,7 @@ title: windows下安装python-pcl
 date: 2021-4-10 10:21:00
 description: 介绍如何在win10下安装python版本的PCL点云库
 img: posts/blog_imgs/pointcloud.png
-tags: [机器视觉]
+tags: [CV]
 author: 李小肥的YY
 mathjax: yes
 ---

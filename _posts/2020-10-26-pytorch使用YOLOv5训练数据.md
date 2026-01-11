@@ -6,7 +6,7 @@ title: pytorch使用YOLOv5训练数据
 date:  2020-10-26 19:21:00
 description: 介绍如何利用官方开源的Yolov5训练一个属于自己的模型
 img: posts/blog_imgs/mir.png
-tags: [深度学习, 机器视觉]
+tags: [深度学习, CV]
 author: 李小肥的YY
 mathjax: yes
 ---

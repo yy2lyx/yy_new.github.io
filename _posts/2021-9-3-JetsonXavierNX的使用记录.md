@@ -6,7 +6,7 @@ title: Jetson Xavier NX 的使用记录
 date: 2021-8-24 21:11:00
 description: 记录使用Jetson Xavier NX的使用体验中遇到的问题和记录
 img: posts/blog_imgs/jetson.jpg
-tags: [机器视觉]
+tags: [CV]
 author: 李小肥的YY
 mathjax: yes
 ---

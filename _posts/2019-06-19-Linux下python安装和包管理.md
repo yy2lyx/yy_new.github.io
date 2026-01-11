@@ -6,7 +6,7 @@ title:  Linux下python安装和包管理
 date:   2019-06-19 20:20:00
 description: 讲述在Linux环境下python包编译及安装过程，以及包管理工具virtualenv
 img: posts/blog_imgs/linux.jpg
-tags: [coding]
+tags: [代码]
 author: 李小肥的YY
 mathjax: yes
 ---

@@ -6,7 +6,7 @@ title:  Xcode搭建Opencv3环境
 date:   2020-10-13 19:21:00
 description: 在Mac中利用Xcode神器搭建opencv3的C++环境
 img: posts/blog_imgs/book1.jpg
-tags: [机器视觉]
+tags: [CV]
 author: 李小肥的YY
 mathjax: yes
 ---

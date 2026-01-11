@@ -6,7 +6,7 @@ title:  Windows下安装C++ IDE（clion）和opencv环境
 date:  2019-10-01 10:18:00
 description: 讲述如何在Windows环境中安装clion和配置opencv环境
 img: posts/blog_imgs/software.jpg
-tags: [机器视觉]
+tags: [CV]
 author: 李小肥的YY
 mathjax: yes
 ---

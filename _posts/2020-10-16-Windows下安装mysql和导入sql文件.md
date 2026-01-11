@@ -6,7 +6,7 @@ title:  Windows下安装mysql和导入sql文件
 date:   2020-10-16 19:21:00
 description:  介绍在Windows环境下本地安装mysql和导入sql文件的使用
 img: posts/blog_imgs/grapes.jpg
-tags: [数据库]
+tags: [代码]
 author: 李小肥的YY
 mathjax: yes
 ---

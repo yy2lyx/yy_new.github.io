@@ -6,7 +6,7 @@ title: Mask_RCNN在TF2下跑通自己的数据集
 date: 2021-7-26 12:11:00
 description: 讲述Mask RCNN在tensorflow2.x下如何跑通自己的数据集
 img: posts/blog_imgs/mrcnn.jpg
-tags: [机器视觉, 深度学习]
+tags: [CV, 深度学习]
 author: 李小肥的YY
 mathjax: yes
 ---
