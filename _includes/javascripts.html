@@ -7,6 +7,10 @@
 {% assign logo_url = logo_url | replace: "//", "/" %}
 {% capture logo_url_dark %}{{ relativebase }}{{ site.logo-dark  }}{% endcapture %}
 {% assign logo_url_dark = logo_url_dark | replace: "//", "/" %}
+{% capture author_pic_url %}{{ relativebase }}assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}{% endcapture %}
+{% assign author_pic_url = author_pic_url | replace: "//", "/" %}
+{% capture author_pic_dark_url %}{{ relativebase }}assets/img/{% if site.author-pic-dark %}{{site.author-pic-dark}}{% endif %}{% endcapture %}
+{% assign author_pic_dark_url = author_pic_dark_url | replace: "//", "/" %}
 {% assign name = 'night_mode' %}
 {% assign night_mode = site.night_mode %}
 
@@ -45,6 +49,26 @@
     } else {
         logo.setAttribute("src", "{{ logo_url }}");
     }
+    // Toggle author image
+    var authorImg = document.getElementById('author-img');
+    var authorImgAbout = document.getElementById('author-img-about');
+    {% if site.author-pic-dark %}
+    if (nightShift) {
+        if (authorImg) {
+            authorImg.setAttribute("src", "{{ author_pic_dark_url }}");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "{{ author_pic_dark_url }}");
+        }
+    } else {
+        if (authorImg) {
+            authorImg.setAttribute("src", "{{ author_pic_url }}");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "{{ author_pic_url }}");
+        }
+    }
+    {% endif %}
     setTimeout(function() {
         sw.checked = nightShift ? true : false;
     }, 50);

@@ -22,7 +22,7 @@
   "headline": "Tag",
   "abstract": "",
     "keywords": "",
-    "wordcount": "75",
+    "wordcount": "74",
     "image": ["http://localhost:4000/assets/img"],
   "datePublished": "",
   "dateModified": "",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="75"/>
+<meta data-rh="true" name="twitter:data1" content="74"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -272,7 +272,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-远程桌面">一. 远程桌面</h3> <blockquote> <p>在windows10远程上操作jetson Xavier，远程的前提：jetson xavier和Windows的PC在同一个局域网内（我这里是直接在windows10上开启热点）。</p> </blockquote> <ul> <li>安装xrdp：<code class="language-plaintext highlighter-rouge">sudo apt-get install xrdp vnc4server xbase-clients</code></li> </ul> <h4 id="11桌面共享没反应">1.1：桌面共享没反应</h4> <blockquote> <p>桌面共享其实就是一个vnc-server（因此没有必要再在linux上安装vnc-server了），如果要远程，必须要先开启共享，允许其他人控制自己电脑。</p> </blockquote> <p>这里发现<strong>双击了桌面共享，没反应</strong>。</p> <p><strong>解决方案</strong>：</p> <ul> <li>安装dconf-editor：<code class="language-plaintext highlighter-rouge">sudo apt-get install dconf-editor</code></li> <li>运行dconf-editor，更改系统配置，org ==&gt; gnome ==&gt; desktop ==&gt; remote-access，关闭以下两个：<code class="language-plaintext highlighter-rouge">promotion-enabled</code>和<code class="language-plaintext highlighter-rouge">requre-encryption</code></li> <li>开启桌面共享：<code class="language-plaintext highlighter-rouge">/usr/lib/vino/vino-server</code></li> </ul> <h4 id="12-开启远程">1.2 开启远程</h4> <ul> <li>在Windows10上安装vnc-client，官网地址：https://www.realvnc.com/en/connect/download/viewer/windows/</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jet_1.png" alt="" /></p> <ul> <li> <p>输入linux的ip后，直接连接即可。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jet_2.png" alt="" /></p> </li> </ul> <h4 id="13-建立双击可执行文件desktop">1.3 建立双击可执行文件.desktop</h4> <blockquote> <p>由于每次我开启远程桌面的时候，都需要在命令行输入相关指令，很麻烦，就想说有没有可以直接在像windows一样快捷方式</p> </blockquote> <ul> <li> <p>写一个shell脚本来开启桌面共享：<code class="language-plaintext highlighter-rouge">vim ~/vnc-server.sh</code></p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span> /usr/lib/vino/vino-server </code></pre></div> </div> </li> <li> <p>在桌面上新建一个.desktop文件：<code class="language-plaintext highlighter-rouge">vim ~/Desktop/vnc-server.desktop</code></p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Desktop Entry]...<a class="read-more" href="./JetsonXavierNX%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.html"> read more</a>
+						<h3 id="一-远程桌面">一. 远程桌面</h3> <blockquote> <p>在windows10远程上操作jetson Xavier，远程的前提：jetson xavier和Windows的PC在同一个局域网内（我这里是直接在windows10上开启热点）。</p> </blockquote> <ul> <li>安装xrdp：<code class="language-plaintext highlighter-rouge">sudo apt-get install xrdp vnc4server xbase-clients</code></li> </ul> <h4 id="11桌面共享没反应">1.1：桌面共享没反应</h4> <blockquote> <p>桌面共享其实就是一个vnc-server（因此没有必要再在linux上安装vnc-server了），如果要远程，必须要先开启共享，允许其他人控制自己电脑。</p> </blockquote> <p>这里发现<strong>双击了桌面共享，没反应</strong>。</p> <p><strong>解决方案</strong>：</p> <ul> <li>安装dconf-editor：<code class="language-plaintext highlighter-rouge">sudo apt-get install dconf-editor</code></li> <li>运行dconf-editor，更改系统配置，org ==&gt; gnome ==&gt; desktop ==&gt; remote-access，关闭以下两个：<code class="language-plaintext highlighter-rouge">promotion-enabled</code>和<code class="language-plaintext highlighter-rouge">requre-encryption</code></li> <li>开启桌面共享：<code class="language-plaintext highlighter-rouge">/usr/lib/vino/vino-server</code></li> </ul> <h4 id="12-开启远程">1.2 开启远程</h4>...<a class="read-more" href="./JetsonXavierNX%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -311,7 +311,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-zed相机的选型">一. ZED相机的选型</h3> <blockquote> <p>STEREOLABS（ZED相机厂家）的官网：https://www.stereolabs.com/zed/</p> </blockquote> <p>ZED双目相机有以下四种型号：</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_1.png" alt="" /></p> <p><a href="https://www.stereolabs.com/zed-2i/">ZED 2i</a>：ZED相机最新款（ZED相机二代的进阶版，<strong>防尘防水</strong>）</p> <p><a href="https://www.stereolabs.com/zed-2i/">ZED 2</a> ：ZED相机二代（相较于1代多了<strong>支持IMU</strong>）</p> <p><a href="https://www.stereolabs.com/zed-mini/">ZED mini</a>：功能上和二代基本一致，<strong>尺寸更小</strong>，<strong>性能上要差</strong>，比如这里支持的景深在15m以内，而二代的景深最大支持20m。</p> <p><a href="https://www.stereolabs.com/zed/">ZED</a>：ZED相机一代，支持2K视频，景深范围在(0.3m,25m)，<strong>无IMU</strong>,所以对于需要玩SLAM的这款就不推荐了。</p> <h3 id="二-安装zed的sdk">二. 安装ZED的SDK</h3> <h4 id="21-安装sdk">2.1 安装SDK</h4> <blockquote> <p>ZED相机SDK官网：https://www.stereolabs.com/developers/release/</p> </blockquote> <p>我们可以看到是，所有的SDK基本都需要你<strong>安装cuda</strong>，因此我选择了cuda11.0进行安装，具体的cuda安装过程可参考我之前的一篇博客：<a href="https://www.lixiaofei2yy.website/windows10%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%90%AD%E5%BB%BAcuda10.1%E5%92%8Cpytorch1.6">Windows10环境下搭建CUDA10.1和pytorch1.6</a>。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_2.png" alt="" /></p> <p>直接安装即可，将下载下来的exe双击运行<code class="language-plaintext highlighter-rouge">ZED_SDK_Windows10_cuda11.0_v3.5.2_4.exe</code>即可，如下图所示</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_3.png" alt="" /></p> <p>一直往下走即可。</p> <h4 id="22-安装python-api">2.2 安装python API</h4> <p>安装完成之后，可以在 <code class="language-plaintext highlighter-rouge">C:\Program Files (x86)\ZED SDK\</code>下看到<code class="language-plaintext highlighter-rouge">get_python_api.py</code>，如下图</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_4.png" alt="" /></p> <p>直接进行安装python的api：<code class="language-plaintext highlighter-rouge">python get_python_api.py</code></p> <h3 id="三-python-api的使用">三. python API的使用</h3> <ul> <li> <p>导入zed的python包</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pyzed.sl</span> <span class="k">as</span> <span class="n">sl</span> </code></pre></div> </div> </li> <li> <p>查看zed相机版本，这里说下，如果检测到是ZED一代的化，是不支持拿IMU数据的。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">zed</span> <span class="o">=</span> <span...<a class="read-more" href="./ZED2%E7%9B%B8%E6%9C%BAapi%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html"> read more</a>
+						<h3 id="一-zed相机的选型">一. ZED相机的选型</h3> <blockquote> <p>STEREOLABS（ZED相机厂家）的官网：https://www.stereolabs.com/zed/</p> </blockquote> <p>ZED双目相机有以下四种型号：</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_1.png" alt="" /></p> <p><a href="https://www.stereolabs.com/zed-2i/">ZED 2i</a>：ZED相机最新款（ZED相机二代的进阶版，<strong>防尘防水</strong>）</p> <p><a href="https://www.stereolabs.com/zed-2i/">ZED 2</a> ：ZED相机二代（相较于1代多了<strong>支持IMU</strong>）</p> <p><a href="https://www.stereolabs.com/zed-mini/">ZED mini</a>：功能上和二代基本一致，<strong>尺寸更小</strong>，<strong>性能上要差</strong>，比如这里支持的景深在15m以内，而二代的景深最大支持20m。</p> <p><a href="https://www.stereolabs.com/zed/">ZED</a>：ZED相机一代，支持2K视频，景深范围在(0.3m,25m)，<strong>无IMU</strong>,所以对于需要玩SLAM的这款就不推荐了。</p> <h3 id="二-安装zed的sdk">二. 安装ZED的SDK</h3> <h4 id="21-安装sdk">2.1 安装SDK</h4> <blockquote> <p>ZED相机SDK官网：https://www.stereolabs.com/developers/release/</p> </blockquote> <p>我们可以看到是，所有的SDK基本都需要你<strong>安装cuda</strong>，因此我选择了cuda11.0进行安装，具体的cuda安装过程可参考我之前的一篇博客：<a href="https://www.lixiaofei2yy.website/windows10%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%90%AD%E5%BB%BAcuda10.1%E5%92%8Cpytorch1.6">Windows10环境下搭建CUDA10.1和pytorch1.6</a>。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_2.png" alt="" /></p> <p>直接安装即可，将下载下来的exe双击运行<code class="language-plaintext highlighter-rouge">ZED_SDK_Windows10_cuda11.0_v3.5.2_4.exe</code>即可，如下图所示</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/zed_3.png" alt="" /></p> <p>一直往下走即可。</p> <h4 id="22-安装python-api">2.2 安装python API</h4>...<a class="read-more" href="./ZED2%E7%9B%B8%E6%9C%BAapi%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -350,7 +350,124 @@
   </span>
 
 					<div class="post-excerpt">
-						<blockquote> <p>论文原文地址：https://arxiv.org/abs/1703.06870</p> <p>MaskRCNN官方的git地址：https://github.com/matterport/Mask_RCNN</p> </blockquote> <h3 id="一-构建数据集">一. 构建数据集</h3> <p>这里参考官方推荐的气球语义分割的<a href="https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46">例子</a>，这里选用的是和他一致的打标工具 <a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VIA (VGG Image Annotator)</a>。个人感觉这个比<a href="https://github.com/wkentaro/labelme">labeme</a>好用太多。</p> <ul> <li>直接在<a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VIA官网</a>下载即可，下载完成后如下图所示，直接用浏览器打开<code class="language-plaintext highlighter-rouge">via.html</code>即可开箱使用。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rcnn_1.png" alt="" /></p> <ul> <li>选择<code class="language-plaintext highlighter-rouge">Add Files</code>添加图片后，选择<code class="language-plaintext highlighter-rouge">Attributes</code>设置打标的label，然后用多边形工具进行打标，如下图。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rcnn_2.png" alt="" /></p> <ul> <li>输出json格式的打标结果</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rcnn_3.png" alt="" /></p> <ul> <li>将图片和json结果保存在同一个目录下，构建自己的数据集时可参考我的目录结构。</li> </ul> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">├─dataset</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">├─train</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">├─</span><span class="mi">1</span><span class="err">.jpg</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">├─</span><span class="mi">2</span><span class="err">.jpg</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">├─</span><span class="mi">3</span><span class="err">.jpg</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w"> </span><span...<a class="read-more" href="./Mask_RCNN%E5%9C%A8TF2%E4%B8%8B%E8%B7%91%E9%80%9A%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86.html"> read more</a>
+						<blockquote> <p>论文原文地址：https://arxiv.org/abs/1703.06870</p> <p>MaskRCNN官方的git地址：https://github.com/matterport/Mask_RCNN</p> </blockquote> <h3 id="一-构建数据集">一. 构建数据集</h3> <p>这里参考官方推荐的气球语义分割的<a href="https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46">例子</a>，这里选用的是和他一致的打标工具 <a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VIA (VGG Image Annotator)</a>。个人感觉这个比<a href="https://github.com/wkentaro/labelme">labeme</a>好用太多。</p> <ul> <li>直接在<a href="https://www.robots.ox.ac.uk/~vgg/software/via/">VIA官网</a>下载即可，下载完成后如下图所示，直接用浏览器打开<code class="language-plaintext highlighter-rouge">via.html</code>即可开箱使用。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rcnn_1.png" alt="" /></p> <ul> <li>选择<code class="language-plaintext highlighter-rouge">Add Files</code>添加图片后，选择<code class="language-plaintext highlighter-rouge">Attributes</code>设置打标的label，然后用多边形工具进行打标，如下图。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rcnn_2.png" alt="" /></p> <ul> <li>输出json格式的打标结果</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rcnn_3.png" alt="" /></p> <ul> <li>将图片和json结果保存在同一个目录下，构建自己的数据集时可参考我的目录结构。</li> </ul> <div class="language-json highlighter-rouge"><div...<a class="read-more" href="./Mask_RCNN%E5%9C%A8TF2%E4%B8%8B%E8%B7%91%E9%80%9A%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./orb_slam3.html">ORB-SLAM3在windows下的编译使用</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-05-12T10:11:00+08:00">May 12, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-数据集">一. 数据集</h3> <h4 id="11-数据集介绍">1.1 数据集介绍</h4> <p><a href="https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets">Euroc</a>：基于室内的MAV(Micro Aerial Vehicle，微型飞行器)，一共两个场景（Machine Hall + Vicon Room）,其中每个数据集包含2个下载连接：</p> <ul> <li>ROS(Robot Operating System) bag：机器人操作库，适用于嵌入式，这里推荐一个很好的双目+IMU应用在jetson nano上的<a href="https://github.com/tau-adl/Position-Control-Using-ORBSLAM2-on-the-Jetson-Nano">git</a>。</li> <li>ASL Dataset Format：数据集结构，包含传感器文件和双目相机的图片。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/orb_1.jpg" alt="" /></p> <h4 id="12-数据使用介绍">1.2 数据使用介绍</h4> <p>可用的数据包含：</p> <ul> <li>Visual-Inertial Sensor Unit（视觉惯性传感器单元） <ul> <li>Stereo Images（双目图片）</li> <li>IMU（惯导数据）</li> </ul> </li> <li>Ground-Truth位姿轨迹 <ul> <li><strong>Vicon</strong> 6轴运动姿态捕捉系统</li> <li><strong>Leica MS50</strong> 3维姿态镭射追踪</li>...<a class="read-more" href="./orb_slam3.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B_4.html">目标检测(one stage)-从FPN到DSSD</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-04-28T05:11:00+08:00">April 28, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-fpn特征金字塔网络">一. FPN特征金字塔网络</h3> <blockquote> <p>论文地址：https://arxiv.org/pdf/1612.03144.pdf</p> </blockquote> <p>这篇论文发布的时间是2017年4月19号，可以说在此之后，对于目标检测（小物体）而言，提升巨大，基本之后的模型比如DSSD，yolov3等都参考过该模型架构。</p> <h4 id="11-解决的问题">1.1 解决的问题</h4> <ul> <li>目标检测的基本挑战（问题）：识别多尺度变化的目标能力不足。这里解决了一下两个方面的难点： <ol> <li>相机距离目标远近不同导致拍摄的图片中目标尺寸不同而导致识别效率低下。</li> <li>小目标物体的识别较难。</li> </ol> </li> </ul> <h4 id="12-图像特征金字塔">1.2 图像特征金字塔</h4> <p>特征金字塔是在不同大小尺寸的目标检测中的一个基础组件。</p> <ul> <li>如下图所示，经过多次特征抽取后，越到高层的feature map所囊括的细节信息就越少，对于底层信息（比如小的目标）预测就越难。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/mu_4_1.jpg" alt="" /></p> <ul> <li>那么图像特征金字塔做了什么呢？既对同一张图片进行多次下采样，从而得到多张不同尺寸的图片，进而生成不同尺寸的feature map，从而使模型拥有对不同尺度大小的物体进行检测的能力。但是论文中也提出它的问题：<strong>消耗太大的内存和计算量</strong>。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/mu_4_2.jpg" alt="" /></p> <ul> <li> <p>看到上面这张图的时候，你是不是觉得很熟悉？和某个网络的推理层很像？是的，就是SSD。SSD和YOLOv1最大的差别（之前的文章中有讲，有兴趣可以查看本人之前的文章）其实是推理层的不同，SSD用的就是多尺度的特征图综合来预测目标，从而达到对于小物体也能够检测的目的。</p> </li> <li> <p>如下图所示，是不是感觉和上面的图像特征金字塔很像？差别还是有的，SSD是对同一张图片进行卷积抽取其不同尺度的feature map进行分别做预测，而特征金字塔是对不同尺度的图片分别做特征抽取得到不同尺度的feature map在分别做预测。这里论文中也提到SSD的<strong>缺点</strong>：<strong>失去了高层语义信息重用的机会，导致低层语义信息不足</strong>。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/mu_4_3.jpg" alt="" /></p>...<a class="read-more" href="./%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B_4.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B_3.html">目标检测(one stage)-YOLOv2</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2021-04-21T04:21:00+08:00">April 21, 2021</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-与v1的不同之处">一. 与V1的不同之处</h3> <p>YOLOv2相较于YOLOv1在VOC2007数据集上表现从63.4%提升到78.6%。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/mu_3_1.jpg" alt="" /></p> <p>YOLOv2与YOLOv1的不同之处一共体现在下面几个方面：</p> <ul> <li> <p><strong>Batch Normalization</strong>（批归一化层）：在模型不过拟合的前提下，可以拿掉Dropout层；同时加速模型训练。在VOC2007数据集上效果<strong>mAP提升2.4%</strong>。</p> </li> <li> <p><strong>High Resolution Classifier</strong>（提高分辨率）:原本YOLOv1中模型训练的使用的是224 * 224分辨率的图像，现在resize成448 * 448的图片，最后经过10个epoch的微调。在VOC2007数据集上效果<strong>mAP提升3.7%</strong>。</p> </li> <li> <p><strong>Convolutional With Anchor Boxes</strong>（提高检测目标数量）：原本yolov1中将其中一个pool层拿掉后， feature map的大小由7 * 7 变成了13 * 13，然后每个1 * 1的grid里面增加了K个anchor boxes，因此从yolov1只能检测7 * 7 = 49个目标，增加到了13 * 13 * K个目标。在VOC2007数据集上效果<strong>虽然mAP下降了0.3%，但是在Recall上提升了7%</strong>。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/mu_3_2.jpg" alt="" /></p>...<a class="read-more" href="./%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B_3.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -399,7 +516,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-raft简单介绍">一. RAFT简单介绍</h3> <blockquote> <p>论文：<a href="https://arxiv.org/abs/2403.10131">《RAFT: Adapting Language Model to Domain Specific RAG》</a></p> <h4 id="11-raft的优势">1.1 RAFT的优势</h4> <p>RAFT其实是基于RAG（检索增强）的SFT（有监督微调），那么他和这两者的差异是什么呢？</p> </blockquote> <ol> <li>RAG：检索增强是基于提出的问题在向量数据库中检索相应的片段，然后作为线索合并问题喂给大模型，然后输出。然后这里会出现一个问题：<strong>模型对于特定领域的知识没有得到提前学习的机会，说白了就是给了大模型很多材料，但是无法非常有效的使用这些材料</strong>。</li> <li>SFT：有监督微调是基于提供特定的QA对的方式来喂给大模型，然后能够让大模型额外扩充知识面的方式。但是这也会存在一个问题：<strong>这些QA对更多的是让大模型增加了额外文档的记忆，而忽略了在回答实际问题时使用文档的机会，要么没有正确处理在寻找合适的文档来学习时出现的错误</strong>。</li> <li>RAFT：基于检索增强的微调则是结合RAG+SFT提出的一种新的微调方案。他的优势： <ul> <li>过微调确保模型在特定领域的知识上得到良好的记忆和训练，从而达到对不准确的检索文档进行发现。</li> <li>通过训练模型来将“理解问题”、“检索知识”和“正确答案”进行关联，从而提高达模型回答的准确性。</li> </ul> </li> </ol> <p>这也就是整片文章中一致强调的RAFT其实是一种“开卷考试” + “特定领域的提前学习”。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft.png" alt="raft" /></p> <h4 id="12-raft如何训练">1.2 RAFT如何训练</h4> <p>区别于常规的SFT，RAFT在训练中加入了干扰的文档 + 正确的文档让模型来学习。<strong>这使得模型学习到的是基于记忆和文档的混合判断</strong>，参考论文中的“which is a mixture of both memorization and reading”。</p> <ul> <li>训练的内容分为2块： <ul> <li>找到核心依据：QA对 + 标准答案的文档 + 多个误导的文档 + 思维链</li> <li>正确的例子：QA对 + 标准答案的文档 + 思维链</li> </ul> </li> <li>训练的核心：通过思维链来解释找到的答案，从而基于上下文信息，思考其答案，并链接到相关文档。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft_train.png" alt="raft_train" /></p> <h3 id="二-基于unsloth和lamma_index来实现faft">二. 基于unsloth和lamma_index来实现FAFT</h3> <h4 id="21-基于ollama和lamma_index来构建数据集">2.1 基于ollama和lamma_index来构建数据集</h4> <p>RAFT的数据集的特点是：</p> <ul> <li>QA对</li> <li>正确文档</li> <li>错误文档</li> <li>思维链</li> </ul> <p>所以我们需要一个能够提供思维链的大模型，帮助我们生成上述这些内容。</p> <ul> <li>模型：Qwen3-32B，选择这个千问模型是因为中文很友好+支持思维链+阿里的预训练的数据很顶</li> <li>调用框架：ollama，调用比如openai需要花钱，这个本地部署，调用不花钱！</li> </ul> <h4 id="22-安装相关依赖">2.2 安装相关依赖</h4> <p>这里需要使用以下几个深度学习相关的框架：</p> <ul> <li>lamma_index: 和langchain感觉很像，只是这个更加偏重于增强大型语言模型 (LLM) 处理广泛和异构数据集的能力。当然也能帮助我们构建raft数据集咯。</li> <li>unsloth:...<a class="read-more" href="./raft.html"> read more</a>
+						<h3 id="一-raft简单介绍">一. RAFT简单介绍</h3> <blockquote> <p>论文：<a href="https://arxiv.org/abs/2403.10131">《RAFT: Adapting Language Model to Domain Specific RAG》</a></p> <h4 id="11-raft的优势">1.1 RAFT的优势</h4> <p>RAFT其实是基于RAG（检索增强）的SFT（有监督微调），那么他和这两者的差异是什么呢？</p> </blockquote> <ol> <li>RAG：检索增强是基于提出的问题在向量数据库中检索相应的片段，然后作为线索合并问题喂给大模型，然后输出。然后这里会出现一个问题：<strong>模型对于特定领域的知识没有得到提前学习的机会，说白了就是给了大模型很多材料，但是无法非常有效的使用这些材料</strong>。</li> <li>SFT：有监督微调是基于提供特定的QA对的方式来喂给大模型，然后能够让大模型额外扩充知识面的方式。但是这也会存在一个问题：<strong>这些QA对更多的是让大模型增加了额外文档的记忆，而忽略了在回答实际问题时使用文档的机会，要么没有正确处理在寻找合适的文档来学习时出现的错误</strong>。</li> <li>RAFT：基于检索增强的微调则是结合RAG+SFT提出的一种新的微调方案。他的优势： <ul> <li>过微调确保模型在特定领域的知识上得到良好的记忆和训练，从而达到对不准确的检索文档进行发现。</li> <li>通过训练模型来将“理解问题”、“检索知识”和“正确答案”进行关联，从而提高达模型回答的准确性。</li> </ul> </li> </ol> <p>这也就是整片文章中一致强调的RAFT其实是一种“开卷考试” + “特定领域的提前学习”。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft.png" alt="raft" /></p> <h4 id="12-raft如何训练">1.2 RAFT如何训练</h4> <p>区别于常规的SFT，RAFT在训练中加入了干扰的文档 + 正确的文档让模型来学习。<strong>这使得模型学习到的是基于记忆和文档的混合判断</strong>，参考论文中的“which is a mixture of both memorization and reading”。</p> <ul>...<a class="read-more" href="./raft.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -438,7 +555,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-rag和graphrag">一. RAG和GraphRAG</h3> <h4 id="11-什么是rag">1.1 什么是RAG</h4> <blockquote> <p>RAG（Retrieval Augmented Generation，检索增强生成）是一种将信息检索技术与生成式语言模型（LLM）结合的AI框架。它通过从外部知识库中检索相关信息，然后使用这些信息增强LLM的提示词（prompt），从而生成更准确、更相关、更全面的答案。﻿</p> </blockquote> <p>大模型为什么需要RAG：</p> <ul> <li>如果一个llm在pretrain之后没有做rag（外部检索）的话，其实往往可能存在幻觉。</li> <li>基座模型在专业领域知识不足，比如一些医药、法律等。</li> <li>外挂知识需要长期实时维护更新的。</li> </ul> <h4 id="12-rag在llm中langchain的例子">1.2 RAG在LLM中LangChain的例子</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rag_lanchain.jpg" alt="LangChain" /> 如上图所示，整个RAG的过程分为三个部分：</p> <ul> <li>文本嵌入阶段：将本地文本进行分段后，利用embedding模型对其每个段落进行词嵌入，并将其vector存入向量数据库（比如FAISS、Chroma）中。</li> <li>请求阶段：对大模型进行请求之前，会将请求的文本同样利用embedding模型转成向量，然后会和向量数据库中比对相似度最高的本地文本段落，并将其作为关联的文本段放到prompt中。</li> <li>输出阶段：将提示词 + 本地文本关联段落 + 请求一起输入大模型，得到输出。</li> </ul> <h4 id="13-graphrag的定义及其优势">1.3 GraphRAG的定义及其优势</h4> <blockquote> <p>GraphRAG是一种基于知识图谱的检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型LLM进行检索增强。 论文：<a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused Summarization</a></p> </blockquote> <p>GraphRAG比RAG优势在哪：</p> <ul> <li>RAG过于局限：RAG仅能检索到与query相速度最高的文本片段，无法从全局出发来看整个本地文本。</li> <li>GraphRAG通过构建实体关系图谱实现了信息间的连接，能从全局出发，能更完整地理解和检索复杂的关联信息，从而生成更准确和全局性的结果。</li> </ul> <h4 id="14-graphrag的流程">1.4 GraphRAG的流程</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/graphrag.png" alt="LangChain" /> 如上图所示，就是GraphRAG的处理流程图，其实总结起来就两个部分： 第一部分：构建知识图谱</p> <ul> <li>将本地文本进行分段</li> <li>对每个段落进行摘要提取：这里完全依赖于<strong>大模型的提取能力</strong></li> <li>实体和关系的提取：这里完全依赖于<strong>大模型的提取能力</strong>，实体和关系抽取可以参考本人之前写的《事件抽取实战》这篇文章</li> <li>构建知识图谱，写入数据库</li> </ul> <p>第二部分：利用构建的知识图谱回答问题</p> <ul> <li>社区检测：实际就是一种图聚类的方法，这里的“社区”，我们可以将其理解为一类具有相同特性的节点的集合。</li> <li>社区总结：给每个社区创建类似报告的摘要。利于理解整体的结构和语义。</li> <li>生成全局答案：给定用户查询，基于上一步生成的社区摘要可用于在多阶段过程中生成最终答案。</li> </ul> <h3 id="二-graphrag的轻量版本nano-graphrag">二. GraphRAG的轻量版本——nano-GraphRAG</h3> <p>对于GraphRAG而言，其封装的太死，代码量又很大，对于定制化的任务而言，不太好下手，因此推荐一个轻量化的版本——nano-GraphRAG。</p> <blockquote> <p>代码：https://github.com/gusye1234/nano-graphrag</p> </blockquote> <p>相较于GraphRAG的优势：</p> <ul> <li>代码量少：包含了tests + prompt也才只有1100行代码！</li> <li>更容易阅读</li> <li>给的例子太好用了，直接上手没有难度。</li> </ul> <h4 id="21-安装">2.1 安装</h4> <p>这里推荐不用官方推荐的pip install 来安装。因为这样会对于代码和prompt不好调整。 直接clone项目即可，然后安装其依赖<code...<a class="read-more" href="./graphrag.html"> read more</a>
+						<h3 id="一-rag和graphrag">一. RAG和GraphRAG</h3> <h4 id="11-什么是rag">1.1 什么是RAG</h4> <blockquote> <p>RAG（Retrieval Augmented Generation，检索增强生成）是一种将信息检索技术与生成式语言模型（LLM）结合的AI框架。它通过从外部知识库中检索相关信息，然后使用这些信息增强LLM的提示词（prompt），从而生成更准确、更相关、更全面的答案。﻿</p> </blockquote> <p>大模型为什么需要RAG：</p> <ul> <li>如果一个llm在pretrain之后没有做rag（外部检索）的话，其实往往可能存在幻觉。</li> <li>基座模型在专业领域知识不足，比如一些医药、法律等。</li> <li>外挂知识需要长期实时维护更新的。</li> </ul> <h4 id="12-rag在llm中langchain的例子">1.2 RAG在LLM中LangChain的例子</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rag_lanchain.jpg" alt="LangChain" /> 如上图所示，整个RAG的过程分为三个部分：</p> <ul> <li>文本嵌入阶段：将本地文本进行分段后，利用embedding模型对其每个段落进行词嵌入，并将其vector存入向量数据库（比如FAISS、Chroma）中。</li> <li>请求阶段：对大模型进行请求之前，会将请求的文本同样利用embedding模型转成向量，然后会和向量数据库中比对相似度最高的本地文本段落，并将其作为关联的文本段放到prompt中。</li> <li>输出阶段：将提示词 + 本地文本关联段落 + 请求一起输入大模型，得到输出。</li> </ul> <h4 id="13-graphrag的定义及其优势">1.3 GraphRAG的定义及其优势</h4> <blockquote> <p>GraphRAG是一种基于知识图谱的检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型LLM进行检索增强。 论文：<a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused...<a class="read-more" href="./graphrag.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -477,7 +594,85 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-大模型微调">一. 大模型微调</h3> <h4 id="11-微调的原因">1.1 微调的原因</h4> <p>在业务中直接使用大模型，往往会发现：</p> <ul> <li>模型对prompt非常敏感，需要不断调整，迭代prompt的过程很痛苦</li> <li>本身能力不满足独有的业务需求</li> <li>模型的更新/更换 导致相同的prompt却拿到不同的结果</li> </ul> <h4 id="12-微调的方式">1.2 微调的方式</h4> <ul> <li>zero-shot prompting（0样本）：撰写prompt，迭代prompt，获取答案。无需数据，无需额外开发、部署成本。</li> <li>few-shot prompting（1-10样本）：收集样例，迭代样例，获取答案。需要提供少量的样本（正反例）。</li> <li>adaptation（1k-1w样本）：收集数据，适配模型，部署模型。 <ul> <li>适用百亿参数以下的模型</li> <li>少量的适配特殊场景/任务的样本，这里其实可以利用更大参数、更优的大模型输出的结果来训练这类“小模型”</li> </ul> </li> <li>更深层次的微调： <ul> <li>领域预训练：用无监督领域数据继续训练基座模型</li> <li>全参数精调：用有监督领域数据精调基座模型</li> <li>检索增强：外挂知识库，这里比如一般的RAG，还有比较火热的GraphRAG。</li> <li>多智能体：多模型/agent共同完成任务。</li> </ul> </li> </ul> <h3 id="二-llm微调工具-unsloth">二. LLM微调工具-Unsloth</h3> <blockquote> <p>git地址：https://github.com/unslothai/unsloth</p> </blockquote> <p>选择unsloth作为微调工具的理由：</p> <ul> <li>训练更快</li> <li>显存占用更少</li> <li>迭代快，模型适配广，目前都能支持Qwen3了</li> </ul> <h4 id="21-依赖的安装">2.1 依赖的安装</h4> <blockquote> <p>这里爬了不少坑，因此记录下</p> </blockquote> <ol> <li>直接pip安装：<code class="language-plaintext highlighter-rouge">pip install unsloth</code>, 这里会默认安装最新的torch版本，而非适配于自身系统cuda版本的torch（用<code class="language-plaintext highlighter-rouge">nvcc -V</code>可查看cuda版本）</li> <li>重新安装torch，本人这里cuda是12.1的：<code class="language-plaintext highlighter-rouge">pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121</code></li> <li>重新安装对应cuda版本的xformers：<code class="language-plaintext highlighter-rouge">pip install -U xformers --index-url https://download.pytorch.org/whl/cu121</code></li> <li>如果需要微调Qwen3，那么对于transformers有版本要求：<code class="language-plaintext highlighter-rouge">pip install transformers==4.51.0 --no-deps</code></li> <li>改了transformers之后，那么也需要对应的trl版本更改：<code class="language-plaintext highlighter-rouge">pip install trl==0.17.0 --no-deps</code></li> <li>安装vllm:<code class="language-plaintext highlighter-rouge">pip install vllm==0.7 --no-deps</code></li> <li>这里会遇到unsloth和vllm版本不匹配的问题：<code...<a class="read-more" href="./%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F.html"> read more</a>
+						<h3 id="一-大模型微调">一. 大模型微调</h3> <h4 id="11-微调的原因">1.1 微调的原因</h4> <p>在业务中直接使用大模型，往往会发现：</p> <ul> <li>模型对prompt非常敏感，需要不断调整，迭代prompt的过程很痛苦</li> <li>本身能力不满足独有的业务需求</li> <li>模型的更新/更换 导致相同的prompt却拿到不同的结果</li> </ul> <h4 id="12-微调的方式">1.2 微调的方式</h4> <ul> <li>zero-shot prompting（0样本）：撰写prompt，迭代prompt，获取答案。无需数据，无需额外开发、部署成本。</li> <li>few-shot prompting（1-10样本）：收集样例，迭代样例，获取答案。需要提供少量的样本（正反例）。</li> <li>adaptation（1k-1w样本）：收集数据，适配模型，部署模型。 <ul> <li>适用百亿参数以下的模型</li> <li>少量的适配特殊场景/任务的样本，这里其实可以利用更大参数、更优的大模型输出的结果来训练这类“小模型”</li> </ul> </li> <li>更深层次的微调： <ul> <li>领域预训练：用无监督领域数据继续训练基座模型</li> <li>全参数精调：用有监督领域数据精调基座模型</li> <li>检索增强：外挂知识库，这里比如一般的RAG，还有比较火热的GraphRAG。</li> <li>多智能体：多模型/agent共同完成任务。</li> </ul> </li> </ul> <h3 id="二-llm微调工具-unsloth">二. LLM微调工具-Unsloth</h3> <blockquote> <p>git地址：https://github.com/unslothai/unsloth</p> </blockquote> <p>选择unsloth作为微调工具的理由：</p> <ul> <li>训练更快</li> <li>显存占用更少</li> <li>迭代快，模型适配广，目前都能支持Qwen3了</li> </ul> <h4 id="21-依赖的安装">2.1...<a class="read-more" href="./%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./langchain.html">LLM的应用开发框架——Langchain</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-07-04T08:00:00+08:00">July 4, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-langchain是什么">一. Langchain是什么</h3> <blockquote> <p>Langchain 官网文档：https://python.langchain.com/v0.2/docs/introduction/</p> </blockquote> <h4 id="llm崛起出现了哪些需求">LLM崛起出现了哪些需求？</h4> <ul> <li> <p>格式化输出：希望给的输出格式是json、csv、db格式</p> </li> <li> <p>输出很长的提示词文本：如何总结一本书的内容？</p> </li> <li> <p>多次API调用：两次调用api，前后两次需要结合的</p> </li> <li> <p>外部调用：比如需要进行web 搜索</p> </li> <li> <p>标准化开发</p> </li> <li> <p>快速切换模型：有多个大模型可用，支持代码不变，快速切换</p> </li> </ul> <h3 id="二-langchain支撑llm的应用">二. Langchain支撑LLM的应用</h3> <h4 id="21-支持多种llm">2.1 支持多种LLM</h4> <p>无论是国外的GPT4、LLaMa，还是国内的ChatGLM、Baichuan，都支持调用api和huggingface模型的使用，下面主要介绍HF模型的下载使用。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">huggingface_hub</span> <span class="kn">import</span> <span class="n">snapshot_download</span> <span...<a class="read-more" href="./langchain.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8.html">大语言模型的应用及训练</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-07-18T23:00:00+08:00">July 18, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-大语言模型llm">一. 大语言模型LLM</h3> <h4 id="11-llm的发展史">1.1 LLM的发展史</h4> <p>LLM(Large Language Model大语言模型)的发展起源应该是从Transformer开始，在chatGPT出现后热度达到顶峰。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/LLM%E5%8F%91%E5%B1%95%E5%8F%B2.png" alt="" /></p> <p>整个发展的过程可以概括为三个阶段：</p> <ul> <li> <p>第一阶段：真对某些领域数据单独微调，出现大量的预训练模型</p> </li> <li> <p>第二阶段：扩大模型参数及训练语料的规模，模型架构偏向于生成式模型，Prompt在微调阶段开始展现。</p> </li> <li> <p>第三阶段：模型参数和数据的规模急剧扩大，注重模型和人之间的交互。AI的安全性、可靠性更加收到关注。</p> </li> </ul> <h4 id="12-开源可用的中文llm">1.2 开源可用的中文LLM</h4> <p>目前公认较好的中文开源大语言模型如下：</p> <ul> <li> <p>Meta AI发布的Llama系列模型，目前已经到Llama2了，推荐一个中文的<a href="https://github.com/FlagAlpha/Llama2-Chinese">Llama2仓库</a></p> </li> <li> <p>清华大学的chatGLM系列模型，目前已经到chatGLM2了，推荐官方的<a href="https://github.com/THUDM/ChatGLM2-6B">chatGLM2仓库</a></p> </li> </ul> <h4 id="13-llm应用的nlp任务">1.3 LLM应用的NLP任务</h4> <p>现在LLM基本都是生成式模型，因此一般可应用的NLP任务：</p> <ul> <li> <p>翻译</p> </li> <li> <p>文本摘要</p>...<a class="read-more" href="./%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -526,7 +721,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-raft简单介绍">一. RAFT简单介绍</h3> <blockquote> <p>论文：<a href="https://arxiv.org/abs/2403.10131">《RAFT: Adapting Language Model to Domain Specific RAG》</a></p> <h4 id="11-raft的优势">1.1 RAFT的优势</h4> <p>RAFT其实是基于RAG（检索增强）的SFT（有监督微调），那么他和这两者的差异是什么呢？</p> </blockquote> <ol> <li>RAG：检索增强是基于提出的问题在向量数据库中检索相应的片段，然后作为线索合并问题喂给大模型，然后输出。然后这里会出现一个问题：<strong>模型对于特定领域的知识没有得到提前学习的机会，说白了就是给了大模型很多材料，但是无法非常有效的使用这些材料</strong>。</li> <li>SFT：有监督微调是基于提供特定的QA对的方式来喂给大模型，然后能够让大模型额外扩充知识面的方式。但是这也会存在一个问题：<strong>这些QA对更多的是让大模型增加了额外文档的记忆，而忽略了在回答实际问题时使用文档的机会，要么没有正确处理在寻找合适的文档来学习时出现的错误</strong>。</li> <li>RAFT：基于检索增强的微调则是结合RAG+SFT提出的一种新的微调方案。他的优势： <ul> <li>过微调确保模型在特定领域的知识上得到良好的记忆和训练，从而达到对不准确的检索文档进行发现。</li> <li>通过训练模型来将“理解问题”、“检索知识”和“正确答案”进行关联，从而提高达模型回答的准确性。</li> </ul> </li> </ol> <p>这也就是整片文章中一致强调的RAFT其实是一种“开卷考试” + “特定领域的提前学习”。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft.png" alt="raft" /></p> <h4 id="12-raft如何训练">1.2 RAFT如何训练</h4> <p>区别于常规的SFT，RAFT在训练中加入了干扰的文档 + 正确的文档让模型来学习。<strong>这使得模型学习到的是基于记忆和文档的混合判断</strong>，参考论文中的“which is a mixture of both memorization and reading”。</p> <ul> <li>训练的内容分为2块： <ul> <li>找到核心依据：QA对 + 标准答案的文档 + 多个误导的文档 + 思维链</li> <li>正确的例子：QA对 + 标准答案的文档 + 思维链</li> </ul> </li> <li>训练的核心：通过思维链来解释找到的答案，从而基于上下文信息，思考其答案，并链接到相关文档。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft_train.png" alt="raft_train" /></p> <h3 id="二-基于unsloth和lamma_index来实现faft">二. 基于unsloth和lamma_index来实现FAFT</h3> <h4 id="21-基于ollama和lamma_index来构建数据集">2.1 基于ollama和lamma_index来构建数据集</h4> <p>RAFT的数据集的特点是：</p> <ul> <li>QA对</li> <li>正确文档</li> <li>错误文档</li> <li>思维链</li> </ul> <p>所以我们需要一个能够提供思维链的大模型，帮助我们生成上述这些内容。</p> <ul> <li>模型：Qwen3-32B，选择这个千问模型是因为中文很友好+支持思维链+阿里的预训练的数据很顶</li> <li>调用框架：ollama，调用比如openai需要花钱，这个本地部署，调用不花钱！</li> </ul> <h4 id="22-安装相关依赖">2.2 安装相关依赖</h4> <p>这里需要使用以下几个深度学习相关的框架：</p> <ul> <li>lamma_index: 和langchain感觉很像，只是这个更加偏重于增强大型语言模型 (LLM) 处理广泛和异构数据集的能力。当然也能帮助我们构建raft数据集咯。</li> <li>unsloth:...<a class="read-more" href="./raft.html"> read more</a>
+						<h3 id="一-raft简单介绍">一. RAFT简单介绍</h3> <blockquote> <p>论文：<a href="https://arxiv.org/abs/2403.10131">《RAFT: Adapting Language Model to Domain Specific RAG》</a></p> <h4 id="11-raft的优势">1.1 RAFT的优势</h4> <p>RAFT其实是基于RAG（检索增强）的SFT（有监督微调），那么他和这两者的差异是什么呢？</p> </blockquote> <ol> <li>RAG：检索增强是基于提出的问题在向量数据库中检索相应的片段，然后作为线索合并问题喂给大模型，然后输出。然后这里会出现一个问题：<strong>模型对于特定领域的知识没有得到提前学习的机会，说白了就是给了大模型很多材料，但是无法非常有效的使用这些材料</strong>。</li> <li>SFT：有监督微调是基于提供特定的QA对的方式来喂给大模型，然后能够让大模型额外扩充知识面的方式。但是这也会存在一个问题：<strong>这些QA对更多的是让大模型增加了额外文档的记忆，而忽略了在回答实际问题时使用文档的机会，要么没有正确处理在寻找合适的文档来学习时出现的错误</strong>。</li> <li>RAFT：基于检索增强的微调则是结合RAG+SFT提出的一种新的微调方案。他的优势： <ul> <li>过微调确保模型在特定领域的知识上得到良好的记忆和训练，从而达到对不准确的检索文档进行发现。</li> <li>通过训练模型来将“理解问题”、“检索知识”和“正确答案”进行关联，从而提高达模型回答的准确性。</li> </ul> </li> </ol> <p>这也就是整片文章中一致强调的RAFT其实是一种“开卷考试” + “特定领域的提前学习”。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft.png" alt="raft" /></p> <h4 id="12-raft如何训练">1.2 RAFT如何训练</h4> <p>区别于常规的SFT，RAFT在训练中加入了干扰的文档 + 正确的文档让模型来学习。<strong>这使得模型学习到的是基于记忆和文档的混合判断</strong>，参考论文中的“which is a mixture of both memorization and reading”。</p> <ul>...<a class="read-more" href="./raft.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -565,7 +760,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-rag和graphrag">一. RAG和GraphRAG</h3> <h4 id="11-什么是rag">1.1 什么是RAG</h4> <blockquote> <p>RAG（Retrieval Augmented Generation，检索增强生成）是一种将信息检索技术与生成式语言模型（LLM）结合的AI框架。它通过从外部知识库中检索相关信息，然后使用这些信息增强LLM的提示词（prompt），从而生成更准确、更相关、更全面的答案。﻿</p> </blockquote> <p>大模型为什么需要RAG：</p> <ul> <li>如果一个llm在pretrain之后没有做rag（外部检索）的话，其实往往可能存在幻觉。</li> <li>基座模型在专业领域知识不足，比如一些医药、法律等。</li> <li>外挂知识需要长期实时维护更新的。</li> </ul> <h4 id="12-rag在llm中langchain的例子">1.2 RAG在LLM中LangChain的例子</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rag_lanchain.jpg" alt="LangChain" /> 如上图所示，整个RAG的过程分为三个部分：</p> <ul> <li>文本嵌入阶段：将本地文本进行分段后，利用embedding模型对其每个段落进行词嵌入，并将其vector存入向量数据库（比如FAISS、Chroma）中。</li> <li>请求阶段：对大模型进行请求之前，会将请求的文本同样利用embedding模型转成向量，然后会和向量数据库中比对相似度最高的本地文本段落，并将其作为关联的文本段放到prompt中。</li> <li>输出阶段：将提示词 + 本地文本关联段落 + 请求一起输入大模型，得到输出。</li> </ul> <h4 id="13-graphrag的定义及其优势">1.3 GraphRAG的定义及其优势</h4> <blockquote> <p>GraphRAG是一种基于知识图谱的检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型LLM进行检索增强。 论文：<a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused Summarization</a></p> </blockquote> <p>GraphRAG比RAG优势在哪：</p> <ul> <li>RAG过于局限：RAG仅能检索到与query相速度最高的文本片段，无法从全局出发来看整个本地文本。</li> <li>GraphRAG通过构建实体关系图谱实现了信息间的连接，能从全局出发，能更完整地理解和检索复杂的关联信息，从而生成更准确和全局性的结果。</li> </ul> <h4 id="14-graphrag的流程">1.4 GraphRAG的流程</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/graphrag.png" alt="LangChain" /> 如上图所示，就是GraphRAG的处理流程图，其实总结起来就两个部分： 第一部分：构建知识图谱</p> <ul> <li>将本地文本进行分段</li> <li>对每个段落进行摘要提取：这里完全依赖于<strong>大模型的提取能力</strong></li> <li>实体和关系的提取：这里完全依赖于<strong>大模型的提取能力</strong>，实体和关系抽取可以参考本人之前写的《事件抽取实战》这篇文章</li> <li>构建知识图谱，写入数据库</li> </ul> <p>第二部分：利用构建的知识图谱回答问题</p> <ul> <li>社区检测：实际就是一种图聚类的方法，这里的“社区”，我们可以将其理解为一类具有相同特性的节点的集合。</li> <li>社区总结：给每个社区创建类似报告的摘要。利于理解整体的结构和语义。</li> <li>生成全局答案：给定用户查询，基于上一步生成的社区摘要可用于在多阶段过程中生成最终答案。</li> </ul> <h3 id="二-graphrag的轻量版本nano-graphrag">二. GraphRAG的轻量版本——nano-GraphRAG</h3> <p>对于GraphRAG而言，其封装的太死，代码量又很大，对于定制化的任务而言，不太好下手，因此推荐一个轻量化的版本——nano-GraphRAG。</p> <blockquote> <p>代码：https://github.com/gusye1234/nano-graphrag</p> </blockquote> <p>相较于GraphRAG的优势：</p> <ul> <li>代码量少：包含了tests + prompt也才只有1100行代码！</li> <li>更容易阅读</li> <li>给的例子太好用了，直接上手没有难度。</li> </ul> <h4 id="21-安装">2.1 安装</h4> <p>这里推荐不用官方推荐的pip install 来安装。因为这样会对于代码和prompt不好调整。 直接clone项目即可，然后安装其依赖<code...<a class="read-more" href="./graphrag.html"> read more</a>
+						<h3 id="一-rag和graphrag">一. RAG和GraphRAG</h3> <h4 id="11-什么是rag">1.1 什么是RAG</h4> <blockquote> <p>RAG（Retrieval Augmented Generation，检索增强生成）是一种将信息检索技术与生成式语言模型（LLM）结合的AI框架。它通过从外部知识库中检索相关信息，然后使用这些信息增强LLM的提示词（prompt），从而生成更准确、更相关、更全面的答案。﻿</p> </blockquote> <p>大模型为什么需要RAG：</p> <ul> <li>如果一个llm在pretrain之后没有做rag（外部检索）的话，其实往往可能存在幻觉。</li> <li>基座模型在专业领域知识不足，比如一些医药、法律等。</li> <li>外挂知识需要长期实时维护更新的。</li> </ul> <h4 id="12-rag在llm中langchain的例子">1.2 RAG在LLM中LangChain的例子</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rag_lanchain.jpg" alt="LangChain" /> 如上图所示，整个RAG的过程分为三个部分：</p> <ul> <li>文本嵌入阶段：将本地文本进行分段后，利用embedding模型对其每个段落进行词嵌入，并将其vector存入向量数据库（比如FAISS、Chroma）中。</li> <li>请求阶段：对大模型进行请求之前，会将请求的文本同样利用embedding模型转成向量，然后会和向量数据库中比对相似度最高的本地文本段落，并将其作为关联的文本段放到prompt中。</li> <li>输出阶段：将提示词 + 本地文本关联段落 + 请求一起输入大模型，得到输出。</li> </ul> <h4 id="13-graphrag的定义及其优势">1.3 GraphRAG的定义及其优势</h4> <blockquote> <p>GraphRAG是一种基于知识图谱的检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型LLM进行检索增强。 论文：<a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused...<a class="read-more" href="./graphrag.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -604,7 +799,124 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-大模型微调">一. 大模型微调</h3> <h4 id="11-微调的原因">1.1 微调的原因</h4> <p>在业务中直接使用大模型，往往会发现：</p> <ul> <li>模型对prompt非常敏感，需要不断调整，迭代prompt的过程很痛苦</li> <li>本身能力不满足独有的业务需求</li> <li>模型的更新/更换 导致相同的prompt却拿到不同的结果</li> </ul> <h4 id="12-微调的方式">1.2 微调的方式</h4> <ul> <li>zero-shot prompting（0样本）：撰写prompt，迭代prompt，获取答案。无需数据，无需额外开发、部署成本。</li> <li>few-shot prompting（1-10样本）：收集样例，迭代样例，获取答案。需要提供少量的样本（正反例）。</li> <li>adaptation（1k-1w样本）：收集数据，适配模型，部署模型。 <ul> <li>适用百亿参数以下的模型</li> <li>少量的适配特殊场景/任务的样本，这里其实可以利用更大参数、更优的大模型输出的结果来训练这类“小模型”</li> </ul> </li> <li>更深层次的微调： <ul> <li>领域预训练：用无监督领域数据继续训练基座模型</li> <li>全参数精调：用有监督领域数据精调基座模型</li> <li>检索增强：外挂知识库，这里比如一般的RAG，还有比较火热的GraphRAG。</li> <li>多智能体：多模型/agent共同完成任务。</li> </ul> </li> </ul> <h3 id="二-llm微调工具-unsloth">二. LLM微调工具-Unsloth</h3> <blockquote> <p>git地址：https://github.com/unslothai/unsloth</p> </blockquote> <p>选择unsloth作为微调工具的理由：</p> <ul> <li>训练更快</li> <li>显存占用更少</li> <li>迭代快，模型适配广，目前都能支持Qwen3了</li> </ul> <h4 id="21-依赖的安装">2.1 依赖的安装</h4> <blockquote> <p>这里爬了不少坑，因此记录下</p> </blockquote> <ol> <li>直接pip安装：<code class="language-plaintext highlighter-rouge">pip install unsloth</code>, 这里会默认安装最新的torch版本，而非适配于自身系统cuda版本的torch（用<code class="language-plaintext highlighter-rouge">nvcc -V</code>可查看cuda版本）</li> <li>重新安装torch，本人这里cuda是12.1的：<code class="language-plaintext highlighter-rouge">pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121</code></li> <li>重新安装对应cuda版本的xformers：<code class="language-plaintext highlighter-rouge">pip install -U xformers --index-url https://download.pytorch.org/whl/cu121</code></li> <li>如果需要微调Qwen3，那么对于transformers有版本要求：<code class="language-plaintext highlighter-rouge">pip install transformers==4.51.0 --no-deps</code></li> <li>改了transformers之后，那么也需要对应的trl版本更改：<code class="language-plaintext highlighter-rouge">pip install trl==0.17.0 --no-deps</code></li> <li>安装vllm:<code class="language-plaintext highlighter-rouge">pip install vllm==0.7 --no-deps</code></li> <li>这里会遇到unsloth和vllm版本不匹配的问题：<code...<a class="read-more" href="./%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F.html"> read more</a>
+						<h3 id="一-大模型微调">一. 大模型微调</h3> <h4 id="11-微调的原因">1.1 微调的原因</h4> <p>在业务中直接使用大模型，往往会发现：</p> <ul> <li>模型对prompt非常敏感，需要不断调整，迭代prompt的过程很痛苦</li> <li>本身能力不满足独有的业务需求</li> <li>模型的更新/更换 导致相同的prompt却拿到不同的结果</li> </ul> <h4 id="12-微调的方式">1.2 微调的方式</h4> <ul> <li>zero-shot prompting（0样本）：撰写prompt，迭代prompt，获取答案。无需数据，无需额外开发、部署成本。</li> <li>few-shot prompting（1-10样本）：收集样例，迭代样例，获取答案。需要提供少量的样本（正反例）。</li> <li>adaptation（1k-1w样本）：收集数据，适配模型，部署模型。 <ul> <li>适用百亿参数以下的模型</li> <li>少量的适配特殊场景/任务的样本，这里其实可以利用更大参数、更优的大模型输出的结果来训练这类“小模型”</li> </ul> </li> <li>更深层次的微调： <ul> <li>领域预训练：用无监督领域数据继续训练基座模型</li> <li>全参数精调：用有监督领域数据精调基座模型</li> <li>检索增强：外挂知识库，这里比如一般的RAG，还有比较火热的GraphRAG。</li> <li>多智能体：多模型/agent共同完成任务。</li> </ul> </li> </ul> <h3 id="二-llm微调工具-unsloth">二. LLM微调工具-Unsloth</h3> <blockquote> <p>git地址：https://github.com/unslothai/unsloth</p> </blockquote> <p>选择unsloth作为微调工具的理由：</p> <ul> <li>训练更快</li> <li>显存占用更少</li> <li>迭代快，模型适配广，目前都能支持Qwen3了</li> </ul> <h4 id="21-依赖的安装">2.1...<a class="read-more" href="./%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B0%8F%E7%BB%93.html">知识图谱的小结</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-12-25T08:00:00+08:00">December 25, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-定义">一. 定义</h3> <p>知识图谱是一种二元的图网络，用以描述客观世界中的实体信息及其相互关系规律的知识化体系。它的基本组成单元包括：</p> <ul> <li>实体-关系-实体</li> <li>实体-属性-属性值</li> </ul> <h3 id="二-知识图谱的构建">二. 知识图谱的构建</h3> <h4 id="21-知识建模">2.1 知识建模</h4> <p>对于构建知识图谱的时候，一般我们都是针对所在的特定领域进行建模，所以一般称为“本体建模”或者“领域建模”。</p> <p>这里构建本体模型一般分为3类技术：</p> <ul> <li>RDF：Resource Description Framework，即资源描述框架。采用“资源-属性-属性值”的“主谓宾”结构（或称三元组），提供一种框架容器，并通过XML定义了一套形式化的方法，为机器语义理解的结构基础。</li> <li>RDFS：RDFS是RDF的一个扩展，它提供了一些基本的类和属性，以及它们之间的关系。</li> <li>OWL：Web Ontology Language，Web本体语言，它是基于RDF和RDFS的一种更加丰富的知识表示语言。在OWL中，我们可以定义类、属性以及它们的约束和关系。此外，OWL还支持对知识的推理。</li> </ul> <h4 id="22-知识获取">2.2 知识获取</h4> <p>构建好需要的本体模型后，那么就需要把数据构建成对应的模型的输入了。我们知识的来源基本分为以下几类：</p> <ul> <li>私有数据 <ul> <li>企业的文档</li> <li>企业私有的用户数据</li> <li>企业私有的非结构化数据</li> </ul> </li> <li>公有数据 <ul> <li>新闻</li> <li>百科</li> <li>公有语料</li> </ul> </li> </ul> <p>那么对于一些上述这些数据拆分为两大类，来进行<strong>数据处理</strong>：</p> <ul> <li>非结构化数据：一般指的是无任何标识的文本，我们可以采用相关的NLP算法，比如实体识别和关系抽取（或者直接使用事件抽取，这里事件抽取可以参考我之前写的一篇博客）来构建实体关系的三元组。</li> <li>结构化数据：由于本身就是标准化的数据，我们只需要通过D2R服务器将数据库的内容转成RDF的形式。</li> </ul>...<a class="read-more" href="./%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B0%8F%E7%BB%93.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./langchain.html">LLM的应用开发框架——Langchain</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-07-04T08:00:00+08:00">July 4, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-langchain是什么">一. Langchain是什么</h3> <blockquote> <p>Langchain 官网文档：https://python.langchain.com/v0.2/docs/introduction/</p> </blockquote> <h4 id="llm崛起出现了哪些需求">LLM崛起出现了哪些需求？</h4> <ul> <li> <p>格式化输出：希望给的输出格式是json、csv、db格式</p> </li> <li> <p>输出很长的提示词文本：如何总结一本书的内容？</p> </li> <li> <p>多次API调用：两次调用api，前后两次需要结合的</p> </li> <li> <p>外部调用：比如需要进行web 搜索</p> </li> <li> <p>标准化开发</p> </li> <li> <p>快速切换模型：有多个大模型可用，支持代码不变，快速切换</p> </li> </ul> <h3 id="二-langchain支撑llm的应用">二. Langchain支撑LLM的应用</h3> <h4 id="21-支持多种llm">2.1 支持多种LLM</h4> <p>无论是国外的GPT4、LLaMa，还是国内的ChatGLM、Baichuan，都支持调用api和huggingface模型的使用，下面主要介绍HF模型的下载使用。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">huggingface_hub</span> <span class="kn">import</span> <span class="n">snapshot_download</span> <span...<a class="read-more" href="./langchain.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%8E%A8%E7%90%86.html">分布式训练推理Accelerate</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-08-16T23:00:00+08:00">August 16, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<blockquote> <p>分布式训练的加速策略详情可见本人上篇文章《 <a href="https://www.lixiaofei2yy.website/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8">大语言模型的应用及训练</a>》，一般有三种，分别是数据并行，流水线式并行和张量并行，本文主推使用hugging face的accelerate库来进行模型分布式的训练和推理。</p> </blockquote> <h3 id="一-torch常用的分布式训练工具">一. torch常用的分布式训练工具</h3> <h4 id="11-dataparallel">1.1 DataParallel</h4> <p>DP(DataParallel)：实现数据并行方式的分布式训练，采用的是PS(worker-server)模式，<strong>不推荐</strong>。</p> <ul> <li>单进程多线程</li> <li>只能在单机上使用</li> <li>训练速度慢，且由于是<strong>PS模式（存在负载不均衡的问题）</strong>，随着worker的个数增多，训练速度越慢</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/dp111.png" alt="" /></p> <h4 id="12-distributeddataparallel">1.2 DistributedDataParallel</h4> <p>DDP(DistributedDataParallel)：实现数据并行方式的分布式训练，采用的是ring-all-reduce模式。它将<strong>模型复制到每个 GPU 上 ，同时复制了每个dataloader</strong>，并且当 <code class="language-plaintext highlighter-rouge">loss.backward()</code> 被调用进行反向传播的时候，所有这些模型副本的梯度将被同步地平均/下降 (reduce)。这确保每个设备在执行优化器步骤后具有相同的权重。</p> <ul> <li> <p>多进程</p> </li> <li> <p>支持多机多卡</p> </li> <li> <p>训练速度较DP快，ring-all-reduce模式下，所有worker只和自己相邻的两个worker进行通信</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/ddp.png" alt="" /></p> </li> </ul> <h4 id="13-amp">1.3 amp</h4>...<a class="read-more" href="./%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%8E%A8%E7%90%86.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -653,7 +965,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-taskflow的优势和完整的工作流">一. TaskFlow的优势和完整的工作流</h3> <p>TaskFlow是OpenStack开源的Python库，他的优势：</p> <ul> <li>可伸缩</li> <li>简单创建任务级对象</li> <li>任务可插拔</li> <li>支持回滚容错机制</li> </ul> <p>api的文档参考：https://docs.openstack.org/taskflow/ocata/</p> <p>一个完整的taskflow包含了一下几个环节：</p> <ul> <li>创建task</li> <li>声明flow</li> <li>构建engine</li> </ul> <h4 id="11-构建task">1.1 构建task</h4> <p>构建task的方式是继承task类，然后修改其excute方法，这里可以指定任务的返回结果为res，注意还可以改写revert函数来重定义回滚的操作。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">taskflow</span> <span class="kn">import</span> <span class="n">task</span> <span class="k">class</span> <span class="nc">TaskA</span><span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">Task</span><span class="p">):</span> <span class="n">default_provides</span> <span class="o">=</span> <span class="sh">'</span><span class="s">res</span><span class="sh">'</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span> <span class="n">res</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="k">return</span> <span class="n">res</span> <span class="k">def</span> <span class="nf">revert</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">a执行失败。。。</span><span class="sh">"</span><span class="p">)</span> </code></pre></div></div> <h4 id="12-构建flow">1.2 构建flow</h4> <p>在构建完task之后，则是需要定义flow，一般的线性flow的定义如下：</p> <div class="language-python...<a class="read-more" href="./taskflow.html"> read more</a>
+						<h3 id="一-taskflow的优势和完整的工作流">一. TaskFlow的优势和完整的工作流</h3> <p>TaskFlow是OpenStack开源的Python库，他的优势：</p> <ul> <li>可伸缩</li> <li>简单创建任务级对象</li> <li>任务可插拔</li> <li>支持回滚容错机制</li> </ul> <p>api的文档参考：https://docs.openstack.org/taskflow/ocata/</p> <p>一个完整的taskflow包含了一下几个环节：</p> <ul> <li>创建task</li> <li>声明flow</li> <li>构建engine</li> </ul> <h4 id="11-构建task">1.1 构建task</h4> <p>构建task的方式是继承task类，然后修改其excute方法，这里可以指定任务的返回结果为res，注意还可以改写revert函数来重定义回滚的操作。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">taskflow</span> <span class="kn">import</span> <span class="n">task</span> <span class="k">class</span> <span class="nc">TaskA</span><span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">Task</span><span class="p">):</span> <span class="n">default_provides</span> <span class="o">=</span> <span class="sh">'</span><span class="s">res</span><span class="sh">'</span>...<a class="read-more" href="./taskflow.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -692,7 +1004,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-常见的oom">一. 常见的OOM</h3> <h4 id="11-常用的解决方案">1.1 常用的解决方案</h4> <p>我们在使用spark的时候，经常在save数据的时候，都会遇到内存溢出的问题，这通常是由于数据量过大导致的。以下是一些可能的解决方案：</p> <ol> <li>增加分区数：如果数据集非常大，可以尝试增加分区数。可以使用<code class="language-plaintext highlighter-rouge">repartition()</code>或<code class="language-plaintext highlighter-rouge">coalesce()</code>函数来增加分区数。增加分区数可以将数据均匀地分布在更多的节点上，从而减少每个节点上的内存压力。</li> <li>压缩数据：如果数据集包含大量重复的值，可以考虑使用压缩算法来减少内存使用。Pyspark提供了多种压缩算法，如Snappy、Gzip等。可以使用<code class="language-plaintext highlighter-rouge">option("compression", "snappy")</code>来设置压缩算法。</li> <li>增加集群资源：可以考虑增加集群资源。可以增加集群的节点数或增加每个节点的内存。可以通过调整<code class="language-plaintext highlighter-rouge">spark.driver.memory</code>和<code class="language-plaintext highlighter-rouge">spark.executor.memory</code>参数来增加内存分配，特别对于driver而言，最好把内存设置大一些。</li> </ol> <h4 id="12-代码方面的优化">1.2 代码方面的优化</h4> <p>如果以上常用的解决方案依旧无法解决OOM的问题，那么我们可能需要考虑是否需要优化pyspark的代码了</p> <ul> <li>UDF过于复杂：尽可能将结果拆分不同的列，然后再用简单的udf来组合这些列进行计算。</li> <li>多用filter算子：提前将大量数据剔除</li> <li>多用select算子：只保留需要的列，减少内存的使用</li> <li>尽量少用collect、count算子：像这些action算子基本都会把executor的数据全部加载回driver上，导致driver的内存吃紧。</li> <li>当发现在某个udf环节只有一个节点在跑的时候，可以使用.cache()来分布式跑任务。</li> </ul> <h4 id="13-数据倾斜导致的oom和心跳时间超时">1.3 数据倾斜导致的OOM和心跳时间超时</h4> <p>通常我们会发现有些时候，数据本身并没有很大，但是要运行很长时间，而且最终还因为heart beat时间过长或则oom而失败。</p> <p><strong>发生</strong> 数据倾斜一般发生在：</p> <ul> <li>join两个df的时候</li> <li>groupby某一列，然后这一列（包含了a，b，c等元素）中，很不巧，a有非常多（1000），而b和c等元素仅有2个</li> </ul> <p><strong>验证</strong> 这时候我们可以直接通过yarn日志中的shuffer resize/records看到很多excutors中会发现极个别失败的excutor的size非常大（10w个），而其他的excutor的size可能只有10个。那么这个时候无疑是发生数据倾斜了。</p> <p><strong>解决</strong> 这里推荐使用<strong>加盐</strong>处理，比什么加excutor的内存和核数更加有效</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">salted_a</span><span class="sh">"</span><span class="p">,</span> <span class="n">F</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">lit</span><span class="p">(</span><span class="sh">"</span><span class="s">_</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">rand</span><span class="p">()</span> <span...<a class="read-more" href="./pyspark%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"> read more</a>
+						<h3 id="一-常见的oom">一. 常见的OOM</h3> <h4 id="11-常用的解决方案">1.1 常用的解决方案</h4> <p>我们在使用spark的时候，经常在save数据的时候，都会遇到内存溢出的问题，这通常是由于数据量过大导致的。以下是一些可能的解决方案：</p> <ol> <li>增加分区数：如果数据集非常大，可以尝试增加分区数。可以使用<code class="language-plaintext highlighter-rouge">repartition()</code>或<code class="language-plaintext highlighter-rouge">coalesce()</code>函数来增加分区数。增加分区数可以将数据均匀地分布在更多的节点上，从而减少每个节点上的内存压力。</li> <li>压缩数据：如果数据集包含大量重复的值，可以考虑使用压缩算法来减少内存使用。Pyspark提供了多种压缩算法，如Snappy、Gzip等。可以使用<code class="language-plaintext highlighter-rouge">option("compression", "snappy")</code>来设置压缩算法。</li> <li>增加集群资源：可以考虑增加集群资源。可以增加集群的节点数或增加每个节点的内存。可以通过调整<code class="language-plaintext highlighter-rouge">spark.driver.memory</code>和<code class="language-plaintext highlighter-rouge">spark.executor.memory</code>参数来增加内存分配，特别对于driver而言，最好把内存设置大一些。</li> </ol> <h4 id="12-代码方面的优化">1.2 代码方面的优化</h4> <p>如果以上常用的解决方案依旧无法解决OOM的问题，那么我们可能需要考虑是否需要优化pyspark的代码了</p> <ul> <li>UDF过于复杂：尽可能将结果拆分不同的列，然后再用简单的udf来组合这些列进行计算。</li> <li>多用filter算子：提前将大量数据剔除</li> <li>多用select算子：只保留需要的列，减少内存的使用</li> <li>尽量少用collect、count算子：像这些action算子基本都会把executor的数据全部加载回driver上，导致driver的内存吃紧。</li> <li>当发现在某个udf环节只有一个节点在跑的时候，可以使用.cache()来分布式跑任务。</li> </ul> <h4 id="13-数据倾斜导致的oom和心跳时间超时">1.3 数据倾斜导致的OOM和心跳时间超时</h4> <p>通常我们会发现有些时候，数据本身并没有很大，但是要运行很长时间，而且最终还因为heart beat时间过长或则oom而失败。</p> <p><strong>发生</strong> 数据倾斜一般发生在：</p> <ul> <li>join两个df的时候</li> <li>groupby某一列，然后这一列（包含了a，b，c等元素）中，很不巧，a有非常多（1000），而b和c等元素仅有2个</li> </ul> <p><strong>验证</strong> 这时候我们可以直接通过yarn日志中的shuffer resize/records看到很多excutors中会发现极个别失败的excutor的size非常大（10w个），而其他的excutor的size可能只有10个。那么这个时候无疑是发生数据倾斜了。</p> <p><strong>解决</strong> 这里推荐使用<strong>加盐</strong>处理，比什么加excutor的内存和核数更加有效</p>...<a class="read-more" href="./pyspark%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -731,7 +1043,124 @@
   </span>
 
 					<div class="post-excerpt">
-						<blockquote> <p>由于工作基本基于python，所以本文主要记录配置远程linux的python环境</p> </blockquote> <h3 id="一-定义docker位置">一. 定义Docker位置</h3> <blockquote> <p>为什么要修改docker存储的位置？ 因为往往docker的缓存过大，导致最后打的镜像多了，最后占满空间了</p> </blockquote> <p>步骤：</p> <ul> <li>获取当前docker所在存储位置：<code class="language-plaintext highlighter-rouge">docker info | grep "Docker Root Dir"</code></li> <li>停止docker服务：<code class="language-plaintext highlighter-rouge">systemctl stop docker</code></li> <li>移动整个路径至新路径：<code class="language-plaintext highlighter-rouge">mv /var/lib/docker /data/docker</code></li> <li>创建软连接：<code class="language-plaintext highlighter-rouge">ln -s /data/docker /var/lib/docker</code></li> <li>重启docker服务：<code class="language-plaintext highlighter-rouge">systemctl start docker</code></li> <li>可以通过第一个命令查看现在的docker存储路径</li> </ul> <h3 id="二-安装python3或则conda">二. 安装python3或则conda</h3> <blockquote> <p>这里推荐安装conda，环境切换方便</p> </blockquote> <h4 id="21-python3的安装">2.1 python3的安装</h4> <h5 id="211-前期准备">2.1.1 前期准备</h5> <blockquote> <p>注意这里需要将openssl升级到1.0.2，因为不然pip3 安装包的时候会出现无法访问http请求。</p> </blockquote> <p>步骤：</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#安装openssl 1.0.2r版本</span> <span class="nb">cd</span> /home/install wget http://www.openssl.org/source/openssl-1.0.2r.tar.gz <span class="c">#下载openssl包</span> <span class="nb">tar</span> <span class="nt">-zxvf</span> openssl-1.0.2r.tar.gz <span class="c">#解压</span> <span class="nb">cd </span>openssl-1.0.2r <span class="c">#进入文件夹</span> ./config shared zlib <span class="c">#配置</span> make <span class="o">&amp;&amp;</span> make <span class="nb">install</span> <span class="c">#解析和安装</span>...<a class="read-more" href="./%E9%85%8D%E7%BD%AEpython%E8%BF%9C%E7%A8%8B%E7%8E%AF%E5%A2%83.html"> read more</a>
+						<blockquote> <p>由于工作基本基于python，所以本文主要记录配置远程linux的python环境</p> </blockquote> <h3 id="一-定义docker位置">一. 定义Docker位置</h3> <blockquote> <p>为什么要修改docker存储的位置？ 因为往往docker的缓存过大，导致最后打的镜像多了，最后占满空间了</p> </blockquote> <p>步骤：</p> <ul> <li>获取当前docker所在存储位置：<code class="language-plaintext highlighter-rouge">docker info | grep "Docker Root Dir"</code></li> <li>停止docker服务：<code class="language-plaintext highlighter-rouge">systemctl stop docker</code></li> <li>移动整个路径至新路径：<code class="language-plaintext highlighter-rouge">mv /var/lib/docker /data/docker</code></li> <li>创建软连接：<code class="language-plaintext highlighter-rouge">ln -s /data/docker /var/lib/docker</code></li> <li>重启docker服务：<code class="language-plaintext highlighter-rouge">systemctl start docker</code></li> <li>可以通过第一个命令查看现在的docker存储路径</li> </ul> <h3 id="二-安装python3或则conda">二. 安装python3或则conda</h3> <blockquote> <p>这里推荐安装conda，环境切换方便</p> </blockquote>...<a class="read-more" href="./%E9%85%8D%E7%BD%AEpython%E8%BF%9C%E7%A8%8B%E7%8E%AF%E5%A2%83.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./pyspark%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html">pyspark使用心得</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-12-27T08:00:00+08:00">December 27, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-安装">一. 安装</h3> <blockquote> <p>要使用PySpark，本地要有Java开发环境。</p> </blockquote> <ul> <li> <p>Java 8 : <code class="language-plaintext highlighter-rouge">brew install --cask homebrew/cask-versions/adoptopenjdk8</code></p> </li> <li> <p>pyspark安装：<code class="language-plaintext highlighter-rouge">pip install pyspark</code></p> </li> </ul> <h3 id="二-和pandas之间的代码使用">二. 和pandas之间的代码使用</h3> <h4 id="21-读取csv">2.1 读取csv</h4> <blockquote> <p>spark在读取csv上优势就很明显了，能直接快速读取几个G的大文件</p> </blockquote> <p>pandas读取大的csv，只能将其拆分为多个chunk进行读取，假如我们直接读取csv，可能会直接报内存不够导致进程被干掉。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span> <span class="n">df</span>...<a class="read-more" href="./pyspark%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./docker%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html">docker使用总结</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-01-10T08:00:00+08:00">January 10, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-定义">一. 定义</h3> <p>Docker的特点：</p> <ul> <li>是一个工具，能快速方便的创建、运行、部署软件。</li> <li>能将一个软件及其依赖打包成一个单独的库，方便移植。</li> <li>能解决不同application之间版本不兼容的问题（比如一个是python2环境，一个是python3环境）</li> <li>相较于虚拟机更为轻量，占用资源少，资源利用率高，运行速度快。</li> </ul> <p>Docker的应用：</p> <ul> <li>提供一次性的环境</li> <li>可组建微服务架构，大程序更方便扩容、稳定。</li> </ul> <h3 id="二-docker使用流程">二. docker使用流程</h3> <h4 id="21-docker的流程">2.1 docker的流程</h4> <p>整个docker的使用流程基本是：编写docker file ==&gt; 创建image(镜像) ==&gt; 实例化为container(容器) ==&gt; 跑container。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/docker_1.png" alt="" /></p> <h4 id="22-拉取使用的例子">2.2 拉取使用的例子</h4> <blockquote> <p>这里用的是doccano这个NLP文本标注工具作为例子，记录下docker在使用该镜像时遇到的问题和总结。</p> </blockquote> <p>使用过程常用的命令：</p> <ol> <li>拉取官方的一个doccano镜像：<code class="language-plaintext highlighter-rouge">docker pull doccano/doccano</code></li> <li>查看本地镜像列表：<code class="language-plaintext highlighter-rouge">docker image...<a class="read-more" href="./docker%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./Selenium%E5%92%8Cwebscraper%E7%88%AC%E8%99%AB.html">Selenium和webscraper爬虫</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-12-24T08:00:00+08:00">December 24, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-selenium爬虫">一. Selenium爬虫</h3> <h4 id="1-安装">1. 安装</h4> <blockquote> <p>Selenium 本身是一个自动化测试的工具，模拟人为在浏览器上进行操作，比如点击和下拉等等。</p> </blockquote> <p>安装的环境：</p> <ul> <li>python环境</li> <li>pip安装Selenium包：<code class="language-plaintext highlighter-rouge">pip install selenium</code></li> <li>chrome浏览器驱动：去<a href="https://chromedriver.chromium.org/downloads">官网</a>下载自己电脑已安装的浏览器所在的版本驱动</li> </ul> <p>我这边的chrome驱动装的是mac版本的，这里需要将其路径放到mac的环境变量中，下载后放到了<code class="language-plaintext highlighter-rouge">/usr/local/chromedriver</code>，</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.profile export PATH="$PATH:/usr/local/chromedriver" source ~/.profile </code></pre></div></div> <p>可以在控制台打<code class="language-plaintext highlighter-rouge">chromedriver</code>测试是否ok。</p> <h4 id="2-使用">2. 使用</h4> <blockquote> <p>这里的例子是的主要任务是：将给的头条url所在的公众号遍历其30条的文章标题和链接。</p> </blockquote> <p>所以我们需要拆解为2步：</p> <ul> <li>打开给定的url，并点击头条的公众号。</li> <li>另开一个页面，找到公众号下前30条文章的标题和链接（这里需要下拉才能看到后面的文章）。</li> </ul> <p>第一步：实例一个浏览器驱动，并找到公众号的XPath（这里推荐一个测试XPath的<strong>浏览器插件XPath...<a class="read-more" href="./Selenium%E5%92%8Cwebscraper%E7%88%AC%E8%99%AB.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -780,43 +1209,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-必须的安装">一. 必须的安装</h3>
-<ul>
-  <li>picgo：强大的能快速创建图片url的工具（支持多种图床），简直不要太好用。我们可以直接在官网下载相应版本的<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">picgo</a>，我这里选用的是windows版本的，当然也有mac版本的。</li>
-  <li>git：这里推荐用scoop进行安装<code class="language-plaintext highlighter-rouge">scoop install git</code></li>
-</ul>
-
-<h3 id="二-搭建属于自己的github图床">二. 搭建属于自己的github图床</h3>
-<h4 id="21-新建一个共有仓库">2.1 新建一个共有仓库</h4>
-
-<p>首先，要搭建一个github图床，我们需要创建一个<strong>共有仓库</strong>（注意：如果是创建私有仓库根本无法显示图片出来）来存储上传的图片。
-<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/new-rep.jpg" alt="" /></p>
-
-<h4 id="22-创建admin分支">2.2 创建admin分支</h4>
-<p>这里如果不会用git创建分支的同学可参考我上一篇文章<a href="https://www.lixiaofei2yy.website/git%E5%91%BD%E4%BB%A4">GIT命令学习</a>。</p>
-
-<p>这里注意最好选择帮你添加一个README.md文件。</p>
-<ul>
-  <li>克隆刚创建的远程仓库：<code class="language-plaintext highlighter-rouge">git clone XX.git</code></li>
-  <li>创建并切换到admin分支：<code class="language-plaintext highlighter-rouge">git checkout -b admin</code></li>
-  <li>向远端仓库推送admin分支：<code class="language-plaintext highlighter-rouge">git push orgin admin</code></li>
-</ul>
-
-<p>这时，我们就可以在仓库中看到admin分支了，如下图。
-<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/admin.jpg" alt="" /></p>
-
-<h4 id="23-设置token">2.3 设置token</h4>
-<p>这里我们还需要设置token，直接点击该<a href="https://github.com/settings/tokens">链接</a>即可。注意，这里需要将repo选择。如下图所示。
-<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/token.jpg" alt="" />
-然后点击generate token就完成了。</p>
-
-<h3 id="三-在picgo下配置github图床">三. 在picgo下配置github图床</h3>
-<p>记住上面刚刚配置好的token和仓库名字及分支名admin，按照下图进行配置即可。
-<img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/picgo.jpg" alt="" /></p>
-
-<p>至此，我们就可以愉快的上传图片咯！</p>
-
-<a class="read-more" href="./picgo%E4%B8%8B%E9%85%8D%E7%BD%AEgithub%E5%9B%BE%E5%BA%8A.html"> read more</a>
+						<h3 id="一-必须的安装">一. 必须的安装</h3> <ul> <li>picgo：强大的能快速创建图片url的工具（支持多种图床），简直不要太好用。我们可以直接在官网下载相应版本的<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">picgo</a>，我这里选用的是windows版本的，当然也有mac版本的。</li> <li>git：这里推荐用scoop进行安装<code class="language-plaintext highlighter-rouge">scoop install git</code></li> </ul> <h3 id="二-搭建属于自己的github图床">二. 搭建属于自己的github图床</h3> <h4 id="21-新建一个共有仓库">2.1 新建一个共有仓库</h4> <p>首先，要搭建一个github图床，我们需要创建一个<strong>共有仓库</strong>（注意：如果是创建私有仓库根本无法显示图片出来）来存储上传的图片。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/new-rep.jpg" alt="" /></p> <h4 id="22-创建admin分支">2.2 创建admin分支</h4> <p>这里如果不会用git创建分支的同学可参考我上一篇文章<a href="https://www.lixiaofei2yy.website/git%E5%91%BD%E4%BB%A4">GIT命令学习</a>。</p> <p>这里注意最好选择帮你添加一个README.md文件。</p> <ul> <li>克隆刚创建的远程仓库：<code class="language-plaintext highlighter-rouge">git clone XX.git</code></li> <li>创建并切换到admin分支：<code class="language-plaintext highlighter-rouge">git checkout -b admin</code></li> <li>向远端仓库推送admin分支：<code class="language-plaintext highlighter-rouge">git push orgin admin</code></li> </ul> <p>这时，我们就可以在仓库中看到admin分支了，如下图。 <img...<a class="read-more" href="./picgo%E4%B8%8B%E9%85%8D%E7%BD%AEgithub%E5%9B%BE%E5%BA%8A.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -855,7 +1248,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-更换jekyll主题">一. 更换Jekyll主题</h3> <ul> <li>之前用的是jekyll主题：<a href="https://github.com/artemsheludko/flexible-jekyll">Flexible-Jekyll</a>，如下图所示：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jaster_1.jpg" alt="" /></p> <ul> <li>觉得有点过于单调和简单了，于是找到了命中注定：<a href="https://github.com/jekyller/jasper2">Jasper2</a>,如下图所示：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jaster_2.jpg" alt="" /></p> <blockquote> <p>如果也想使用这个Jasper2主题的话，最好多读读其作者的readme哦！</p> </blockquote> <h4 id="11-在git仓库中推送生成好的html文件">1.1 在git仓库中推送生成好的html文件</h4> <p>​ 克隆Jasper2项目（master分支）到自己本地，然后利用jekyll开启本地预览模式：<code class="language-plaintext highlighter-rouge">bundle exec jekyll server</code>，这里你会发现在本地的上级目录下生成一个<code class="language-plaintext highlighter-rouge">jasper2-pages</code>文件夹。</p> <ul> <li>如果是和我一样是利用<code class="language-plaintext highlighter-rouge">username.github.io</code>建立的仓库，那么就直接在项目中新建一个<code class="language-plaintext highlighter-rouge">_site</code>文件夹，并将<code class="language-plaintext highlighter-rouge">jasper2-pages</code>内容复制到该目录下即可。</li> <li>如果是利用<code class="language-plaintext highlighter-rouge">github pages</code>来展示自己的项目的话，那就建立一个<code class="language-plaintext highlighter-rouge">gh-pages </code>分支，同时将<code class="language-plaintext highlighter-rouge">jasper2-pages</code>内容复制到该目录下即可。</li> </ul> <p>注意：每次跟新仓库代码后，都需要重新生成一次，并替换掉<code class="language-plaintext highlighter-rouge">_site</code>文件夹内容！</p> <h4 id="12-内容替换">1.2 内容替换</h4> <ul> <li><code class="language-plaintext highlighter-rouge">_config.yml</code>：用来修改主页上的一些个人信息</li> <li><code class="language-plaintext highlighter-rouge">about/index.md</code>：修改关于的个人说明</li> <li><code class="language-plaintext highlighter-rouge">_post</code>：将其中的文章替换掉自己文章</li> </ul> <h4 id="13-前端页面的修改">1.3 前端页面的修改</h4> <blockquote> <p>ps:本人也是个前端新手，也是根据李小肥的指导才知道怎么修改前端的，给你们撒狗粮，哈哈哈！</p> </blockquote> <p>这里就不讲修改细节部分了，主要讲述如何快速找到想要修改的代码，毕竟授人以鱼不如授人以渔嘛！</p> <ul> <li>进入到jasper2的<a href="https://jekyller.github.io/jasper2/">展示主页</a>，右键页面中的facebook图标点击<code class="language-plaintext highlighter-rouge">检查</code>,就可以看到以下界面：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jaster_3.jpg" alt="" /></p> <ul> <li>在这个check界面上可以看到有个<code class="language-plaintext highlighter-rouge">social-link social-link-fb</code>类，那么如果我们想要修改这些内容，可以直接在项目代码中全文搜索，就可以在<code class="language-plaintext highlighter-rouge">author.html</code>中找到咯，但是这和我们想修改图标或者是内容不符啊，那么就往这个类的上面继续找<code class="language-plaintext highlighter-rouge">site-nav-right</code>,这里就指向了我们想要修改的图标。</li> <li>如果还想修改css文件呢，可以看到上图中<code class="language-plaintext highlighter-rouge">Styles</code>下面中就是，还可以直接在这里修改，就可以同时在网页中预览哦！如何找这个css文件呢，旁边的<code class="language-plaintext highlighter-rouge">screen.css:279</code>就是，而且连行号都给你了！</li>...<a class="read-more" href="./Jasper2%E5%8D%9A%E5%AE%A2%E8%B7%9F%E6%96%B0.html"> read more</a>
+						<h3 id="一-更换jekyll主题">一. 更换Jekyll主题</h3> <ul> <li>之前用的是jekyll主题：<a href="https://github.com/artemsheludko/flexible-jekyll">Flexible-Jekyll</a>，如下图所示：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jaster_1.jpg" alt="" /></p> <ul> <li>觉得有点过于单调和简单了，于是找到了命中注定：<a href="https://github.com/jekyller/jasper2">Jasper2</a>,如下图所示：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jaster_2.jpg" alt="" /></p> <blockquote> <p>如果也想使用这个Jasper2主题的话，最好多读读其作者的readme哦！</p> </blockquote> <h4 id="11-在git仓库中推送生成好的html文件">1.1 在git仓库中推送生成好的html文件</h4> <p>​ 克隆Jasper2项目（master分支）到自己本地，然后利用jekyll开启本地预览模式：<code class="language-plaintext highlighter-rouge">bundle exec jekyll server</code>，这里你会发现在本地的上级目录下生成一个<code class="language-plaintext highlighter-rouge">jasper2-pages</code>文件夹。</p> <ul> <li>如果是和我一样是利用<code class="language-plaintext highlighter-rouge">username.github.io</code>建立的仓库，那么就直接在项目中新建一个<code class="language-plaintext highlighter-rouge">_site</code>文件夹，并将<code class="language-plaintext highlighter-rouge">jasper2-pages</code>内容复制到该目录下即可。</li> <li>如果是利用<code class="language-plaintext highlighter-rouge">github pages</code>来展示自己的项目的话，那就建立一个<code class="language-plaintext highlighter-rouge">gh-pages </code>分支，同时将<code class="language-plaintext...<a class="read-more" href="./Jasper2%E5%8D%9A%E5%AE%A2%E8%B7%9F%E6%96%B0.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -894,7 +1287,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-搭建环境">一. 搭建环境</h3> <h4 id="11-下载软件">1.1 下载软件</h4> <ul> <li><a href="https://www.jekyll.com.cn/">jekyll</a>：这个是将纯文本转化为静态网站和博客，使用gem安装下载：<code class="language-plaintext highlighter-rouge">gem install bundler jekyll</code>。</li> <li><a href="">github pages</a>：免费开源，并且可以自动生成域名，自己去构建一个属于自己的github账号和新建一个仓库（名字为：<code class="language-plaintext highlighter-rouge">XX.github.io</code>，这里<code class="language-plaintext highlighter-rouge">XX</code>就是你自己的账号名称）</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jek_1.jpg" alt="" /></p> <ul> <li>mac或者linux或者Windows平台。</li> </ul> <h4 id="12-选择一个适合自己的博客主题">1.2 选择一个适合自己的博客主题</h4> <blockquote> <p>jekyll主题：http://jekyllthemes.org/</p> <p>jekyll插件：http://www.jekyll-plugins.com/</p> </blockquote> <ul> <li>本人选择的jekyll主题：<a href="https://github.com/artemsheludko/flexible-jekyll">Flexible-Jekyll</a>，如下图所示：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jek_2.jpg" alt="" /></p> <ul> <li>选择一个地方存放下载的主题（直接git下载）：<code class="language-plaintext highlighter-rouge">git clone https://github.com/artemsheludko/flexible-jekyll </code></li> <li>这里直接在本地利用jekyll生成一个网页进行测试和调试：<code class="language-plaintext highlighter-rouge">bundle exec jekyll server</code>或者是<code class="language-plaintext highlighter-rouge">bundle exec jekyll s</code>，这里会生成一个本地的博客地址：<code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/</code>，可以直接查看</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jek_3.jpg" alt="" /></p> <h4 id="13-将主题放入自己的仓库中">1.3 将主题放入自己的仓库中</h4> <ul> <li>git下载创建好的xx.github.io该仓库到自己本地：<code class="language-plaintext highlighter-rouge">git clone https://github.com/xx/xx.github.io.git</code></li> <li>将之前下载的主题放到自己创建的github.io这个仓库中</li> <li>git上传修改的地方： <ul> <li>git添加修改的地方：<code class="language-plaintext highlighter-rouge">git add .</code></li> <li>git提交：<code class="language-plaintext highlighter-rouge">git commit -m "修改"</code></li> <li>git推送：<code class="language-plaintext highlighter-rouge">git push</code></li> </ul> </li> <li>这里可以直接在网页上打开<code class="language-plaintext...<a class="read-more" href="./Mac%E4%B8%8B%E5%88%A9%E7%94%A8jekyll%E5%92%8Cgithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html"> read more</a>
+						<h3 id="一-搭建环境">一. 搭建环境</h3> <h4 id="11-下载软件">1.1 下载软件</h4> <ul> <li><a href="https://www.jekyll.com.cn/">jekyll</a>：这个是将纯文本转化为静态网站和博客，使用gem安装下载：<code class="language-plaintext highlighter-rouge">gem install bundler jekyll</code>。</li> <li><a href="">github pages</a>：免费开源，并且可以自动生成域名，自己去构建一个属于自己的github账号和新建一个仓库（名字为：<code class="language-plaintext highlighter-rouge">XX.github.io</code>，这里<code class="language-plaintext highlighter-rouge">XX</code>就是你自己的账号名称）</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jek_1.jpg" alt="" /></p> <ul> <li>mac或者linux或者Windows平台。</li> </ul> <h4 id="12-选择一个适合自己的博客主题">1.2 选择一个适合自己的博客主题</h4> <blockquote> <p>jekyll主题：http://jekyllthemes.org/</p> <p>jekyll插件：http://www.jekyll-plugins.com/</p> </blockquote> <ul> <li>本人选择的jekyll主题：<a href="https://github.com/artemsheludko/flexible-jekyll">Flexible-Jekyll</a>，如下图所示：</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/jek_2.jpg" alt="" /></p> <ul> <li>选择一个地方存放下载的主题（直接git下载）：<code class="language-plaintext highlighter-rouge">git clone https://github.com/artemsheludko/flexible-jekyll...<a class="read-more" href="./Mac%E4%B8%8B%E5%88%A9%E7%94%A8jekyll%E5%92%8Cgithub-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -943,7 +1336,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一--torch的图神经网络库pyg">一. Torch的图神经网络库pyG</h3> <blockquote> <p>torch_geometric 官方文档：https://pytorch-geometric.readthedocs.io/en/latest/index.html</p> </blockquote> <h4 id="11-安装及使用">1.1 安装及使用</h4> <p>这里参考官网的安装过程。</p> <ol> <li> <p>确定自己安装的pytorch版本：<code class="language-plaintext highlighter-rouge">pip list</code>进行查看，例如本人的torch版本为<code class="language-plaintext highlighter-rouge">1.6.0+cu101</code>（这里的<code class="language-plaintext highlighter-rouge">cu101</code>是指cuda10.1）</p> </li> <li> <p>安装相关的第三方包，这里注意要匹配上面的torch版本，因此：<code class="language-plaintext highlighter-rouge">${TORCH} = 1.6.0</code>，<code class="language-plaintext highlighter-rouge">${CUDA} = cu101</code></p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--no-index</span> torch-scatter <span class="nt">-f</span> https://pytorch-geometric.com/whl/torch-<span class="k">${</span><span class="nv">TORCH</span><span class="k">}</span>+<span class="k">${</span><span class="nv">CUDA</span><span class="k">}</span>.html pip <span class="nb">install</span> <span class="nt">--no-index</span> torch-sparse <span class="nt">-f</span> https://pytorch-geometric.com/whl/torch-<span class="k">${</span><span class="nv">TORCH</span><span class="k">}</span>+<span class="k">${</span><span class="nv">CUDA</span><span class="k">}</span>.html pip <span class="nb">install</span> <span class="nt">--no-index</span> torch-cluster <span class="nt">-f</span> https://pytorch-geometric.com/whl/torch-<span class="k">${</span><span class="nv">TORCH</span><span class="k">}</span>+<span class="k">${</span><span class="nv">CUDA</span><span class="k">}</span>.html pip <span class="nb">install</span> <span class="nt">--no-index</span> torch-spline-conv <span class="nt">-f</span> https://pytorch-geometric.com/whl/torch-<span class="k">${</span><span class="nv">TORCH</span><span class="k">}</span>+<span class="k">${</span><span class="nv">CUDA</span><span class="k">}</span>.html pip <span class="nb">install </span>torch-geometric...<a class="read-more" href="./GCN%E5%9C%A8%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.html"> read more</a>
+						<h3 id="一--torch的图神经网络库pyg">一. Torch的图神经网络库pyG</h3> <blockquote> <p>torch_geometric 官方文档：https://pytorch-geometric.readthedocs.io/en/latest/index.html</p> </blockquote> <h4 id="11-安装及使用">1.1 安装及使用</h4> <p>这里参考官网的安装过程。</p> <ol> <li> <p>确定自己安装的pytorch版本：<code class="language-plaintext highlighter-rouge">pip list</code>进行查看，例如本人的torch版本为<code class="language-plaintext highlighter-rouge">1.6.0+cu101</code>（这里的<code class="language-plaintext highlighter-rouge">cu101</code>是指cuda10.1）</p> </li> <li> <p>安装相关的第三方包，这里注意要匹配上面的torch版本，因此：<code class="language-plaintext highlighter-rouge">${TORCH} = 1.6.0</code>，<code class="language-plaintext highlighter-rouge">${CUDA} = cu101</code></p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--no-index</span> torch-scatter <span class="nt">-f</span> https://pytorch-geometric.com/whl/torch-<span class="k">${</span><span class="nv">TORCH</span><span class="k">}</span>+<span class="k">${</span><span class="nv">CUDA</span><span...<a class="read-more" href="./GCN%E5%9C%A8%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -982,7 +1375,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-环境准备">一. 环境准备</h3> <ul> <li> <p>neo4j python包：<code class="language-plaintext highlighter-rouge">pip3 install neo4j</code> 和<code class="language-plaintext highlighter-rouge">pip3 install py2neo</code>（这里的py2neo 是python对Neo4j的驱动库,同时这里必须是py2neo版本必须是最新版4，不然会报连接数据库的错误，老版本不兼容的问题）</p> </li> <li> <p>Java8：这里由于neo4j 数据库是依赖于java8的。</p> </li> <li> <p><a href="[ftp://neo4j.55555.io/neo4j-chs/3.5.14/](ftp://neo4j.55555.io/neo4j-chs/3.5.14/)">Neo4j_3.5.14</a>：这里由于neo4j 在中国地区下载慢，并且neo4j3.X版本才支持java8，到4.0版本就是需要java11了。</p> </li> <li> <p><a href="[ftp://neo4j.55555.io/neo4j-desktop/1.2.4/](ftp://neo4j.55555.io/neo4j-desktop/1.2.4/)">Neo4j_Desktop</a>：neo4j的桌面端（可以远程数据库和连接本地数据库，同时包含很多额外的扩展）</p> </li> </ul> <h3 id="二-连接本地图数据库">二. 连接本地图数据库</h3> <blockquote> <p>py2neo V4 官方文档：https://py2neo.org/v4/index.html</p> </blockquote> <p>Neo4j 一共有3种连接方式：</p> <ul> <li>Bolt：bolt://localhost:11005</li> <li>HTTP：http://localhost:11006</li> <li>HTTPS：https://localhost:11007</li> </ul> <p>这里可以通过Neo4j Desktop来查看新建的图数据库（同时设置密码）</p> <h4 id="21-neo4j数据库语法cypher">2.1 Neo4j数据库语法Cypher</h4> <ul> <li>创建 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create (:Movie {title:"ABC",released:2016}) return p; </code></pre></div> </div> </li> <li>查询</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>match (p: Person) return p; 查询Person类型的所有数据 match (p: Person {name:"sun"}) return p; 查询名字等于sun的人 match( p1: Person {name:"sun"} )-[rel:friend]-&gt;(p2) return p2.name , p2.age 查询sun的朋友的名字和年龄 match (old) ... create (new) create (old)-[rel:dr]-&gt;(new)...<a class="read-more" href="./Neo4j%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E5%9B%BE%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%AE%97%E6%B3%95%E7%BB%93%E5%90%88.html"> read more</a>
+						<h3 id="一-环境准备">一. 环境准备</h3> <ul> <li> <p>neo4j python包：<code class="language-plaintext highlighter-rouge">pip3 install neo4j</code> 和<code class="language-plaintext highlighter-rouge">pip3 install py2neo</code>（这里的py2neo 是python对Neo4j的驱动库,同时这里必须是py2neo版本必须是最新版4，不然会报连接数据库的错误，老版本不兼容的问题）</p> </li> <li> <p>Java8：这里由于neo4j 数据库是依赖于java8的。</p> </li> <li> <p><a href="[ftp://neo4j.55555.io/neo4j-chs/3.5.14/](ftp://neo4j.55555.io/neo4j-chs/3.5.14/)">Neo4j_3.5.14</a>：这里由于neo4j 在中国地区下载慢，并且neo4j3.X版本才支持java8，到4.0版本就是需要java11了。</p> </li> <li> <p><a href="[ftp://neo4j.55555.io/neo4j-desktop/1.2.4/](ftp://neo4j.55555.io/neo4j-desktop/1.2.4/)">Neo4j_Desktop</a>：neo4j的桌面端（可以远程数据库和连接本地数据库，同时包含很多额外的扩展）</p> </li> </ul> <h3 id="二-连接本地图数据库">二. 连接本地图数据库</h3> <blockquote> <p>py2neo V4 官方文档：https://py2neo.org/v4/index.html</p> </blockquote> <p>Neo4j 一共有3种连接方式：</p> <ul> <li>Bolt：bolt://localhost:11005</li> <li>HTTP：http://localhost:11006</li> <li>HTTPS：https://localhost:11007</li> </ul> <p>这里可以通过Neo4j Desktop来查看新建的图数据库（同时设置密码）</p> <h4...<a class="read-more" href="./Neo4j%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E5%9B%BE%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%AE%97%E6%B3%95%E7%BB%93%E5%90%88.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1031,7 +1424,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-定义">一. 定义</h3> <p>知识图谱是一种二元的图网络，用以描述客观世界中的实体信息及其相互关系规律的知识化体系。它的基本组成单元包括：</p> <ul> <li>实体-关系-实体</li> <li>实体-属性-属性值</li> </ul> <h3 id="二-知识图谱的构建">二. 知识图谱的构建</h3> <h4 id="21-知识建模">2.1 知识建模</h4> <p>对于构建知识图谱的时候，一般我们都是针对所在的特定领域进行建模，所以一般称为“本体建模”或者“领域建模”。</p> <p>这里构建本体模型一般分为3类技术：</p> <ul> <li>RDF：Resource Description Framework，即资源描述框架。采用“资源-属性-属性值”的“主谓宾”结构（或称三元组），提供一种框架容器，并通过XML定义了一套形式化的方法，为机器语义理解的结构基础。</li> <li>RDFS：RDFS是RDF的一个扩展，它提供了一些基本的类和属性，以及它们之间的关系。</li> <li>OWL：Web Ontology Language，Web本体语言，它是基于RDF和RDFS的一种更加丰富的知识表示语言。在OWL中，我们可以定义类、属性以及它们的约束和关系。此外，OWL还支持对知识的推理。</li> </ul> <h4 id="22-知识获取">2.2 知识获取</h4> <p>构建好需要的本体模型后，那么就需要把数据构建成对应的模型的输入了。我们知识的来源基本分为以下几类：</p> <ul> <li>私有数据 <ul> <li>企业的文档</li> <li>企业私有的用户数据</li> <li>企业私有的非结构化数据</li> </ul> </li> <li>公有数据 <ul> <li>新闻</li> <li>百科</li> <li>公有语料</li> </ul> </li> </ul> <p>那么对于一些上述这些数据拆分为两大类，来进行<strong>数据处理</strong>：</p> <ul> <li>非结构化数据：一般指的是无任何标识的文本，我们可以采用相关的NLP算法，比如实体识别和关系抽取（或者直接使用事件抽取，这里事件抽取可以参考我之前写的一篇博客）来构建实体关系的三元组。</li> <li>结构化数据：由于本身就是标准化的数据，我们只需要通过D2R服务器将数据库的内容转成RDF的形式。</li> </ul> <h4 id="23-知识融合">2.3 知识融合</h4> <blockquote> <p>知识融合是将不同来源的知识整合到一起的过程，用以解决知识的冲突和重复。</p> </blockquote> <p>以下是基于知识融合步骤：</p> <ol> <li>实体识别和链接：首先需要识别出不同数据源的相同实体，并将其链接。比如这里的“Tesla”和“特斯拉”应该识别并链接为同一实体。</li> <li>重复实体的合并：可以基于文本相似度来将不同数据源的重复实体进行合并</li> <li>关系融合：识别并合并描述相同实体之间的关系。</li> </ol> <h4 id="24-知识存储">2.4 知识存储</h4> <p>一般来说，会将知识利用图的形式进行存储，因此，我们需要将抽取的实体关系构建成图的形式：</p> <ul> <li>图的节点：实体</li> <li>图的边：关系</li> </ul> <p>图的存储一般使用的是Neo4j图数据库，据说其图的搜索的性能比mysql快1000倍！</p> <h4 id="25-知识计算">2.5 知识计算</h4> <blockquote> <p>知识计算是基于已构建的知识图谱进行能力输出的过程，它以图谱质量提升、潜在关系挖掘与补全、知识统计与知识推理作为主要研究内容。</p> </blockquote> <p>基于图论的相关挖掘算法：</p> <ul> <li>图匹配</li> <li>图查询</li> <li>频繁子图</li> <li>图聚类</li> </ul> <p>知识推理是指从知识库中已有的实体关系数据出发，进行计算机推理，建立实体间的新关联，从而拓展和丰富知识网络。以下是基于知识推理的计算方法：</p> <ul> <li>JENA：最常见的OWL推理工具是Jena，Jena2支持基于规则的简单推理，它的推理机制支持将推理器（inference reasoners）导入Jena，创建模型时将推理器与模型关联以实现推理。</li> <li>JESS：使用规则引擎进行推理，同 大多数专家系统工具一样，Jess的核心也是由事实库、规则库、推理机三大部分组成，并采用产生式规则作为基本的知识表达模式。</li> <li>ProLog：Prolog作为一种声明式逻辑编程语言，非常适合用于实现专家系统中的知识表示和推理。专家系统通过模拟人类专家的知识和决策过程来解决特定领域的复杂问题。在专家系统中，知识通常以事实（facts）和规则（rules）的形式表示，而Prolog的逻辑声明特性使得它成为实现专家系统的理想选择。</li> <li>DataLog:是一种基于逻辑的编程语言。它是一阶谓词逻辑中Horn子句逻辑的一种受限形式，只允许变量或常量作为谓词的自变元，不允许函数作为谓词的自变元。Datalog的语句由事实和规则组成，同Prolog一样，它可以实现对知识库的演绎推理，即可以从已知事实中根据跟着推理得到新的事实。</li> </ul> <h3 id="三-知识图谱的应用">三. 知识图谱的应用</h3> <h4 id="31-安防领域">3.1 安防领域</h4> <p>对于传销组织而言，其实其特征信息是潜藏在通话网络中，我们可以利用构建通话网络的图谱，利用子图识别和匹配的挖掘手段找到十分特殊的传销子图。</p>...<a class="read-more" href="./%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B0%8F%E7%BB%93.html"> read more</a>
+						<h3 id="一-定义">一. 定义</h3> <p>知识图谱是一种二元的图网络，用以描述客观世界中的实体信息及其相互关系规律的知识化体系。它的基本组成单元包括：</p> <ul> <li>实体-关系-实体</li> <li>实体-属性-属性值</li> </ul> <h3 id="二-知识图谱的构建">二. 知识图谱的构建</h3> <h4 id="21-知识建模">2.1 知识建模</h4> <p>对于构建知识图谱的时候，一般我们都是针对所在的特定领域进行建模，所以一般称为“本体建模”或者“领域建模”。</p> <p>这里构建本体模型一般分为3类技术：</p> <ul> <li>RDF：Resource Description Framework，即资源描述框架。采用“资源-属性-属性值”的“主谓宾”结构（或称三元组），提供一种框架容器，并通过XML定义了一套形式化的方法，为机器语义理解的结构基础。</li> <li>RDFS：RDFS是RDF的一个扩展，它提供了一些基本的类和属性，以及它们之间的关系。</li> <li>OWL：Web Ontology Language，Web本体语言，它是基于RDF和RDFS的一种更加丰富的知识表示语言。在OWL中，我们可以定义类、属性以及它们的约束和关系。此外，OWL还支持对知识的推理。</li> </ul> <h4 id="22-知识获取">2.2 知识获取</h4> <p>构建好需要的本体模型后，那么就需要把数据构建成对应的模型的输入了。我们知识的来源基本分为以下几类：</p> <ul> <li>私有数据 <ul> <li>企业的文档</li> <li>企业私有的用户数据</li> <li>企业私有的非结构化数据</li> </ul> </li> <li>公有数据 <ul> <li>新闻</li> <li>百科</li> <li>公有语料</li> </ul> </li> </ul> <p>那么对于一些上述这些数据拆分为两大类，来进行<strong>数据处理</strong>：</p> <ul> <li>非结构化数据：一般指的是无任何标识的文本，我们可以采用相关的NLP算法，比如实体识别和关系抽取（或者直接使用事件抽取，这里事件抽取可以参考我之前写的一篇博客）来构建实体关系的三元组。</li> <li>结构化数据：由于本身就是标准化的数据，我们只需要通过D2R服务器将数据库的内容转成RDF的形式。</li> </ul>...<a class="read-more" href="./%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B0%8F%E7%BB%93.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1070,7 +1463,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h2 id="写专利心得">写专利心得</h2> <blockquote> <p>最近2个月一口气写了9篇专利，近些年加起来也写了近20篇AI算法类专利了，所以想写点自己对于写专利的一些心得体会。</p> </blockquote> <h3 id="一-专利相关知识">一. 专利相关知识</h3> <h4 id="11-专利是什么">1.1 专利是什么</h4> <p>专利是专利权的简称，主要分为发明、实用新型及工业设计三种类型：</p> <ul> <li> <p>发明：产品、方法及其改进的技术方案</p> </li> <li> <p>使用新型：产品的形状、结构或其结合的技术方案</p> </li> <li> <p>外观设计：产品外部形状、图案、色彩及其组合，如外包装。</p> </li> </ul> <h4 id="12-专利申请流程">1.2 专利申请流程</h4> <ul> <li> <p>想好idea，确保哪些可以写，哪些写不了</p> </li> <li> <p>利用专利检索的工具（比如google学术），查看别人是否写过</p> </li> <li> <p>写交底书（简写）</p> </li> <li> <p>第三方机构代理人撰写</p> </li> <li> <p>专利递交专利局</p> </li> <li> <p>官方受理、初审、公开、实审</p> </li> <li> <p>官方授权</p> </li> <li> <p>专利维持</p> </li> </ul> <h4 id="13-写专利好处">1.3 写专利好处</h4> <ul> <li> <p>拓展和发散思维</p> </li> <li> <p>锻炼文笔</p> </li> <li> <p>了解当前行业已有的技术</p> </li> </ul> <p>其实说了这么多，还是因为写专利可以<strong>赚钱</strong>啦！</p> <h3 id="二-专利挖掘-算法类">二. 专利挖掘-算法类</h3> <p>对于算法工程师而言，其实写发明类专利还是很简单的。个人感觉就和写小论文差不太多，甚至于比写小论文还简单，因为写专利其实可以不需要数据支持，只需要把自己的解决方案写出来就好了！</p> <h4 id="21-创新点">2.1 创新点</h4> <ul> <li> <p>专利审查时判断创造性的逻辑，是用你的方案和现有的技术比对，看有哪些区别点，然后判断在现有技术的基础上，做出这些区别点的改变得到你的方案是否是容易想到的，有没有一些难度。</p> </li> <li> <p>如果都是一些常规的方案，并且应用到我们这里也没什么难度的话，创造性高度就比较低，如果并不是简单的能运用到我们的方案，需要做一些相应的技术难点的解决的话，创新性就比较好。</p> </li> </ul> <h4 id="22-可写的几类算法专利">2.2 可写的几类算法专利</h4> <ul> <li> <p>改进发明：这里最好详尽描述下现有技术，当前改进的技术</p> <ul> <li> <p>改进的数据处理</p> </li> <li> <p>改进的数据挖掘</p> </li> <li> <p>改进的数据标注</p> </li> <li> <p>改进的模型结构</p>...<a class="read-more" href="./%E5%86%99%E4%B8%93%E5%88%A9%E5%BF%83%E5%BE%97.html"> read more</a>
+						<h2 id="写专利心得">写专利心得</h2> <blockquote> <p>最近2个月一口气写了9篇专利，近些年加起来也写了近20篇AI算法类专利了，所以想写点自己对于写专利的一些心得体会。</p> </blockquote> <h3 id="一-专利相关知识">一. 专利相关知识</h3> <h4 id="11-专利是什么">1.1 专利是什么</h4> <p>专利是专利权的简称，主要分为发明、实用新型及工业设计三种类型：</p> <ul> <li> <p>发明：产品、方法及其改进的技术方案</p> </li> <li> <p>使用新型：产品的形状、结构或其结合的技术方案</p> </li> <li> <p>外观设计：产品外部形状、图案、色彩及其组合，如外包装。</p> </li> </ul> <h4 id="12-专利申请流程">1.2 专利申请流程</h4> <ul> <li> <p>想好idea，确保哪些可以写，哪些写不了</p> </li> <li> <p>利用专利检索的工具（比如google学术），查看别人是否写过</p> </li> <li> <p>写交底书（简写）</p> </li> <li> <p>第三方机构代理人撰写</p> </li> <li> <p>专利递交专利局</p> </li> <li> <p>官方受理、初审、公开、实审</p> </li> <li> <p>官方授权</p> </li> <li> <p>专利维持</p>...<a class="read-more" href="./%E5%86%99%E4%B8%93%E5%88%A9%E5%BF%83%E5%BE%97.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1109,7 +1502,124 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-常见的oom">一. 常见的OOM</h3> <h4 id="11-常用的解决方案">1.1 常用的解决方案</h4> <p>我们在使用spark的时候，经常在save数据的时候，都会遇到内存溢出的问题，这通常是由于数据量过大导致的。以下是一些可能的解决方案：</p> <ol> <li>增加分区数：如果数据集非常大，可以尝试增加分区数。可以使用<code class="language-plaintext highlighter-rouge">repartition()</code>或<code class="language-plaintext highlighter-rouge">coalesce()</code>函数来增加分区数。增加分区数可以将数据均匀地分布在更多的节点上，从而减少每个节点上的内存压力。</li> <li>压缩数据：如果数据集包含大量重复的值，可以考虑使用压缩算法来减少内存使用。Pyspark提供了多种压缩算法，如Snappy、Gzip等。可以使用<code class="language-plaintext highlighter-rouge">option("compression", "snappy")</code>来设置压缩算法。</li> <li>增加集群资源：可以考虑增加集群资源。可以增加集群的节点数或增加每个节点的内存。可以通过调整<code class="language-plaintext highlighter-rouge">spark.driver.memory</code>和<code class="language-plaintext highlighter-rouge">spark.executor.memory</code>参数来增加内存分配，特别对于driver而言，最好把内存设置大一些。</li> </ol> <h4 id="12-代码方面的优化">1.2 代码方面的优化</h4> <p>如果以上常用的解决方案依旧无法解决OOM的问题，那么我们可能需要考虑是否需要优化pyspark的代码了</p> <ul> <li>UDF过于复杂：尽可能将结果拆分不同的列，然后再用简单的udf来组合这些列进行计算。</li> <li>多用filter算子：提前将大量数据剔除</li> <li>多用select算子：只保留需要的列，减少内存的使用</li> <li>尽量少用collect、count算子：像这些action算子基本都会把executor的数据全部加载回driver上，导致driver的内存吃紧。</li> <li>当发现在某个udf环节只有一个节点在跑的时候，可以使用.cache()来分布式跑任务。</li> </ul> <h4 id="13-数据倾斜导致的oom和心跳时间超时">1.3 数据倾斜导致的OOM和心跳时间超时</h4> <p>通常我们会发现有些时候，数据本身并没有很大，但是要运行很长时间，而且最终还因为heart beat时间过长或则oom而失败。</p> <p><strong>发生</strong> 数据倾斜一般发生在：</p> <ul> <li>join两个df的时候</li> <li>groupby某一列，然后这一列（包含了a，b，c等元素）中，很不巧，a有非常多（1000），而b和c等元素仅有2个</li> </ul> <p><strong>验证</strong> 这时候我们可以直接通过yarn日志中的shuffer resize/records看到很多excutors中会发现极个别失败的excutor的size非常大（10w个），而其他的excutor的size可能只有10个。那么这个时候无疑是发生数据倾斜了。</p> <p><strong>解决</strong> 这里推荐使用<strong>加盐</strong>处理，比什么加excutor的内存和核数更加有效</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">salted_a</span><span class="sh">"</span><span class="p">,</span> <span class="n">F</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">lit</span><span class="p">(</span><span class="sh">"</span><span class="s">_</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">rand</span><span class="p">()</span> <span...<a class="read-more" href="./pyspark%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"> read more</a>
+						<h3 id="一-常见的oom">一. 常见的OOM</h3> <h4 id="11-常用的解决方案">1.1 常用的解决方案</h4> <p>我们在使用spark的时候，经常在save数据的时候，都会遇到内存溢出的问题，这通常是由于数据量过大导致的。以下是一些可能的解决方案：</p> <ol> <li>增加分区数：如果数据集非常大，可以尝试增加分区数。可以使用<code class="language-plaintext highlighter-rouge">repartition()</code>或<code class="language-plaintext highlighter-rouge">coalesce()</code>函数来增加分区数。增加分区数可以将数据均匀地分布在更多的节点上，从而减少每个节点上的内存压力。</li> <li>压缩数据：如果数据集包含大量重复的值，可以考虑使用压缩算法来减少内存使用。Pyspark提供了多种压缩算法，如Snappy、Gzip等。可以使用<code class="language-plaintext highlighter-rouge">option("compression", "snappy")</code>来设置压缩算法。</li> <li>增加集群资源：可以考虑增加集群资源。可以增加集群的节点数或增加每个节点的内存。可以通过调整<code class="language-plaintext highlighter-rouge">spark.driver.memory</code>和<code class="language-plaintext highlighter-rouge">spark.executor.memory</code>参数来增加内存分配，特别对于driver而言，最好把内存设置大一些。</li> </ol> <h4 id="12-代码方面的优化">1.2 代码方面的优化</h4> <p>如果以上常用的解决方案依旧无法解决OOM的问题，那么我们可能需要考虑是否需要优化pyspark的代码了</p> <ul> <li>UDF过于复杂：尽可能将结果拆分不同的列，然后再用简单的udf来组合这些列进行计算。</li> <li>多用filter算子：提前将大量数据剔除</li> <li>多用select算子：只保留需要的列，减少内存的使用</li> <li>尽量少用collect、count算子：像这些action算子基本都会把executor的数据全部加载回driver上，导致driver的内存吃紧。</li> <li>当发现在某个udf环节只有一个节点在跑的时候，可以使用.cache()来分布式跑任务。</li> </ul> <h4 id="13-数据倾斜导致的oom和心跳时间超时">1.3 数据倾斜导致的OOM和心跳时间超时</h4> <p>通常我们会发现有些时候，数据本身并没有很大，但是要运行很长时间，而且最终还因为heart beat时间过长或则oom而失败。</p> <p><strong>发生</strong> 数据倾斜一般发生在：</p> <ul> <li>join两个df的时候</li> <li>groupby某一列，然后这一列（包含了a，b，c等元素）中，很不巧，a有非常多（1000），而b和c等元素仅有2个</li> </ul> <p><strong>验证</strong> 这时候我们可以直接通过yarn日志中的shuffer resize/records看到很多excutors中会发现极个别失败的excutor的size非常大（10w个），而其他的excutor的size可能只有10个。那么这个时候无疑是发生数据倾斜了。</p> <p><strong>解决</strong> 这里推荐使用<strong>加盐</strong>处理，比什么加excutor的内存和核数更加有效</p>...<a class="read-more" href="./pyspark%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./pyspark%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html">pyspark使用心得</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-12-27T08:00:00+08:00">December 27, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        less than 1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-安装">一. 安装</h3> <blockquote> <p>要使用PySpark，本地要有Java开发环境。</p> </blockquote> <ul> <li> <p>Java 8 : <code class="language-plaintext highlighter-rouge">brew install --cask homebrew/cask-versions/adoptopenjdk8</code></p> </li> <li> <p>pyspark安装：<code class="language-plaintext highlighter-rouge">pip install pyspark</code></p> </li> </ul> <h3 id="二-和pandas之间的代码使用">二. 和pandas之间的代码使用</h3> <h4 id="21-读取csv">2.1 读取csv</h4> <blockquote> <p>spark在读取csv上优势就很明显了，能直接快速读取几个G的大文件</p> </blockquote> <p>pandas读取大的csv，只能将其拆分为多个chunk进行读取，假如我们直接读取csv，可能会直接报内存不够导致进程被干掉。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span> <span class="n">df</span>...<a class="read-more" href="./pyspark%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%90%86%E8%A7%A3.html">贝叶斯公式及模型的理解</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2022-02-10T16:10:00+08:00">February 10, 2022</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-贝叶斯公式">一. 贝叶斯公式</h3> <h4 id="11-实际的例子推导公式">1.1 实际的例子推导公式</h4> <p>这里我们用比较实际的例子来理解贝叶斯公式。</p> <p>现在我们有2个骰子，每个骰子有6个面。</p> <ul> <li>样本空间：$6\times6 = 36$</li> <li>事件A：其中一个骰子展示的是2</li> <li>事件B：两个骰子的总和是7</li> </ul> <p>如下图所示，将所有的样本空间展示出来，并圈出事件A、B两种情况的所有可能性。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/b_1.png" alt="" /></p> <p>那么，针对每个不同的事件所发生的概率如下：</p> <ul> <li> <p>事件A发生的概率： <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/b_2.png" alt="" /></p> </li> <li> <p>事件B发生的概率： <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/b_3.png" alt="" /></p> </li> <li> <p>事件A、B同时发生的概率： <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/b_4.png" alt="" /></p> </li> <li> <p>在A发生的条件下，B发生的概率： <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/b_5.png" alt="" /></p> </li>...<a class="read-more" href="./%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%90%86%E8%A7%A3.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html">深度学习算法面试总结</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2020-06-12T23:21:00+08:00">June 12, 2020</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<blockquote> <p>面试官会根据自己简历中提到的一些点进行提问，这里先自己对某些点进行深挖。</p> </blockquote> <h3 id="一数据处理">一.数据处理</h3> <p>海量数据：</p> <ul> <li>（1）数据量太大，无法短时间内处理完成</li> <li>（2）无法一次性将数据放入内存中。</li> </ul> <h4 id="11-缺失值处理">1.1 缺失值处理</h4> <ul> <li>填充固定值：选取某个固定值/默认值填充缺失值。</li> <li>填充均值：对每一列的缺失值，填充当列的均值。</li> <li>填充中位数：对每一列的缺失值，填充当列的中位数。</li> <li>填充众数：对每一列的缺失值，填充当列的众数。由于存在某列缺失值过多，众数为nan的情况，因此这里取的是每列删除掉nan值后的众数。</li> <li>填充上下条的数据：对每一条数据的缺失值，填充其上下条数据的值。</li> <li>填充插值得到的数据：用插值法拟合出缺失的数据，然后进行填充。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。</li> </ul> <h3 id="二机器学习">二.机器学习</h3> <h4 id="21--svm和lr的区别与联系">2.1 SVM和LR的区别与联系？</h4> <p>SVM 和 LR 都是属于分类算法，不过 SVM 是通过划分超平面的方法来进行分类，而 LR 则是通过计算样本属于哪个类别的概率，从而达到分类效果</p> <h4 id="22--交叉熵函数系列问题与最大似然函数的关系和区别">2.2 交叉熵函数系列问题？与最大似然函数的关系和区别？</h4> <p>在二分类中，交叉熵函数和负最大似然函数的表达式是相同的，但是交叉熵函数是从信息论角度得到的，而最大似然函数则是从概率论角度得到的</p> <p>交叉熵涉及到2点：</p> <ul> <li>信息量：假设X是一个离散型随机变量，其取值集合为X，概率分布函数为p(x)=Pr(X=x),x∈X，我们定义事件X=x0的信息量为： I(x0)=−log(p(x0))，可以理解为，一个事件发生的概率越大，则它所携带的信息量就越小，而当p(x0)=1时，熵将等于0，也就是说该事件的发生不会导致任何信息量的增加。举个例子，小明平时不爱学习，考试经常不及格，而小王是个勤奋学习的好学生，经常得满分，所以我们可以做如下假设： 事件A：小明考试及格，对应的概率P(xA)=0.1，信息量为I(xA)=−log(0.1)=3.3219 事件B：小王考试及格，对应的概率P(xB)=0.999，信息量为I(xB)=−log(0.999)=0.0014 可以看出，结果非常符合直观：小明及格的可能性很低(十次考试只有一次及格)，因此如果某次考试及格了（大家都会说：XXX竟然及格了！），必然会引入较大的信息量，对应的I值也较高。</li> <li>熵：假设小明的考试结果是一个0-1分布XA只有两个取值{0：不及格，1：及格}，在某次考试结果公布前，小明的考试结果有多大的不确定度呢？你肯定会说：十有八九不及格！因为根据先验知识，小明及格的概率仅有0.1,90%的可能都是不及格的。怎么来度量这个不确定度？求期望！不错，我们对所有可能结果带来的额外信息量求取均值（期望），其结果不就能够衡量出小明考试成绩的不确定度了吗。<strong>熵其实是信息量的期望值，它是一个随机变量的确定性的度量。熵越大，变量的取值越不确定，反之就越确定。</strong></li> <li>相对熵：称为<strong>KL散度</strong>，是两个随机分布间距离的度量。越小说明分布越一致。</li> <li>交叉熵：交叉熵与KL距离在行为上是等价的，都反映了分布p，q的相似程度。特别的，在logistic regression中， p:真实样本分布，服从参数为p的0-1分布，即X∼B(1,p)X∼B(1,p)...<a class="read-more" href="./%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1158,7 +1668,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-raft简单介绍">一. RAFT简单介绍</h3> <blockquote> <p>论文：<a href="https://arxiv.org/abs/2403.10131">《RAFT: Adapting Language Model to Domain Specific RAG》</a></p> <h4 id="11-raft的优势">1.1 RAFT的优势</h4> <p>RAFT其实是基于RAG（检索增强）的SFT（有监督微调），那么他和这两者的差异是什么呢？</p> </blockquote> <ol> <li>RAG：检索增强是基于提出的问题在向量数据库中检索相应的片段，然后作为线索合并问题喂给大模型，然后输出。然后这里会出现一个问题：<strong>模型对于特定领域的知识没有得到提前学习的机会，说白了就是给了大模型很多材料，但是无法非常有效的使用这些材料</strong>。</li> <li>SFT：有监督微调是基于提供特定的QA对的方式来喂给大模型，然后能够让大模型额外扩充知识面的方式。但是这也会存在一个问题：<strong>这些QA对更多的是让大模型增加了额外文档的记忆，而忽略了在回答实际问题时使用文档的机会，要么没有正确处理在寻找合适的文档来学习时出现的错误</strong>。</li> <li>RAFT：基于检索增强的微调则是结合RAG+SFT提出的一种新的微调方案。他的优势： <ul> <li>过微调确保模型在特定领域的知识上得到良好的记忆和训练，从而达到对不准确的检索文档进行发现。</li> <li>通过训练模型来将“理解问题”、“检索知识”和“正确答案”进行关联，从而提高达模型回答的准确性。</li> </ul> </li> </ol> <p>这也就是整片文章中一致强调的RAFT其实是一种“开卷考试” + “特定领域的提前学习”。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft.png" alt="raft" /></p> <h4 id="12-raft如何训练">1.2 RAFT如何训练</h4> <p>区别于常规的SFT，RAFT在训练中加入了干扰的文档 + 正确的文档让模型来学习。<strong>这使得模型学习到的是基于记忆和文档的混合判断</strong>，参考论文中的“which is a mixture of both memorization and reading”。</p> <ul> <li>训练的内容分为2块： <ul> <li>找到核心依据：QA对 + 标准答案的文档 + 多个误导的文档 + 思维链</li> <li>正确的例子：QA对 + 标准答案的文档 + 思维链</li> </ul> </li> <li>训练的核心：通过思维链来解释找到的答案，从而基于上下文信息，思考其答案，并链接到相关文档。</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft_train.png" alt="raft_train" /></p> <h3 id="二-基于unsloth和lamma_index来实现faft">二. 基于unsloth和lamma_index来实现FAFT</h3> <h4 id="21-基于ollama和lamma_index来构建数据集">2.1 基于ollama和lamma_index来构建数据集</h4> <p>RAFT的数据集的特点是：</p> <ul> <li>QA对</li> <li>正确文档</li> <li>错误文档</li> <li>思维链</li> </ul> <p>所以我们需要一个能够提供思维链的大模型，帮助我们生成上述这些内容。</p> <ul> <li>模型：Qwen3-32B，选择这个千问模型是因为中文很友好+支持思维链+阿里的预训练的数据很顶</li> <li>调用框架：ollama，调用比如openai需要花钱，这个本地部署，调用不花钱！</li> </ul> <h4 id="22-安装相关依赖">2.2 安装相关依赖</h4> <p>这里需要使用以下几个深度学习相关的框架：</p> <ul> <li>lamma_index: 和langchain感觉很像，只是这个更加偏重于增强大型语言模型 (LLM) 处理广泛和异构数据集的能力。当然也能帮助我们构建raft数据集咯。</li> <li>unsloth:...<a class="read-more" href="./raft.html"> read more</a>
+						<h3 id="一-raft简单介绍">一. RAFT简单介绍</h3> <blockquote> <p>论文：<a href="https://arxiv.org/abs/2403.10131">《RAFT: Adapting Language Model to Domain Specific RAG》</a></p> <h4 id="11-raft的优势">1.1 RAFT的优势</h4> <p>RAFT其实是基于RAG（检索增强）的SFT（有监督微调），那么他和这两者的差异是什么呢？</p> </blockquote> <ol> <li>RAG：检索增强是基于提出的问题在向量数据库中检索相应的片段，然后作为线索合并问题喂给大模型，然后输出。然后这里会出现一个问题：<strong>模型对于特定领域的知识没有得到提前学习的机会，说白了就是给了大模型很多材料，但是无法非常有效的使用这些材料</strong>。</li> <li>SFT：有监督微调是基于提供特定的QA对的方式来喂给大模型，然后能够让大模型额外扩充知识面的方式。但是这也会存在一个问题：<strong>这些QA对更多的是让大模型增加了额外文档的记忆，而忽略了在回答实际问题时使用文档的机会，要么没有正确处理在寻找合适的文档来学习时出现的错误</strong>。</li> <li>RAFT：基于检索增强的微调则是结合RAG+SFT提出的一种新的微调方案。他的优势： <ul> <li>过微调确保模型在特定领域的知识上得到良好的记忆和训练，从而达到对不准确的检索文档进行发现。</li> <li>通过训练模型来将“理解问题”、“检索知识”和“正确答案”进行关联，从而提高达模型回答的准确性。</li> </ul> </li> </ol> <p>这也就是整片文章中一致强调的RAFT其实是一种“开卷考试” + “特定领域的提前学习”。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/raft.png" alt="raft" /></p> <h4 id="12-raft如何训练">1.2 RAFT如何训练</h4> <p>区别于常规的SFT，RAFT在训练中加入了干扰的文档 + 正确的文档让模型来学习。<strong>这使得模型学习到的是基于记忆和文档的混合判断</strong>，参考论文中的“which is a mixture of both memorization and reading”。</p> <ul>...<a class="read-more" href="./raft.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1197,7 +1707,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-rag和graphrag">一. RAG和GraphRAG</h3> <h4 id="11-什么是rag">1.1 什么是RAG</h4> <blockquote> <p>RAG（Retrieval Augmented Generation，检索增强生成）是一种将信息检索技术与生成式语言模型（LLM）结合的AI框架。它通过从外部知识库中检索相关信息，然后使用这些信息增强LLM的提示词（prompt），从而生成更准确、更相关、更全面的答案。﻿</p> </blockquote> <p>大模型为什么需要RAG：</p> <ul> <li>如果一个llm在pretrain之后没有做rag（外部检索）的话，其实往往可能存在幻觉。</li> <li>基座模型在专业领域知识不足，比如一些医药、法律等。</li> <li>外挂知识需要长期实时维护更新的。</li> </ul> <h4 id="12-rag在llm中langchain的例子">1.2 RAG在LLM中LangChain的例子</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rag_lanchain.jpg" alt="LangChain" /> 如上图所示，整个RAG的过程分为三个部分：</p> <ul> <li>文本嵌入阶段：将本地文本进行分段后，利用embedding模型对其每个段落进行词嵌入，并将其vector存入向量数据库（比如FAISS、Chroma）中。</li> <li>请求阶段：对大模型进行请求之前，会将请求的文本同样利用embedding模型转成向量，然后会和向量数据库中比对相似度最高的本地文本段落，并将其作为关联的文本段放到prompt中。</li> <li>输出阶段：将提示词 + 本地文本关联段落 + 请求一起输入大模型，得到输出。</li> </ul> <h4 id="13-graphrag的定义及其优势">1.3 GraphRAG的定义及其优势</h4> <blockquote> <p>GraphRAG是一种基于知识图谱的检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型LLM进行检索增强。 论文：<a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused Summarization</a></p> </blockquote> <p>GraphRAG比RAG优势在哪：</p> <ul> <li>RAG过于局限：RAG仅能检索到与query相速度最高的文本片段，无法从全局出发来看整个本地文本。</li> <li>GraphRAG通过构建实体关系图谱实现了信息间的连接，能从全局出发，能更完整地理解和检索复杂的关联信息，从而生成更准确和全局性的结果。</li> </ul> <h4 id="14-graphrag的流程">1.4 GraphRAG的流程</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/graphrag.png" alt="LangChain" /> 如上图所示，就是GraphRAG的处理流程图，其实总结起来就两个部分： 第一部分：构建知识图谱</p> <ul> <li>将本地文本进行分段</li> <li>对每个段落进行摘要提取：这里完全依赖于<strong>大模型的提取能力</strong></li> <li>实体和关系的提取：这里完全依赖于<strong>大模型的提取能力</strong>，实体和关系抽取可以参考本人之前写的《事件抽取实战》这篇文章</li> <li>构建知识图谱，写入数据库</li> </ul> <p>第二部分：利用构建的知识图谱回答问题</p> <ul> <li>社区检测：实际就是一种图聚类的方法，这里的“社区”，我们可以将其理解为一类具有相同特性的节点的集合。</li> <li>社区总结：给每个社区创建类似报告的摘要。利于理解整体的结构和语义。</li> <li>生成全局答案：给定用户查询，基于上一步生成的社区摘要可用于在多阶段过程中生成最终答案。</li> </ul> <h3 id="二-graphrag的轻量版本nano-graphrag">二. GraphRAG的轻量版本——nano-GraphRAG</h3> <p>对于GraphRAG而言，其封装的太死，代码量又很大，对于定制化的任务而言，不太好下手，因此推荐一个轻量化的版本——nano-GraphRAG。</p> <blockquote> <p>代码：https://github.com/gusye1234/nano-graphrag</p> </blockquote> <p>相较于GraphRAG的优势：</p> <ul> <li>代码量少：包含了tests + prompt也才只有1100行代码！</li> <li>更容易阅读</li> <li>给的例子太好用了，直接上手没有难度。</li> </ul> <h4 id="21-安装">2.1 安装</h4> <p>这里推荐不用官方推荐的pip install 来安装。因为这样会对于代码和prompt不好调整。 直接clone项目即可，然后安装其依赖<code...<a class="read-more" href="./graphrag.html"> read more</a>
+						<h3 id="一-rag和graphrag">一. RAG和GraphRAG</h3> <h4 id="11-什么是rag">1.1 什么是RAG</h4> <blockquote> <p>RAG（Retrieval Augmented Generation，检索增强生成）是一种将信息检索技术与生成式语言模型（LLM）结合的AI框架。它通过从外部知识库中检索相关信息，然后使用这些信息增强LLM的提示词（prompt），从而生成更准确、更相关、更全面的答案。﻿</p> </blockquote> <p>大模型为什么需要RAG：</p> <ul> <li>如果一个llm在pretrain之后没有做rag（外部检索）的话，其实往往可能存在幻觉。</li> <li>基座模型在专业领域知识不足，比如一些医药、法律等。</li> <li>外挂知识需要长期实时维护更新的。</li> </ul> <h4 id="12-rag在llm中langchain的例子">1.2 RAG在LLM中LangChain的例子</h4> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/rag_lanchain.jpg" alt="LangChain" /> 如上图所示，整个RAG的过程分为三个部分：</p> <ul> <li>文本嵌入阶段：将本地文本进行分段后，利用embedding模型对其每个段落进行词嵌入，并将其vector存入向量数据库（比如FAISS、Chroma）中。</li> <li>请求阶段：对大模型进行请求之前，会将请求的文本同样利用embedding模型转成向量，然后会和向量数据库中比对相似度最高的本地文本段落，并将其作为关联的文本段放到prompt中。</li> <li>输出阶段：将提示词 + 本地文本关联段落 + 请求一起输入大模型，得到输出。</li> </ul> <h4 id="13-graphrag的定义及其优势">1.3 GraphRAG的定义及其优势</h4> <blockquote> <p>GraphRAG是一种基于知识图谱的检索增强技术，通过构建图模型的知识表达，将实体和关系之间的联系用图的形式进行展示，然后利用大语言模型LLM进行检索增强。 论文：<a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused...<a class="read-more" href="./graphrag.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1236,7 +1746,124 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-大模型微调">一. 大模型微调</h3> <h4 id="11-微调的原因">1.1 微调的原因</h4> <p>在业务中直接使用大模型，往往会发现：</p> <ul> <li>模型对prompt非常敏感，需要不断调整，迭代prompt的过程很痛苦</li> <li>本身能力不满足独有的业务需求</li> <li>模型的更新/更换 导致相同的prompt却拿到不同的结果</li> </ul> <h4 id="12-微调的方式">1.2 微调的方式</h4> <ul> <li>zero-shot prompting（0样本）：撰写prompt，迭代prompt，获取答案。无需数据，无需额外开发、部署成本。</li> <li>few-shot prompting（1-10样本）：收集样例，迭代样例，获取答案。需要提供少量的样本（正反例）。</li> <li>adaptation（1k-1w样本）：收集数据，适配模型，部署模型。 <ul> <li>适用百亿参数以下的模型</li> <li>少量的适配特殊场景/任务的样本，这里其实可以利用更大参数、更优的大模型输出的结果来训练这类“小模型”</li> </ul> </li> <li>更深层次的微调： <ul> <li>领域预训练：用无监督领域数据继续训练基座模型</li> <li>全参数精调：用有监督领域数据精调基座模型</li> <li>检索增强：外挂知识库，这里比如一般的RAG，还有比较火热的GraphRAG。</li> <li>多智能体：多模型/agent共同完成任务。</li> </ul> </li> </ul> <h3 id="二-llm微调工具-unsloth">二. LLM微调工具-Unsloth</h3> <blockquote> <p>git地址：https://github.com/unslothai/unsloth</p> </blockquote> <p>选择unsloth作为微调工具的理由：</p> <ul> <li>训练更快</li> <li>显存占用更少</li> <li>迭代快，模型适配广，目前都能支持Qwen3了</li> </ul> <h4 id="21-依赖的安装">2.1 依赖的安装</h4> <blockquote> <p>这里爬了不少坑，因此记录下</p> </blockquote> <ol> <li>直接pip安装：<code class="language-plaintext highlighter-rouge">pip install unsloth</code>, 这里会默认安装最新的torch版本，而非适配于自身系统cuda版本的torch（用<code class="language-plaintext highlighter-rouge">nvcc -V</code>可查看cuda版本）</li> <li>重新安装torch，本人这里cuda是12.1的：<code class="language-plaintext highlighter-rouge">pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121</code></li> <li>重新安装对应cuda版本的xformers：<code class="language-plaintext highlighter-rouge">pip install -U xformers --index-url https://download.pytorch.org/whl/cu121</code></li> <li>如果需要微调Qwen3，那么对于transformers有版本要求：<code class="language-plaintext highlighter-rouge">pip install transformers==4.51.0 --no-deps</code></li> <li>改了transformers之后，那么也需要对应的trl版本更改：<code class="language-plaintext highlighter-rouge">pip install trl==0.17.0 --no-deps</code></li> <li>安装vllm:<code class="language-plaintext highlighter-rouge">pip install vllm==0.7 --no-deps</code></li> <li>这里会遇到unsloth和vllm版本不匹配的问题：<code...<a class="read-more" href="./%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F.html"> read more</a>
+						<h3 id="一-大模型微调">一. 大模型微调</h3> <h4 id="11-微调的原因">1.1 微调的原因</h4> <p>在业务中直接使用大模型，往往会发现：</p> <ul> <li>模型对prompt非常敏感，需要不断调整，迭代prompt的过程很痛苦</li> <li>本身能力不满足独有的业务需求</li> <li>模型的更新/更换 导致相同的prompt却拿到不同的结果</li> </ul> <h4 id="12-微调的方式">1.2 微调的方式</h4> <ul> <li>zero-shot prompting（0样本）：撰写prompt，迭代prompt，获取答案。无需数据，无需额外开发、部署成本。</li> <li>few-shot prompting（1-10样本）：收集样例，迭代样例，获取答案。需要提供少量的样本（正反例）。</li> <li>adaptation（1k-1w样本）：收集数据，适配模型，部署模型。 <ul> <li>适用百亿参数以下的模型</li> <li>少量的适配特殊场景/任务的样本，这里其实可以利用更大参数、更优的大模型输出的结果来训练这类“小模型”</li> </ul> </li> <li>更深层次的微调： <ul> <li>领域预训练：用无监督领域数据继续训练基座模型</li> <li>全参数精调：用有监督领域数据精调基座模型</li> <li>检索增强：外挂知识库，这里比如一般的RAG，还有比较火热的GraphRAG。</li> <li>多智能体：多模型/agent共同完成任务。</li> </ul> </li> </ul> <h3 id="二-llm微调工具-unsloth">二. LLM微调工具-Unsloth</h3> <blockquote> <p>git地址：https://github.com/unslothai/unsloth</p> </blockquote> <p>选择unsloth作为微调工具的理由：</p> <ul> <li>训练更快</li> <li>显存占用更少</li> <li>迭代快，模型适配广，目前都能支持Qwen3了</li> </ul> <h4 id="21-依赖的安装">2.1...<a class="read-more" href="./%E5%9F%BA%E4%BA%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./langchain.html">LLM的应用开发框架——Langchain</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-07-04T08:00:00+08:00">July 4, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        2 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<h3 id="一-langchain是什么">一. Langchain是什么</h3> <blockquote> <p>Langchain 官网文档：https://python.langchain.com/v0.2/docs/introduction/</p> </blockquote> <h4 id="llm崛起出现了哪些需求">LLM崛起出现了哪些需求？</h4> <ul> <li> <p>格式化输出：希望给的输出格式是json、csv、db格式</p> </li> <li> <p>输出很长的提示词文本：如何总结一本书的内容？</p> </li> <li> <p>多次API调用：两次调用api，前后两次需要结合的</p> </li> <li> <p>外部调用：比如需要进行web 搜索</p> </li> <li> <p>标准化开发</p> </li> <li> <p>快速切换模型：有多个大模型可用，支持代码不变，快速切换</p> </li> </ul> <h3 id="二-langchain支撑llm的应用">二. Langchain支撑LLM的应用</h3> <h4 id="21-支持多种llm">2.1 支持多种LLM</h4> <p>无论是国外的GPT4、LLaMa，还是国内的ChatGLM、Baichuan，都支持调用api和huggingface模型的使用，下面主要介绍HF模型的下载使用。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">huggingface_hub</span> <span class="kn">import</span> <span class="n">snapshot_download</span> <span...<a class="read-more" href="./langchain.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./pytorch_lightning%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C.html">pytorch_lightning使用体验</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2024-01-18T08:00:00+08:00">January 18, 2024</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<blockquote> <p>如果是一些小模型想要快速实验，不想怎么写代码的，可以通过pytorch_lightning快速搭建模型，但是如果涉及到大模型，以及分布式训练预测，咱还是老老实实用pytorch吧。</p> </blockquote> <h3 id="一-使用体验">一. 使用体验</h3> <p>就像很多年前写过tensorflow之后看到keras后的欣喜，当我看到pytorch_lightning后瞬间就喜欢上了它！对于pytorch的重度使用者来说，每次都要写很多重复的训练预测代码，总感觉代码复用起来很麻烦，于是pytorch_lightning它来啦！</p> <p><strong>pytorch_lightning的优势：</strong></p> <ul> <li> <p>代码可读性、复用性高</p> </li> <li> <p>自由度和pytorch一样高，并没有像使用keras一样感觉封装过死的感觉。</p> </li> <li> <p>能像keras一样快速搭建模型，简化模型训练和预测的过程</p> </li> <li> <p>支持分布式训练</p> </li> </ul> <h3 id="二-安装和使用">二. 安装和使用</h3> <p>官网地址是：https://lightning.ai/</p> <p>pip进行安装：<code class="language-plaintext highlighter-rouge">pip show pytorch_lightning</code></p> <p>下面使用MNIST来展示如何使用pytorch_lightning来简化自己的代码</p> <h4 id="21-数据模块lightningdatamodule">2.1 数据模块LightningDataModule</h4> <p>通常情况下，我们需要做一些预处理，以及在定义完自己的dataset后，需要定义dataloader，这里可以直接继承LightningDataModule模块，直接重写其中的方法即可。</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MNISTDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span> <span class="k">def</span> <span...<a class="read-more" href="./pytorch_lightning%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C.html"> 阅读更多</a>
+					</div>
+				</div>
+			
+			
+
+				<div class="post">
+					<a class="post-list-title" href="./%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%8E%A8%E7%90%86.html">分布式训练推理Accelerate</a>
+					
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2023-08-16T23:00:00+08:00">August 16, 2023</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        1 minute read
+      
+    </span>
+  
+  
+  </span>
+
+					<div class="post-excerpt">
+						<blockquote> <p>分布式训练的加速策略详情可见本人上篇文章《 <a href="https://www.lixiaofei2yy.website/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8">大语言模型的应用及训练</a>》，一般有三种，分别是数据并行，流水线式并行和张量并行，本文主推使用hugging face的accelerate库来进行模型分布式的训练和推理。</p> </blockquote> <h3 id="一-torch常用的分布式训练工具">一. torch常用的分布式训练工具</h3> <h4 id="11-dataparallel">1.1 DataParallel</h4> <p>DP(DataParallel)：实现数据并行方式的分布式训练，采用的是PS(worker-server)模式，<strong>不推荐</strong>。</p> <ul> <li>单进程多线程</li> <li>只能在单机上使用</li> <li>训练速度慢，且由于是<strong>PS模式（存在负载不均衡的问题）</strong>，随着worker的个数增多，训练速度越慢</li> </ul> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/dp111.png" alt="" /></p> <h4 id="12-distributeddataparallel">1.2 DistributedDataParallel</h4> <p>DDP(DistributedDataParallel)：实现数据并行方式的分布式训练，采用的是ring-all-reduce模式。它将<strong>模型复制到每个 GPU 上 ，同时复制了每个dataloader</strong>，并且当 <code class="language-plaintext highlighter-rouge">loss.backward()</code> 被调用进行反向传播的时候，所有这些模型副本的梯度将被同步地平均/下降 (reduce)。这确保每个设备在执行优化器步骤后具有相同的权重。</p> <ul> <li> <p>多进程</p> </li> <li> <p>支持多机多卡</p> </li> <li> <p>训练速度较DP快，ring-all-reduce模式下，所有worker只和自己相邻的两个worker进行通信</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/ddp.png" alt="" /></p> </li> </ul> <h4 id="13-amp">1.3 amp</h4>...<a class="read-more" href="./%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%8E%A8%E7%90%86.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1285,7 +1912,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-selenium爬虫">一. Selenium爬虫</h3> <h4 id="1-安装">1. 安装</h4> <blockquote> <p>Selenium 本身是一个自动化测试的工具，模拟人为在浏览器上进行操作，比如点击和下拉等等。</p> </blockquote> <p>安装的环境：</p> <ul> <li>python环境</li> <li>pip安装Selenium包：<code class="language-plaintext highlighter-rouge">pip install selenium</code></li> <li>chrome浏览器驱动：去<a href="https://chromedriver.chromium.org/downloads">官网</a>下载自己电脑已安装的浏览器所在的版本驱动</li> </ul> <p>我这边的chrome驱动装的是mac版本的，这里需要将其路径放到mac的环境变量中，下载后放到了<code class="language-plaintext highlighter-rouge">/usr/local/chromedriver</code>，</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.profile export PATH="$PATH:/usr/local/chromedriver" source ~/.profile </code></pre></div></div> <p>可以在控制台打<code class="language-plaintext highlighter-rouge">chromedriver</code>测试是否ok。</p> <h4 id="2-使用">2. 使用</h4> <blockquote> <p>这里的例子是的主要任务是：将给的头条url所在的公众号遍历其30条的文章标题和链接。</p> </blockquote> <p>所以我们需要拆解为2步：</p> <ul> <li>打开给定的url，并点击头条的公众号。</li> <li>另开一个页面，找到公众号下前30条文章的标题和链接（这里需要下拉才能看到后面的文章）。</li> </ul> <p>第一步：实例一个浏览器驱动，并找到公众号的XPath（这里推荐一个测试XPath的<strong>浏览器插件XPath Helper</strong>）</p> <pre><code class="language-python3">driver = webdriver.Chrome() driver.get(url) time.sleep(2) try: name = driver.find_element(By.XPATH,".//div[@class='article-meta']/span[@class='name']/a").get_attribute('href') except: driver.quit() driver.find_element(By.XPATH,".//div[@class='article-meta']/span[@class='name']/a").click() </code></pre> <p>由于点击了公众号后会出现一个新的页面，这里最好指定下现在的driver是归属于哪个页面的，不然写的xpath就会找不到元素。</p> <pre><code class="language-python3">list_windows = driver.window_handles print(list_windows) driver.close() driver.switch_to.window(list_windows[1]) #list_windows 存储了上一步中获取的窗口 time.sleep(2) # 防止页面还未加载完全 </code></pre> <p>第二步：找到所有的页面的文章（这里需要下拉才可以获取）</p> <pre><code class="language-python3"> data = [] titles = set() last_position = driver.execute_script("return window.pageYOffset;") # 执行下拉操作 scrolling = True count = 0...<a class="read-more" href="./Selenium%E5%92%8Cwebscraper%E7%88%AC%E8%99%AB.html"> read more</a>
+						<h3 id="一-selenium爬虫">一. Selenium爬虫</h3> <h4 id="1-安装">1. 安装</h4> <blockquote> <p>Selenium 本身是一个自动化测试的工具，模拟人为在浏览器上进行操作，比如点击和下拉等等。</p> </blockquote> <p>安装的环境：</p> <ul> <li>python环境</li> <li>pip安装Selenium包：<code class="language-plaintext highlighter-rouge">pip install selenium</code></li> <li>chrome浏览器驱动：去<a href="https://chromedriver.chromium.org/downloads">官网</a>下载自己电脑已安装的浏览器所在的版本驱动</li> </ul> <p>我这边的chrome驱动装的是mac版本的，这里需要将其路径放到mac的环境变量中，下载后放到了<code class="language-plaintext highlighter-rouge">/usr/local/chromedriver</code>，</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.profile export PATH="$PATH:/usr/local/chromedriver" source ~/.profile </code></pre></div></div> <p>可以在控制台打<code class="language-plaintext highlighter-rouge">chromedriver</code>测试是否ok。</p> <h4 id="2-使用">2. 使用</h4> <blockquote> <p>这里的例子是的主要任务是：将给的头条url所在的公众号遍历其30条的文章标题和链接。</p> </blockquote> <p>所以我们需要拆解为2步：</p> <ul> <li>打开给定的url，并点击头条的公众号。</li> <li>另开一个页面，找到公众号下前30条文章的标题和链接（这里需要下拉才能看到后面的文章）。</li> </ul> <p>第一步：实例一个浏览器驱动，并找到公众号的XPath（这里推荐一个测试XPath的<strong>浏览器插件XPath...<a class="read-more" href="./Selenium%E5%92%8Cwebscraper%E7%88%AC%E8%99%AB.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1334,7 +1961,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<h3 id="一-操作系统">一. 操作系统</h3> <h4 id="11-并行和并发">1.1 并行和并发</h4> <p><strong>并发</strong>：在操作系统中，某一时间段，几个程序在同一个CPU上运行，但在任意一个时间点上，只有一个程序在CPU上运行。</p> <p><strong>并行</strong>：当操作系统有多个CPU时，一个CPU处理A线程，另一个CPU处理B线程，<strong>两个线程互相不抢占CPU资源，可以同时进行</strong>，这种方式成为并行。</p> <p>知乎的例子：</p> <ul> <li>你吃饭吃到一半，电话来了，你一直到吃完了以后才去接，这就说明你不支持并发也不支持并行。</li> <li>你吃饭吃到一半，电话来了，你停了下来接了电话，接完后继续吃饭，这说明你支持并发。</li> <li>你吃饭吃到一半，电话来了，你一边打电话一边吃饭，这说明你支持并行。</li> </ul> <h4 id="12-进程和线程">1.2 进程和线程</h4> <h5 id="121-进程">1.2.1 进程</h5> <p>​ <strong>进程是资源分配的基本单位，理解为一个程序</strong>。所以我们一般都要求进程池的进程数小于等于CPU的核心数。</p> <p>​ 如果问<strong>单核CPU能否运行多进程？</strong>答案又是肯定的。单核CPU也可以运行多进程，只不过不是同时的，而是极快地在<strong>进程间来回切换实现的多进程</strong>。进<strong>程拥有自己的地址空间，全局变量，文件描述符，各种硬件等等资源</strong>。</p> <h5 id="122-线程">1.2.2 线程</h5> <p>​ <strong>线程</strong>：线程是依赖于进程的。<strong>如果说进程和进程之间相当于程序与程序之间的关系，那么线程与线程之间就相当于程序内的任务和任务之间的关系。</strong></p> <p>​ 一个程序内包含了多种任务。加上了线程之后，线程能够共享进程的大部分资源，并参与CPU的调度。意味着它能够在<strong>进程间进行切换，实现并发</strong>。</p> <h5 id="123-为什么要用多进程适用条件">1.2.3 为什么要用多进程，适用条件</h5> <p>​ 总是在运行一个进程上的任务，就会出现一个现象。就是任务不一定总是在执行 ”计算型“ 的任务，会有很大可能是在执行网络调用，阻塞了，CPU 岂不就浪费了？</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/interv_1.jpg" alt="" /></p> <p>因此，多进程适用于<strong>CPU密集型任务(各种循环处理、计算等等)</strong>。多线程适用于<strong>IO密集型任务(文件处理、网络爬虫等)</strong>。</p> <h5 id="124-多进程通信">1.2.4 多进程通信</h5> <p><strong>管道pipe</strong>：管道是一种<strong>半双工</strong>的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指<strong>父子进程关系</strong>。类似于python的<code class="language-plaintext highlighter-rouge">multiprocessing.Pipe()</code></p> <p><strong>消息队列MessageQueue</strong>：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。类似于python的<code class="language-plaintext highlighter-rouge">multiprocessing.Queue()</code></p> <p><strong>共享存储SharedMemory</strong>：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。<strong>共享内存是最快的 IPC 方式</strong>，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。</p> <h5 id="125-python的多线程是真的多线程么">1.2.5 python的多线程是真的多线程么</h5> <p>​ Python在设计之初就考虑要在主循环中，同时只有一个线程在执行，就像单CPU的系统中运行多个进程那样，内存中可以存放多个程序，但任意时刻，只有一个程序在CPU中运行。同样地，虽然Python解释器可以运行多个线程，只有一个线程在解释器中运行。</p> <p>​ Python虚拟机的访问由<strong>全局解释器锁（GIL）</strong>来控制，正是这个锁能保证同时只有一个线程在运行。</p> <p><strong>Python的多进程多线程测试</strong>：</p> <ul> <li> <p>在一个4核CPU上开4线程，发现电脑的CPU利用率没有占满，大致相当于单核水平。</p> </li> <li> <p>在一个4核CPU上开4进程，发现CPU直接飙到了100%，说明进程是可以利用多核的！</p> <p>Python多线程相当于单核多线程，多线程有两个好处：<strong>CPU并行，IO并行</strong>，单核多线程相当于自断一臂。所以，在Python中，可以使用多线程，但不要指望能有效利用多核。</p> </li> </ul> <h5 id="126-多线程如何保证线程安全">1.2.6 多线程如何保证线程安全</h5> <p>当<strong>多个线程同时操作同一个共享全局变量</strong>的时候，就容易出现线程安全问题，线程安全问题只会影响到线程对同一个共享的全局变量的<strong>写操作</strong>。</p> <p>利用<strong>线程锁</strong>来保证同一个时刻，有且仅有一个线程对共享的全局变量进行写操作。且开始写操作前，需要<strong>加锁</strong>，完成后，需要<strong>解锁</strong>，让其他线程再对其进行写操作。</p> <h5 id="127-死锁问题">1.2.7 死锁问题</h5> <p>​ <strong>死锁</strong>是指两个或两个以上的进程（线程）在执行过程中，由于竞争资源或者由于<strong>彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去</strong>。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程（线程）称为死锁进程（线程）。</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/interv_2.jpg" alt="" /></p> <p>死锁的<strong>4个必要条件</strong>：</p> <ul> <li>互斥条件：线程(进程)对于所分配到的资源具有排它性，即<strong>一个资源只能被一个线程(进程)占用，直到被该线程(进程)释放</strong>。</li> <li>请求与保持条件：一个线程(进程)因请求被占用资源而发生阻塞时，<strong>对已获得的资源保持不放</strong>。</li> <li>不剥夺条件：线程(进程)已获得的资源在末使用完之前不能被其他线程强行剥夺，<strong>只有自己使用完毕后才释放资源</strong>。</li> <li>循环等待条件：当发生死锁时，所等待的线程(进程)必定会<strong>形成一个环路（类似于死循环），造成永久阻塞</strong></li> </ul> <p><strong>如何避免死锁？</strong></p> <p>只要破坏产生死锁的四个条件中的其中一个就可以了。</p> <ul> <li><strong>破坏互斥条件</strong>：这个条件我们没有办法破坏，因为我们用锁本来就是想让他们互斥的（临界资源需要互斥访问）。</li> <li><strong>破坏请求与保持条件</strong>：一次性申请所有的资源。</li> <li><strong>破坏不剥夺条件</strong>：占用部分资源的线程进一步申请其他资源时，如果申请不到，可以主动释放它占有的资源。</li>...<a class="read-more" href="./%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93.html"> read more</a>
+						<h3 id="一-操作系统">一. 操作系统</h3> <h4 id="11-并行和并发">1.1 并行和并发</h4> <p><strong>并发</strong>：在操作系统中，某一时间段，几个程序在同一个CPU上运行，但在任意一个时间点上，只有一个程序在CPU上运行。</p> <p><strong>并行</strong>：当操作系统有多个CPU时，一个CPU处理A线程，另一个CPU处理B线程，<strong>两个线程互相不抢占CPU资源，可以同时进行</strong>，这种方式成为并行。</p> <p>知乎的例子：</p> <ul> <li>你吃饭吃到一半，电话来了，你一直到吃完了以后才去接，这就说明你不支持并发也不支持并行。</li> <li>你吃饭吃到一半，电话来了，你停了下来接了电话，接完后继续吃饭，这说明你支持并发。</li> <li>你吃饭吃到一半，电话来了，你一边打电话一边吃饭，这说明你支持并行。</li> </ul> <h4 id="12-进程和线程">1.2 进程和线程</h4> <h5 id="121-进程">1.2.1 进程</h5> <p>​ <strong>进程是资源分配的基本单位，理解为一个程序</strong>。所以我们一般都要求进程池的进程数小于等于CPU的核心数。</p> <p>​ 如果问<strong>单核CPU能否运行多进程？</strong>答案又是肯定的。单核CPU也可以运行多进程，只不过不是同时的，而是极快地在<strong>进程间来回切换实现的多进程</strong>。进<strong>程拥有自己的地址空间，全局变量，文件描述符，各种硬件等等资源</strong>。</p> <h5 id="122-线程">1.2.2 线程</h5> <p>​ <strong>线程</strong>：线程是依赖于进程的。<strong>如果说进程和进程之间相当于程序与程序之间的关系，那么线程与线程之间就相当于程序内的任务和任务之间的关系。</strong></p> <p>​ 一个程序内包含了多种任务。加上了线程之后，线程能够共享进程的大部分资源，并参与CPU的调度。意味着它能够在<strong>进程间进行切换，实现并发</strong>。</p> <h5 id="123-为什么要用多进程适用条件">1.2.3 为什么要用多进程，适用条件</h5> <p>​ 总是在运行一个进程上的任务，就会出现一个现象。就是任务不一定总是在执行 ”计算型“ 的任务，会有很大可能是在执行网络调用，阻塞了，CPU 岂不就浪费了？</p> <p><img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/interv_1.jpg" alt="" /></p> <p>因此，多进程适用于<strong>CPU密集型任务(各种循环处理、计算等等)</strong>。多线程适用于<strong>IO密集型任务(文件处理、网络爬虫等)</strong>。</p> <h5 id="124-多进程通信">1.2.4 多进程通信</h5> <p><strong>管道pipe</strong>：管道是一种<strong>半双工</strong>的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指<strong>父子进程关系</strong>。类似于python的<code class="language-plaintext highlighter-rouge">multiprocessing.Pipe()</code></p>...<a class="read-more" href="./%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1373,7 +2000,7 @@
   </span>
 
 					<div class="post-excerpt">
-						<blockquote> <p>面试官会根据自己简历中提到的一些点进行提问，这里先自己对某些点进行深挖。</p> </blockquote> <h3 id="一数据处理">一.数据处理</h3> <p>海量数据：</p> <ul> <li>（1）数据量太大，无法短时间内处理完成</li> <li>（2）无法一次性将数据放入内存中。</li> </ul> <h4 id="11-缺失值处理">1.1 缺失值处理</h4> <ul> <li>填充固定值：选取某个固定值/默认值填充缺失值。</li> <li>填充均值：对每一列的缺失值，填充当列的均值。</li> <li>填充中位数：对每一列的缺失值，填充当列的中位数。</li> <li>填充众数：对每一列的缺失值，填充当列的众数。由于存在某列缺失值过多，众数为nan的情况，因此这里取的是每列删除掉nan值后的众数。</li> <li>填充上下条的数据：对每一条数据的缺失值，填充其上下条数据的值。</li> <li>填充插值得到的数据：用插值法拟合出缺失的数据，然后进行填充。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。</li> </ul> <h3 id="二机器学习">二.机器学习</h3> <h4 id="21--svm和lr的区别与联系">2.1 SVM和LR的区别与联系？</h4> <p>SVM 和 LR 都是属于分类算法，不过 SVM 是通过划分超平面的方法来进行分类，而 LR 则是通过计算样本属于哪个类别的概率，从而达到分类效果</p> <h4 id="22--交叉熵函数系列问题与最大似然函数的关系和区别">2.2 交叉熵函数系列问题？与最大似然函数的关系和区别？</h4> <p>在二分类中，交叉熵函数和负最大似然函数的表达式是相同的，但是交叉熵函数是从信息论角度得到的，而最大似然函数则是从概率论角度得到的</p> <p>交叉熵涉及到2点：</p> <ul> <li>信息量：假设X是一个离散型随机变量，其取值集合为X，概率分布函数为p(x)=Pr(X=x),x∈X，我们定义事件X=x0的信息量为： I(x0)=−log(p(x0))，可以理解为，一个事件发生的概率越大，则它所携带的信息量就越小，而当p(x0)=1时，熵将等于0，也就是说该事件的发生不会导致任何信息量的增加。举个例子，小明平时不爱学习，考试经常不及格，而小王是个勤奋学习的好学生，经常得满分，所以我们可以做如下假设： 事件A：小明考试及格，对应的概率P(xA)=0.1，信息量为I(xA)=−log(0.1)=3.3219 事件B：小王考试及格，对应的概率P(xB)=0.999，信息量为I(xB)=−log(0.999)=0.0014 可以看出，结果非常符合直观：小明及格的可能性很低(十次考试只有一次及格)，因此如果某次考试及格了（大家都会说：XXX竟然及格了！），必然会引入较大的信息量，对应的I值也较高。</li> <li>熵：假设小明的考试结果是一个0-1分布XA只有两个取值{0：不及格，1：及格}，在某次考试结果公布前，小明的考试结果有多大的不确定度呢？你肯定会说：十有八九不及格！因为根据先验知识，小明及格的概率仅有0.1,90%的可能都是不及格的。怎么来度量这个不确定度？求期望！不错，我们对所有可能结果带来的额外信息量求取均值（期望），其结果不就能够衡量出小明考试成绩的不确定度了吗。<strong>熵其实是信息量的期望值，它是一个随机变量的确定性的度量。熵越大，变量的取值越不确定，反之就越确定。</strong></li> <li>相对熵：称为<strong>KL散度</strong>，是两个随机分布间距离的度量。越小说明分布越一致。</li> <li>交叉熵：交叉熵与KL距离在行为上是等价的，都反映了分布p，q的相似程度。特别的，在logistic regression中， p:真实样本分布，服从参数为p的0-1分布，即X∼B(1,p)X∼B(1,p) q:待估计的模型，服从参数为q的0-1分布，即X∼B(1,q)两者的交叉熵为</li> </ul> <h4 id="23-svm的核函数">2.3 SVM的核函数</h4> <p>使用非线性核的支持向量机可以处理线性不可分的问题。通过核函数，支持向量机可以将特征向量映射到更高维的空间中，使得原本线性不可分的数据在映射之后的空间中变得线性可分，如下图所示，原本二维空间的线性不可分（异或问题）转成三维空间，就可以线性可分了。 <img src="https://raw.githubusercontent.com/yy2lyx/picgo/admin/img/int_1.jpg" alt="" /></p> <p>常用的核函数：线性核、多项式核、高斯核（RBF）、拉普拉斯核等等。核函数的选择其实才是SVM模型的最大变数。</p> <h4 id="24-l1和l2范数">2.4 L1和L2范数</h4> <p>范数的定义： \(\|\mathbf{x}\|_{p}:=\left(\sum_{i=1}^{n}\left|x_{i}\right|^{p}\right)^{1 / p}\) L1范数就是p=1,即： \(\|\boldsymbol{x}\|_{1}:=\sum_{i=1}^{n}\left|x_{i}\right|\)</p> <p>L2范数就是p = 2，即: \(\|\boldsymbol{x}\|_{2}:=\sqrt{x_{1}^{2}+\cdots+x_{n}^{2}}\)</p> <p>这里如果需要求解如何使得上述式子最小，无可避免三步走：求导，置零，解方程。因此L2范数计算就比L1范数计算更容易，因此L2范数应用较多。</p> <p>L1 和 L2 范数在机器学习上最主要的应用大概分下面两类：</p> <ul> <li>作为损失函数使用(计算回归问题中需要计算拟合的线和点之间的距离)，这里L1是LAD（最小绝对偏差），L2是最小二乘法</li> <li>作为正则项使用（防止过拟合）也即所谓 L1-regularization 和 L2-regularization：这里就是将x替换成权重w，</li> </ul> <p>这两个正则项最主要的不同，包括两点：如上面提到的，L2 计算起来更方便，而 L1 在特别是非稀疏向量上的计算效率就很低；还有就是 L1 最重要的一个特点，输出稀疏，会把不重要的特征直接置零，而 L2 则不会；最后，如之前多次提过，L2 有唯一解，而 L1 不是。</p> <h4 id="25-决策树">2.5 决策树</h4>...<a class="read-more" href="./%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html"> read more</a>
+						<blockquote> <p>面试官会根据自己简历中提到的一些点进行提问，这里先自己对某些点进行深挖。</p> </blockquote> <h3 id="一数据处理">一.数据处理</h3> <p>海量数据：</p> <ul> <li>（1）数据量太大，无法短时间内处理完成</li> <li>（2）无法一次性将数据放入内存中。</li> </ul> <h4 id="11-缺失值处理">1.1 缺失值处理</h4> <ul> <li>填充固定值：选取某个固定值/默认值填充缺失值。</li> <li>填充均值：对每一列的缺失值，填充当列的均值。</li> <li>填充中位数：对每一列的缺失值，填充当列的中位数。</li> <li>填充众数：对每一列的缺失值，填充当列的众数。由于存在某列缺失值过多，众数为nan的情况，因此这里取的是每列删除掉nan值后的众数。</li> <li>填充上下条的数据：对每一条数据的缺失值，填充其上下条数据的值。</li> <li>填充插值得到的数据：用插值法拟合出缺失的数据，然后进行填充。插值是离散函数逼近的重要方法，利用它可通过函数在有限个点处的取值状况，估算出函数在其他点处的近似值。</li> </ul> <h3 id="二机器学习">二.机器学习</h3> <h4 id="21--svm和lr的区别与联系">2.1 SVM和LR的区别与联系？</h4> <p>SVM 和 LR 都是属于分类算法，不过 SVM 是通过划分超平面的方法来进行分类，而 LR 则是通过计算样本属于哪个类别的概率，从而达到分类效果</p> <h4 id="22--交叉熵函数系列问题与最大似然函数的关系和区别">2.2 交叉熵函数系列问题？与最大似然函数的关系和区别？</h4> <p>在二分类中，交叉熵函数和负最大似然函数的表达式是相同的，但是交叉熵函数是从信息论角度得到的，而最大似然函数则是从概率论角度得到的</p> <p>交叉熵涉及到2点：</p> <ul> <li>信息量：假设X是一个离散型随机变量，其取值集合为X，概率分布函数为p(x)=Pr(X=x),x∈X，我们定义事件X=x0的信息量为： I(x0)=−log(p(x0))，可以理解为，一个事件发生的概率越大，则它所携带的信息量就越小，而当p(x0)=1时，熵将等于0，也就是说该事件的发生不会导致任何信息量的增加。举个例子，小明平时不爱学习，考试经常不及格，而小王是个勤奋学习的好学生，经常得满分，所以我们可以做如下假设： 事件A：小明考试及格，对应的概率P(xA)=0.1，信息量为I(xA)=−log(0.1)=3.3219 事件B：小王考试及格，对应的概率P(xB)=0.999，信息量为I(xB)=−log(0.999)=0.0014 可以看出，结果非常符合直观：小明及格的可能性很低(十次考试只有一次及格)，因此如果某次考试及格了（大家都会说：XXX竟然及格了！），必然会引入较大的信息量，对应的I值也较高。</li> <li>熵：假设小明的考试结果是一个0-1分布XA只有两个取值{0：不及格，1：及格}，在某次考试结果公布前，小明的考试结果有多大的不确定度呢？你肯定会说：十有八九不及格！因为根据先验知识，小明及格的概率仅有0.1,90%的可能都是不及格的。怎么来度量这个不确定度？求期望！不错，我们对所有可能结果带来的额外信息量求取均值（期望），其结果不就能够衡量出小明考试成绩的不确定度了吗。<strong>熵其实是信息量的期望值，它是一个随机变量的确定性的度量。熵越大，变量的取值越不确定，反之就越确定。</strong></li> <li>相对熵：称为<strong>KL散度</strong>，是两个随机分布间距离的度量。越小说明分布越一致。</li> <li>交叉熵：交叉熵与KL距离在行为上是等价的，都反映了分布p，q的相似程度。特别的，在logistic regression中， p:真实样本分布，服从参数为p的0-1分布，即X∼B(1,p)X∼B(1,p)...<a class="read-more" href="./%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html"> 阅读更多</a>
 					</div>
 				</div>
 			
@@ -1559,6 +2186,10 @@
 
 
 
+
+
+
+
 <script>
 (function() {
     var sw = document.getElementById('theme-switch');
@@ -1594,6 +2225,26 @@
     } else {
         logo.setAttribute("src", "./assets/img/branding/MVM-logo-full.svg");
     }
+    // Toggle author image
+    var authorImg = document.getElementById('author-img');
+    var authorImgAbout = document.getElementById('author-img-about');
+    
+    if (nightShift) {
+        if (authorImg) {
+            authorImg.setAttribute("src", "./assets/img/yy_dark.png");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "./assets/img/yy_dark.png");
+        }
+    } else {
+        if (authorImg) {
+            authorImg.setAttribute("src", "./assets/img/yy.jpg");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "./assets/img/yy.jpg");
+        }
+    }
+    
     setTimeout(function() {
         sw.checked = nightShift ? true : false;
     }, 50);

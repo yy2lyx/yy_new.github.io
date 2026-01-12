@@ -26,13 +26,14 @@ highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code h
 # Author settings
 author: 李小肥的YY # add your name
 author-pic: yy.jpg
+author-pic-dark: yy_dark.png
 about-author: 本人专注于机器学习、深度学习、自然语言处理和大模型，希望能和各位看官共同学习进步！
 
 # Contact links
 email: yeyansiwangtt@gmail.com # Add your Email address
 phone: # Add your Phone number
-website: https://amaynez.github.io # Add your website
-linkedin: amaynez # Add your Linkedin handle
+website: https://yy2lyx.github.io/ # Add your website
+zhihu: xie-yan-44-84-33
 github: yy2lyx # Add your Github handle
 # twitter: '@MvmThe' # Add your Twitter handle
 # bandcamp: armandomaynez # Add your Bandcamp username

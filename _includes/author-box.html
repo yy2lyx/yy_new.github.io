@@ -2,13 +2,13 @@
 {% include escape-404.html %}
 <section class="author-box">
   <div class="narrow-column">
-    <a href='{{ site.website }}'><img src="{{ relativebase }}assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="{{ site.author }}" class="author-img"></a>
+    <a href='{{ site.website }}'><img id="author-img" src="{{ relativebase }}assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="{{ site.author }}" class="author-img"></a>
     <ul class="contact-icons">
       {% if site.twitter %}
       <li class="twitter"><a class="twitter" href="https://twitter.com/{{site.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
       {% endif %}
-      {% if site.linkedin %}
-      <li class="linkedin"><a class="linkedin" href="https://in.linkedin.com/in/{{site.linkedin}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      {% if site.zhihu %}
+      <li class="zhihu"><a class="zhihu" href="https://www.zhihu.com/people/{{site.zhihu}}" target="_blank"><span style="font-size: 18px; font-weight: bold; display: inline-block; line-height: 1;">知</span></a></li>
       {% endif %}
       {% if site.github %}
       <li class="github"><a class="github" href="http://github.com/{{site.github}}" target="_blank"><i class="fa fa-github"></i></a></li>

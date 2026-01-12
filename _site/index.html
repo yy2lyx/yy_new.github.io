@@ -650,6 +650,10 @@
 
 
 
+
+
+
+
 <script>
 (function() {
     var sw = document.getElementById('theme-switch');
@@ -685,6 +689,26 @@
     } else {
         logo.setAttribute("src", "./assets/img/branding/MVM-logo-full.svg");
     }
+    // Toggle author image
+    var authorImg = document.getElementById('author-img');
+    var authorImgAbout = document.getElementById('author-img-about');
+    
+    if (nightShift) {
+        if (authorImg) {
+            authorImg.setAttribute("src", "./assets/img/yy_dark.png");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "./assets/img/yy_dark.png");
+        }
+    } else {
+        if (authorImg) {
+            authorImg.setAttribute("src", "./assets/img/yy.jpg");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "./assets/img/yy.jpg");
+        }
+    }
+    
     setTimeout(function() {
         sw.checked = nightShift ? true : false;
     }, 50);

@@ -22,7 +22,7 @@
   "headline": "About",
   "abstract": "",
     "keywords": "",
-    "wordcount": "52",
+    "wordcount": "53",
     "image": ["http://localhost:4000/assets/img"],
   "datePublished": "",
   "dateModified": "",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="52"/>
+<meta data-rh="true" name="twitter:data1" content="53"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -233,7 +233,7 @@
   <div class="about-container">
     <section class="about-header">
       <div class="author-image-container">
-        <a href='https://amaynez.github.io'><img src=".//assets/img/yy.jpg" alt="李小肥的YY"></a>
+        <a href='https://yy2lyx.github.io/'><img id="author-img-about" src=".//assets/img/yy.jpg" alt="李小肥的YY"></a>
       </div>
       <h3>李小肥的YY</h3>
       <p class="subtitle">本人专注于机器学习、深度学习、自然语言处理和大模型，希望能和各位看官共同学习进步！</p>
@@ -242,7 +242,7 @@
       <ul class="contact-list">
       
       
-        <li class="linkedin"><a class="linkedin" href="https://in.linkedin.com/in/amaynez" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li class="zhihu"><a class="zhihu" href="https://www.zhihu.com/people/xie-yan-44-84-33" target="_blank"><span style="font-size: 16px; font-weight: bold;">知</span></a></li>
       
       
         <li class="github"><a class="github" href="https://github.com/yy2lyx" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -333,6 +333,10 @@
 
 
 
+
+
+
+
 <script>
 (function() {
     var sw = document.getElementById('theme-switch');
@@ -368,6 +372,26 @@
     } else {
         logo.setAttribute("src", "./assets/img/branding/MVM-logo-full.svg");
     }
+    // Toggle author image
+    var authorImg = document.getElementById('author-img');
+    var authorImgAbout = document.getElementById('author-img-about');
+    
+    if (nightShift) {
+        if (authorImg) {
+            authorImg.setAttribute("src", "./assets/img/yy_dark.png");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "./assets/img/yy_dark.png");
+        }
+    } else {
+        if (authorImg) {
+            authorImg.setAttribute("src", "./assets/img/yy.jpg");
+        }
+        if (authorImgAbout) {
+            authorImgAbout.setAttribute("src", "./assets/img/yy.jpg");
+        }
+    }
+    
     setTimeout(function() {
         sw.checked = nightShift ? true : false;
     }, 50);
